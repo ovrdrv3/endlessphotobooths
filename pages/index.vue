@@ -3,10 +3,7 @@
 
 <!--       <b-col md="4">
           <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
-          <br>
           <span class="subtitle">Ventura County Photo Booth Rentals</span>
-          <br>
-          <br>
           <b-button class="contact-btn"
                     size="lg"
                     href="tel:+18057108997">
@@ -17,27 +14,21 @@
                     href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">
             Email
           </b-button>
-          <br>
-          <br>
 
       </b-col>
       <b-col md="8"> -->
       <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
       <div class="subtitle">Ventura County Photo Booth Rentals</div>
-      <br>
-    <b-row>
+    <b-row class="py-3">
       <b-col>
         <HomeCarousel/>
       </b-col>
     </b-row>
 
     <!-- Make a non fluiid container for the rest of the content -->
-    <br>
-    <br>
     <!-- Home info section -->
-    <b-row>
+    <b-row class="py-3">
       <b-col md="10" offset-md="1">
-      <br>
       <h1 class="title">We provide:</h1>
       <ul>
         <li>Service to Ventura County, Los Angeles County and Santa Barbara County for all events!</li>
@@ -47,15 +38,13 @@
       </ul>
       </b-col>
     </b-row>
-    <br>
-    <br>
     <!-- Package Info Section -->
     <b-row>
       <b-col offset-md="1" md="10">
         <h1 class="title">ALL Photo Booth Packages Include:</h1>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row class="py-3">
       <b-col order-md="2" md="3">
         <img class="d-block img-fluid zoomable-img"
              src="~assets/images/home/all_include.jpg"
@@ -75,13 +64,12 @@
         </ul>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row class="py-3">
       <b-col offset-md="1" md="10">
         <h1 class="title">Our Photo Booth Styles:</h1>
-        <br>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row class="py-3">
       <b-col offset-md="1" md="5">
           <div class="card border-0">
             <img src="~assets/images/home/enclosed_booth.png" alt="Endless Photo Booths Slide One" class="card-img-top photobooth-style-img">
@@ -101,12 +89,10 @@
           </div>
       </b-col>
     </b-row>
-    <br>
-    <br>
     <!-- End Section -->
-    <b-row>
+    <b-row class="py-3">
       <b-col>
-      <div> Ventura Photo Booth Rentals will be a perfect addition to any event! <nuxt-link class="contact-us-link" to="/contact-us">Contact us today!</nuxt-link></div>
+      <div class="subtitle"> Ventura Photo Booth Rentals will be a perfect addition to any event! Ventura Photo Booth rentals by Endless Photo Booths, <nuxt-link class="contact-us-link" to="/contact-us">a company you can count on!</nuxt-link></div>
       </b-col>
     </b-row>
   </b-container>
