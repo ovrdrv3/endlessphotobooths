@@ -2,15 +2,18 @@
   <div>
     <Navbar/>
     <nuxt/>
+    <Bottombar/>
   </div>
 </template>
 
 <script>
 
 import Navbar from '~/components/Navbar.vue';
+import Bottombar from '~/components/BottomBar.vue';
 export default {
   components: {
-    Navbar
+    Navbar,
+    Bottombar
   }
 }
 
@@ -18,8 +21,8 @@ export default {
 
 <style>
 html {
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
