@@ -21,7 +21,7 @@ export default {
 
 <style>
 html {
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', cursive !important;
   font-size: 20px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
