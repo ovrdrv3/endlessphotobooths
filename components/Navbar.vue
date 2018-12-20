@@ -6,6 +6,7 @@
     <b-navbar-brand to="/">
       <img id="brandLogo" src="~assets/images/best_png_logo.png" alt="Endless Photo Booths Ventura County logo"/>
     </b-navbar-brand>
+
     <b-collapse is-nav id="nav_collapse">
 
       <b-navbar-nav class="ml-auto">
