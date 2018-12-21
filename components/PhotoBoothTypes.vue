@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <b-row class="py-3">
-      <b-col offset-md="1" md="5">
+      <b-col offset-md="2" md="4">
           <div class="card border-0">
             <img src="~assets/images/home/enclosed_booth-min.png" alt="Endless Photo Booths Slide One" class="card-img-top photobooth-style-img">
             <div class="card-body">
@@ -15,7 +15,7 @@
             </div>
           </div>
       </b-col>
-      <b-col md="5">
+      <b-col  md="4">
           <div class="card offset-md-1 border-0">
             <img src="~assets/images/home/open_booth-min.jpg" alt="Endless Photo Booths Slide Two" class="card-img-top photobooth-style-img">
             <div class="card-body">

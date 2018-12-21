@@ -31,7 +31,7 @@
       <b-col order-md="2" md="3">
         <img class="d-block img-fluid zoomable-img"
              src="~assets/images/home/all_include-min.jpg"
-             alt="Endless Photo Booths Ventura County logo">
+             alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
       </b-col>
       <b-col offset-md="1" order-md="1" md="7">
         <ul>
@@ -65,6 +65,14 @@ import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import mediumZoom from 'medium-zoom';
 
 export default {
+  head () {
+    return {
+      title: 'ENDLESS PHOTOBOOTHS',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Home Page' }
+      ]
+    }
+  },
   components: {
     HomeCarousel,
     PhotoBoothTypes

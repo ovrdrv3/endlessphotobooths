@@ -1,25 +1,66 @@
 <template>
   <b-container>
 
-    <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
+    <h1 class="title">ABOUT ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
 
-    <Packages/>
-
-    <PhotoBoothTypes/>
+    <b-row >
+      <b-col md="6" class="py-5">
+        <h4 class="we-specialize-text">Looking for Photo Booth Rentals in Ventura? </h4>
+        <br>
+        Endless Photo Booths is a full service photo booth rental company with 2 types of booth styles and  different options. Photo Booths aren’t just great to rent for weddings but for any other special event as well. Here at Endless Photo Booths we offer affordable photo booth rentals with many great and amazing options. Endless Photo Booths will be a perfect addition to any and all events!
+        <br>
+        <br>
+        <h4 class="we-specialize-text">Areas we service:</h4>
+        <br>
+        Endless Photo Booths services Ventura County, Los Angeles and Santa Barbara with small travel fees outside of Ventura County.
+        <br>
+        <br>
+        <h4 class="we-specialize-text">We specialize in:</h4>
+        <br>
+        <ul>
+          <li>Corporate Events​​</li>
+          <li>Baby Showers</li>
+          <li>​Graduations</li>
+          <li>Weddings</li>
+          <li>Private Parties</li>
+          <li>Many More!</li>
+        </ul>
+      </b-col>
+      <b-col md="5" offset-md="1">
+        <img class="d-block py-5 img-fluid zoomable-img"
+             src="~assets/images/about-us/conrad_and_rocio-min.jpg"
+             alt="Example of a wedding Four by Six Print">
+        <img class="d-block py-5 img-fluid zoomable-img"
+             src="~assets/images/about-us/elijah_meet_and_greet-min.jpg"
+             alt="Example of a Baby Shower">
+        <img class="d-block py-5 img-fluid zoomable-img"
+             src="~assets/images/about-us/krystal_and_deven_slides-min.jpg"
+             alt="Example of what the slide print out will look like">
+        <img class="d-block py-5 img-fluid zoomable-img"
+             src="~assets/images/about-us/props-min.jpg"
+             alt="Example of what the props will look like">
+<!--         <img class="d-block py-5 img-fluid"
+             src="~assets/images/about-us/4x6_example-min.jpg"
+             alt="Example of what the slide print out will look like">
+ -->
+      </b-col>
+    </b-row>
 
   </b-container>
 </template>
 
 <script>
-import Packages from '~/components/Packages.vue';
-import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import mediumZoom from 'medium-zoom';
 
 export default {
-  components: {
-    Packages,
-    PhotoBoothTypes
+  head () {
+    return {
+      title: 'About Us',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals About Us Page' }
+      ]
+    }
   },
   mounted(){
     mediumZoom('.zoomable-img')
@@ -54,6 +95,14 @@ export default {
   font-weight: 300;
   word-spacing: 5px;
   text-align: center;
+}
+
+.we-specialize-text{
+  color: #317FBC;
+  /*color: white;*/
+  font-weight: 300;
+  word-spacing: 5px;
+  text-align: left;
 }
 
 .contact-us-link{

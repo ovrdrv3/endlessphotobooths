@@ -1,6 +1,6 @@
 <template>
-  <b-container>
-    <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
+  <b-container fluid>
+    <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS PACKAGES</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
     <Packages/>
     <PhotoBoothTypes/>
@@ -14,6 +14,14 @@ import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import mediumZoom from 'medium-zoom';
 
 export default {
+  head () {
+    return {
+      title: 'Packages',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Packages Page' }
+      ]
+    }
+  },
   components: {
     Packages,
     PhotoBoothTypes
@@ -53,27 +61,8 @@ export default {
   text-align: center;
 }
 
-.contact-us-link{
-  color: #317FBC;
-  text-decoration: underline;
-}
-.contact-btn {
-  background-color: #317FBC;
-}
-
 .photobooth-style-img {
   max-height: 250px;
 }
 
-ul{
-  text-align: left;
-}
-
-li{
-  margin-top: 10px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

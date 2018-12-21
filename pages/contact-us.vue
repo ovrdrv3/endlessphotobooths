@@ -30,6 +30,14 @@ import ContactButtons from '~/components/ContactButtons.vue';
 import mediumZoom from 'medium-zoom';
 
 export default {
+  head () {
+    return {
+      title: 'Contact Us',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Contact Us Page' }
+      ]
+    }
+  },
   components: {
     ContactForm,
     ContactButtons

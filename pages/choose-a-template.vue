@@ -1,26 +1,10 @@
 <template>
-  <b-container fluid>
+  <b-container>
 
-<!--       <b-col md="4">
-          <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
-          <span class="subtitle">Ventura County Photo Booth Rentals</span>
-          <b-button class="contact-btn"
-                    size="lg"
-                    href="tel:+18057108997">
-            Call
-          </b-button>
-          <b-button class="contact-btn"
-                    size="lg"
-                    href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">
-            Email
-          </b-button>
-
-      </b-col>
-      <b-col md="8"> -->
     <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
-    <div class="subtitle">Ventura County Photo Booth Rentals</div>
-    <Packages/>
-    <PhotoBoothTypes/>
+    <div id="paddee-container" data-key="f89Okf2_1101" data-tags="landscape3l,landscape3p,landscape1l,portrait1p,strip3l" data-categories="1,4,33"></div>
+    <!--     <div style="text-align: center; padding-top: 30px;">Powered by <a href="http://getpaddee.com"><em>Paddee</em></a></div> -->
+    <script src="https://paddee.herokuapp.com/widget_v1.js"></script>
 
   </b-container>
 </template>
@@ -31,6 +15,14 @@ import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import mediumZoom from 'medium-zoom';
 
 export default {
+  head () {
+    return {
+      title: 'Choose a Template',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Choose a Template Page' }
+      ]
+    }
+  },
   components: {
     Packages,
     PhotoBoothTypes
@@ -69,12 +61,16 @@ export default {
   word-spacing: 5px;
   text-align: center;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.tab-title{
+  color: #317FBC !important;
+  /*color: white;*/
+  font-weight: 300;
+  word-spacing: 5px;
   text-align: center;
+
 }
+
 .contact-us-link{
   color: #317FBC;
   text-decoration: underline;
