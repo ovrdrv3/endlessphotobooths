@@ -14,11 +14,7 @@
         <b-nav-item href="tel:+18057108997">Call</b-nav-item>
         <b-nav-item href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">Email</b-nav-item>
 
-        <b-nav-item-dropdown to="packages" text="Packages" extra-toggle-classes="nav-link-custom" right>
-          <b-dropdown-item to="packages#one">Package one</b-dropdown-item>
-          <b-dropdown-item to="packages#two">Package two</b-dropdown-item>
-          <b-dropdown-item to="packages#three">Package three</b-dropdown-item>
-        </b-nav-item-dropdown>
+        <b-nav-item to="packages">Packages</b-nav-item>
         <b-nav-item to="about-us">About Us</b-nav-item>
         <b-nav-item to="contact-us">Contact Us</b-nav-item>
         <b-nav-item to="choose-a-template">Choose a Template</b-nav-item>

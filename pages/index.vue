@@ -2,8 +2,6 @@
   <b-container fluid>
 
 <!--       <b-col md="4">
-          <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
-          <span class="subtitle">Ventura County Photo Booth Rentals</span>
           <b-button class="contact-btn"
                     size="lg"
                     href="tel:+18057108997">
@@ -128,9 +126,6 @@ export default {
 .contact-us-link{
   color: #317FBC;
   text-decoration: underline;
-}
-.contact-btn {
-  background-color: #317FBC;
 }
 
 .photobooth-style-img {

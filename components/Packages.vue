@@ -1,44 +1,58 @@
 <template>
 <div>
-    <b-card-group deck>
-        <b-card title="Title"
-                img-src="https://picsum.photos/300/300/?image=41"
-                img-alt="Img"
-                img-top>
-            <p class="card-text">
-                This is a wider card with supporting text below as a
-                natural lead-in to additional content. This content
-                is a little bit longer.
-            </p>
-            <div slot="footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </b-card>
-        <b-card title="Title"
-                img-src="https://picsum.photos/300/300/?image=41"
-                img-alt="Img"
-                img-top>
-            <p class="card-text">
-                This card has supporting text below as a natural lead-in
-                to additional content.
-            </p>
-            <div slot="footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </b-card>
-        <b-card title="Title"
-                img-src="https://picsum.photos/300/300/?image=41"
-                img-alt="Img"
-                img-top>
-            <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-            </p>
-            <div slot="footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </b-card>
-    </b-card-group>
+    <b-row class="py-3">
+        <b-col offset-md="1" md="10">
+            <b-card-group deck>
+                <b-card title="Package I">
+                    <b-list-group flush>
+                        <b-list-group-item>Rose Gold, Red, Silver backdrop</b-list-group-item>
+                        <b-list-group-item>2 Strips with 3 Photos Taken</b-list-group-item>
+                        <b-list-group-item>Copies for Everyone in Photo</b-list-group-item>
+                        <b-list-group-item>Unlimited Use of Booth</b-list-group-item>
+                        <b-list-group-item>Open air Photo Booth</b-list-group-item>
+                        <b-list-group-item>Custom Text For Bottom Of Picture</b-list-group-item>
+                        <b-list-group-item>Props</b-list-group-item>
+                        <b-list-group-item>Person to Run Photo Booth</b-list-group-item>
+                        <b-list-group-item>Drop off and Pickup Included</b-list-group-item>
+                    </b-list-group>
+                    <b-button to="/contact-us"
+                              variant="primary">Book
+                    </b-button>
+                </b-card>
+                <b-card title="Package II">
+                    <b-list-group flush>
+                        <b-list-group-item>LED Enclosed Booth</b-list-group-item>
+                        <b-list-group-item>2 Strips with 3 Photos Taken</b-list-group-item>
+                        <b-list-group-item>Photo Album</b-list-group-item>
+                        <b-list-group-item>Copies for Everyone in Photo</b-list-group-item>
+                        <b-list-group-item>Unlimited Use of Booth</b-list-group-item>
+                        <b-list-group-item>Custom Text For Bottom Of Picture</b-list-group-item>
+                        <b-list-group-item>Props</b-list-group-item>
+                        <b-list-group-item>Person to Run Photo Booth</b-list-group-item>
+                        <b-list-group-item>Drop off and Pickup Included</b-list-group-item>
+                    </b-list-group>
+                    <b-button to="/contact-us"
+                              variant="primary">Book
+                    </b-button>
+                </b-card>
+                <b-card title="Package III">
+                    <b-list-group flush>
+                        <b-list-group-item>LED Enclosed Booth</b-list-group-item>
+                        <b-list-group-item>Full 4x6 Prints</b-list-group-item>
+                        <b-list-group-item>Photo Album</b-list-group-item>
+                        <b-list-group-item>Copies for Everyone in Photo</b-list-group-item>
+                        <b-list-group-item>Unlimited Use of Booth</b-list-group-item>
+                        <b-list-group-item>Custom Text For Bottom Of Picture</b-list-group-item>
+                        <b-list-group-item>Props</b-list-group-item>
+                        <b-list-group-item>Person to Run Photo Booth</b-list-group-item>
+                        <b-list-group-item>Drop off and Pickup Included</b-list-group-item>
+                    </b-list-group>
+                    <b-button to="/contact-us"
+                              variant="primary">Book
+                    </b-button>
+                </b-card>
+            </b-card-group>
+        </b-col>
+    </b-row>
 </div>
 </template>
