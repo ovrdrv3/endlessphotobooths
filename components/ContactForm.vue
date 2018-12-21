@@ -81,7 +81,10 @@ export default {
       return this.errorMessages.email ? false : true;
     },
     errorsPresent () {
-      this.formValidation();
+      // do not run any validation until data has started to be input into the display
+      if (!this.allFormsGray) {
+        this.formValidation();
+      }
       for (var key in this.errorMessages) {
           // skip loop if the property is from prototype
           if (!this.errorMessages.hasOwnProperty(key)) continue;
