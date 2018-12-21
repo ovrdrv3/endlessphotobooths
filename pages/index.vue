@@ -45,7 +45,7 @@
     <b-row class="py-3">
       <b-col order-md="2" md="3">
         <img class="d-block img-fluid zoomable-img"
-             src="~assets/images/home/all_include.jpg"
+             src="~assets/images/home/all_include-min.jpg"
              alt="Endless Photo Booths Ventura County logo">
       </b-col>
       <b-col offset-md="1" order-md="1" md="7">

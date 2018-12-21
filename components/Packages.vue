@@ -1,7 +1,7 @@
 <template>
 <div>
     <b-row class="py-3">
-        <b-col offset-md="1" md="10">
+        <b-col>
             <b-card-group deck>
                 <b-card title="Package I">
                     <b-list-group flush>
