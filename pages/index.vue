@@ -1,20 +1,5 @@
 <template>
   <b-container fluid>
-
-<!--       <b-col md="4">
-          <b-button class="contact-btn"
-                    size="lg"
-                    href="tel:+18057108997">
-            Call
-          </b-button>
-          <b-button class="contact-btn"
-                    size="lg"
-                    href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">
-            Email
-          </b-button>
-
-      </b-col>
-      <b-col md="8"> -->
       <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
       <div class="subtitle">Ventura County Photo Booth Rentals</div>
     <b-row class="py-3">
@@ -117,12 +102,7 @@ export default {
   word-spacing: 5px;
   text-align: center;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 .contact-us-link{
   color: #317FBC;
   text-decoration: underline;

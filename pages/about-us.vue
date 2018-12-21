@@ -1,25 +1,11 @@
 <template>
   <b-container>
 
-<!--       <b-col md="4">
-          <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
-          <span class="subtitle">Ventura County Photo Booth Rentals</span>
-          <b-button class="contact-btn"
-                    size="lg"
-                    href="tel:+18057108997">
-            Call
-          </b-button>
-          <b-button class="contact-btn"
-                    size="lg"
-                    href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">
-            Email
-          </b-button>
-
-      </b-col>
-      <b-col md="8"> -->
     <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
+
     <Packages/>
+
     <PhotoBoothTypes/>
 
   </b-container>
@@ -90,7 +76,4 @@ li{
   margin-top: 10px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>

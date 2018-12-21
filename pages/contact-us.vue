@@ -1,7 +1,6 @@
 <template>
   <b-container>
-    <b-row>
-      <b-col>
+
         <h1 class="title">Get in Touch with ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
         <div class="subtitle">Ventura County Photo Booth Rentals</div>
 
@@ -21,8 +20,6 @@
 
         <ContactForm/>
 
-      </b-col>
-    </b-row>
 
   </b-container>
 </template>

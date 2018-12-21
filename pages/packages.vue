@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid>
+  <b-container>
     <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
     <Packages/>
@@ -52,12 +52,7 @@ export default {
   word-spacing: 5px;
   text-align: center;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 .contact-us-link{
   color: #317FBC;
   text-decoration: underline;
