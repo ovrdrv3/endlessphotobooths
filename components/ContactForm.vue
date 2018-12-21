@@ -1,5 +1,5 @@
 <template>
-  <div @keydown="unGrayFields">
+  <div @keydown="unGrayFields" class="py-3">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group id="exampleInputGroup2"
                     label="Name:"

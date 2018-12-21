@@ -4,11 +4,7 @@
       <b-col>
         <h1 class="title">Get in Touch with ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
         <div class="subtitle">Ventura County Photo Booth Rentals</div>
-      </b-col>
-    </b-row>
 
-    <b-row>
-      <b-col>
         <div class="py-3">
           We have Photo Booth Rentals in Ventura, Los Angeles, and Santa Barbara Counties. Please give us a call, send us an email, or feel free to fill out the contact form below if you have any questions!
         </div>
@@ -22,12 +18,9 @@
           <br>
           <a href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">endlessphotobooths@gmail.com</a>
         </div>
-      </b-col>
-    </b-row>
 
-    <b-row>
-      <b-col class="py-3">
         <ContactForm/>
+
       </b-col>
     </b-row>
 
