@@ -140,7 +140,4 @@ li{
   margin-top: 10px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>

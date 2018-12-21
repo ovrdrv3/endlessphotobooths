@@ -1,5 +1,5 @@
 <template>
-    <b-navbar id="navBar" sticky toggleable="md">
+    <b-navbar id="navBar" v-scroll="handleScroll" :class="{ shrink: hasScrolled}" sticky toggleable="md">
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -28,16 +28,17 @@
 
 nav{
    // Animation
-   -webkit-transition: all 0.4s ease;
-   transition: all 0.4s ease;
+   -webkit-transition: all 0.4s;
+   transition: all 0.4s;
+   -webkit-transform: translateZ(0);
 }
 nav.shrink{
   background-color: #eee;
 }
 nav img{
-  transition: all 0.5s;
-  /*transition-delay: 0.5s;*/
+  transition: all 0.4s;
   max-height: 92px;
+  -webkit-transform: translateZ(0);
 }
 nav img.shrink{
   max-height: 50px;
@@ -52,29 +53,20 @@ nav img.shrink{
 <script>
 
 export default {
-  mounted() {
-        // shrink the navbar on scroll.
-        this.$nextTick(function(){
-          window.addEventListener("scroll", function(){
-            var brandLogo = document.getElementById("brandLogo");
-            var navBarId = document.getElementById("navBar");
-            var brandClasses = brandLogo.classList;
-            var navBarClasses = navBarId.classList;
-            if(document.documentElement.scrollTop >= 50) {
-              if (brandClasses.contains("shrink") === false) {
-                brandClasses.toggle("shrink");
-                navBarClasses.toggle("shrink");
-              }
-            }
-            if(document.documentElement.scrollTop < 5) {
-              if (brandClasses.contains("shrink") === true) {
-                brandClasses.toggle("shrink");
-                navBarClasses.toggle("shrink");
-              }
-            }
-          })
-        })
-      },
+  data () {
+    return {
+      hasScrolled: false
+    }
+  },
+  methods: {
+      handleScroll: function (evt, el) {
+        if (window.scrollY > 30 || document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+          this.hasScrolled = true;
+        } else {
+          this.hasScrolled = false;
+        }
+      }
+    }
 }
 
 
