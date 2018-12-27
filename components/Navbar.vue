@@ -2,12 +2,13 @@
     <b-navbar id="navBar" v-scroll="handleScroll" :class="{ shrink: hasScrolled}" sticky toggleable="md">
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-    <b-navbar-brand to="/">
-      <img id="brandLogo" src="~assets/images/best_png_logo.png" alt="Endless Photo Booths Ventura County logo"/>
+    <b-navbar-brand to="/" @click.native="navItemsVisible = false">
+      <img  id="brandLogo"
+            src="~assets/images/best_png_logo.png"
+            alt="Endless Photo Booths Ventura County logo"/>
     </b-navbar-brand>
 
-    <b-collapse is-nav id="nav_collapse">
+    <b-collapse is-nav id="nav_collapse" v-model="navItemsVisible">
 
       <b-navbar-nav class="ml-auto">
 
@@ -55,7 +56,8 @@ nav img.shrink{
 export default {
   data () {
     return {
-      hasScrolled: false
+      hasScrolled: false,
+      navItemsVisible: false
     }
   },
   methods: {
@@ -64,6 +66,12 @@ export default {
           this.hasScrolled = true;
         } else {
           this.hasScrolled = false;
+        }
+      },
+      handleNavBarVisibility: function (){
+        // If the navbar items are not visible we do not want to allow this to show the items, only collapse them.
+        if (this.navItemsVisible) {
+          this.navItemsVisible = false;
         }
       }
     }
