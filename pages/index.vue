@@ -8,7 +8,7 @@
       </b-col>
     </b-row>
 
-    <!-- Make a non fluiid container for the rest of the content -->
+    <!-- Make a non fluid container for the rest of the content -->
     <!-- Home info section -->
     <b-row class="py-3">
       <b-col md="10" offset-md="1">
