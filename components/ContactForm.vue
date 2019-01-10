@@ -1,7 +1,7 @@
 <template>
   <div @keydown="unGrayFields" class="py-3">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-form-group id="exampleInputGroup2"
+      <b-form-group id="FormName"
                     label="Name:"
                     label-for="Name">
         <b-form-input id="name"
@@ -15,7 +15,7 @@
         </b-form-text>
 
       </b-form-group>
-      <b-form-group id="exampleInputGroup1"
+      <b-form-group id="formNumber"
                     label="Number:"
                     label-for="Phone Number">
         <b-form-input id="phone"
@@ -28,7 +28,7 @@
           {{ errorMessages.phone }}
         </b-form-text>
       </b-form-group>
-      <b-form-group id="exampleInputGroup1"
+      <b-form-group id="formEmail"
                     label="Email:"
                     label-for="email">
         <b-form-input id="email"
@@ -41,7 +41,7 @@
           {{ errorMessages.email }}
         </b-form-text>
       </b-form-group>
-      <b-form-group id="comment"
+      <b-form-group id="formComment"
                     label="Comment or Message:"
                     label-for="comment">
         <b-form-textarea id="exampletextarea1"
@@ -51,7 +51,7 @@
                       :max-rows="6">
         </b-form-textarea>
       </b-form-group>
-      <b-form-group id="package"
+      <b-form-group id="formPackage"
                     label="Interested in:"
                     label-for="package">
         <b-form-select id="package"
@@ -66,7 +66,27 @@
 </template>
 
 <script>
+    // if (searchParams.has("package")){
+    //   console.log('Package ' + searchParams.get("package"));
+    //   this.form.packages = 'Package ' + searchParams.get("package") ;
+    // }
+    // console.log(window.location.search);
+    // var searchParams = new URLSearchParams(window.location.search);
+    // console.log(searchParams.get("package"));
+
+
+    // for (let p of searchParams) {
+    //   console.log(p);
+    // }
 export default {
+  created: function (){
+    var paramsString = window.location.search;
+    var searchParams = new URLSearchParams(paramsString);
+    if (searchParams.has("package")){
+      // console.log('Package ' + searchParams.get("package"));
+      this.form.packages = 'Package ' + searchParams.get("package") ;
+    }
+  },
   computed: {
     nameState () {
       if (this.allFormsGray) return null;

@@ -14,7 +14,7 @@
                 <b-list-group-item class="py-1">Drop off and Pickup Included</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us"
+                      to="/contact-us?package=I"
                       variant="primary"
                       block>
                       Book
@@ -33,7 +33,7 @@
                 <b-list-group-item class="py-1">Drop off and Pickup Included</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us"
+                      to="/contact-us?package=II"
                       variant="primary"
                       block>
                       Book
@@ -52,7 +52,7 @@
                 <b-list-group-item class="py-1">Drop off and Pickup Included</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us"
+                      to="/contact-us?package=III"
                       variant="primary"
                       block>
                       Book

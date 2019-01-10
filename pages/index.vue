@@ -67,7 +67,7 @@ import mediumZoom from 'medium-zoom';
 export default {
   head () {
     return {
-      title: 'ENDLESS PHOTOBOOTHS',
+      title: 'ENDLESS Ventura Photo Booth Rentals',
       meta: [
         { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Home Page' }
       ]
