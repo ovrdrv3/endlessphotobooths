@@ -1,7 +1,7 @@
 <template>
 <div>
     <b-card-group deck class="py-3">
-        <b-card title="Package I">
+        <b-card title="Open Air">
             <b-list-group flush>
                 <b-list-group-item class="py-1">Rose Gold, Red, Silver backdrop</b-list-group-item>
                 <b-list-group-item class="py-1">2 Strips with 3 Photos Taken</b-list-group-item>
@@ -20,7 +20,7 @@
                       Book
             </b-button>
         </b-card>
-        <b-card title="Package II">
+        <b-card title="LED Booth">
             <b-list-group flush>
                 <b-list-group-item class="py-1">LED Enclosed Booth</b-list-group-item>
                 <b-list-group-item class="py-1">2 Strips with 3 Photos Taken</b-list-group-item>
@@ -39,7 +39,7 @@
                       Book
             </b-button>
         </b-card>
-        <b-card title="Package III">
+        <b-card title="ENDLESS VIP">
             <b-list-group flush>
                 <b-list-group-item class="py-1">LED Enclosed Booth</b-list-group-item>
                 <b-list-group-item class="py-1">Full 4x6 Prints</b-list-group-item>

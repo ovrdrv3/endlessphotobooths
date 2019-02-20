@@ -12,8 +12,8 @@
 
       <b-navbar-nav class="ml-auto">
 
-        <b-nav-item href="tel:+18057108997">Call</b-nav-item>
-        <b-nav-item href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">Email</b-nav-item>
+        <!-- <b-nav-item href="tel:+18057108997">Call</b-nav-item> -->
+        <!-- <b-nav-item href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">Email</b-nav-item> -->
 
         <b-nav-item to="packages">Packages</b-nav-item>
         <b-nav-item to="about-us">About Us</b-nav-item>
@@ -28,7 +28,6 @@
 <style>
 
 nav{
-   // Animation
    -webkit-transition: all 0.4s;
    transition: all 0.4s;
    -webkit-transform: translateZ(0);
