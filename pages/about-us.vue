@@ -28,18 +28,26 @@
         </ul>
       </b-col>
       <b-col md="5" offset-md="1">
-        <img class="d-block py-5 img-fluid zoomable-img"
-             src="~assets/images/about-us/conrad_and_rocio-min.jpg"
-             alt="Example of a wedding Four by Six Print">
-        <img class="d-block py-5 img-fluid zoomable-img"
-             src="~assets/images/about-us/elijah_meet_and_greet-min.jpg"
-             alt="Example of a Baby Shower">
-        <img class="d-block py-5 img-fluid zoomable-img"
-             src="~assets/images/about-us/krystal_and_deven_slides-min.jpg"
-             alt="Example of what the slide print out will look like">
-        <img class="d-block py-5 img-fluid zoomable-img"
-             src="~assets/images/about-us/props-min.jpg"
-             alt="Example of what the props will look like">
+        <picture>
+          <source srcset="~assets/images/about-us/conrad_and_rocio-min.webp" type="image/webp"  class="d-block py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/conrad_and_rocio-min.jpg"class="d-block py-5 img-fluid zoomable-img">
+          <img src="~assets/images/about-us/conrad_and_rocio-min.jpg" alt="Example of a wedding Four by Six Print" class="d-block py-5 img-fluid zoomable-img">
+        </picture>
+        <picture>
+          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="d-block py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.jpg"class="d-block py-5 img-fluid zoomable-img">
+          <img src="~assets/images/about-us/elijah_meet_and_greet-min.jpg" alt="Example of a Baby Shower" class="d-block py-5 img-fluid zoomable-img">
+        </picture>
+        <picture>
+          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="d-block py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.jpg"class="d-block py-5 img-fluid zoomable-img">
+          <img src="~assets/images/about-us/krystal_and_deven_slides-min.jpg" alt="Example of what the slide print out will look like" class="d-block py-5 img-fluid zoomable-img">
+        </picture>
+        <picture>
+          <source srcset="~assets/images/about-us/props-min.webp" type="image/webp"  class="d-block py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/props-min.jpg"class="d-block py-5 img-fluid zoomable-img">
+          <img src="~assets/images/about-us/props-min.jpg" alt="Example of what the props will look like" class="d-block py-5 img-fluid zoomable-img">
+        </picture>
 <!--         <img class="d-block py-5 img-fluid"
              src="~assets/images/about-us/4x6_example-min.jpg"
              alt="Example of what the slide print out will look like">

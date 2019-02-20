@@ -29,9 +29,16 @@
     </b-row>
     <b-row class="py-3">
       <b-col order-md="2" md="3">
-        <img class="d-block img-fluid zoomable-img"
-             src="~assets/images/home/all_include-min.jpg"
-             alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
+
+        <picture>
+         <source class="d-block img-fluid zoomable-img" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
+         <source class="d-block img-fluid zoomable-img" srcset="~assets/images/home/all_include-min.jpg" type="image/jpeg">
+          <img class="d-block img-fluid zoomable-img"
+               src="~assets/images/home/all_include-min.jpg"
+               alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
+        </picture>
+
+
       </b-col>
       <b-col offset-md="1" order-md="1" md="7">
         <ul>
