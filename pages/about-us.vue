@@ -29,40 +29,26 @@
       </b-col>
       <b-col md="5" offset-md="1">
         <picture>
-          <source srcset="~assets/images/about-us/conrad_and_rocio-min.webp" type="image/webp"  class="d py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-          <source srcset="~assets/images/about-us/conrad_and_rocio-min.jpg" class="py-5 img-fluid zoomable-img" media="(min-width: 400px)"><source srcset="~assets/images/about-us/conrad_and_rocio-min-mob.webp" type="image/webp"  class="py-5 img-fluid zoomable-img"">
-          <source srcset="~assets/images/about-us/conrad_and_rocio-min-mob.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <source srcset="~assets/images/about-us/conrad_and_rocio-min-mob.jpg" class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/conrad_and_rocio-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/conrad_and_rocio-min.jpg" class="py-5 img-fluid zoomable-img">
           <img src="~assets/images/about-us/conrad_and_rocio-min.jpg" alt="Example of a wedding Four by Six Print" class="py-5 img-fluid zoomable-img">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.jpg"class="py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-
-          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min-mob.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min-mob.jpg"class="py-5 img-fluid zoomable-img">
-
+          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.jpg" class="py-5 img-fluid zoomable-img">
           <img src="~assets/images/about-us/elijah_meet_and_greet-min.jpg" alt="Example of a Baby Shower" class="py-5 img-fluid zoomable-img">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-
-          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min-mob.jpg" class="py-5 img-fluid zoomable-img">
-          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min-mob.jpg" class="py-5 img-fluid zoomable-img">
-
+          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.jpg" class="py-5 img-fluid zoomable-img">
           <img src="~assets/images/about-us/krystal_and_deven_slides-min.jpg" alt="Example of what the slide print out will look like" class="py-5 img-fluid zoomable-img">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/props-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-          <source srcset="~assets/images/about-us/props-min.jpg" class="py-5 img-fluid zoomable-img" media="(min-width: 400px)">
-
-          <source srcset="~assets/images/about-us/props-min-mob.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <source srcset="~assets/images/about-us/props-min-mob.jpg" class="py-5 img-fluid zoomable-img">
-
+          <source srcset="~assets/images/about-us/props-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/props-min.jpg" class="py-5 img-fluid zoomable-img">
           <img src="~assets/images/about-us/props-min.jpg" alt="Example of what the props will look like" class="py-5 img-fluid zoomable-img">
         </picture>
-<!--         <img class="py-5 img-fluid"
+<!--         <img class="d-block py-5 img-fluid"
              src="~assets/images/about-us/4x6_example-min.jpg"
              alt="Example of what the slide print out will look like">
  -->
