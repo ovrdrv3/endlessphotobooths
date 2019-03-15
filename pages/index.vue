@@ -148,7 +148,7 @@ export default {
 
 .dark-overlay {
   /*background: rgba(0, 0, 0, .6);*/
-  filter: brightness(70%);
+  filter: brightness(50%);
 }
 
 .blue-text{
@@ -161,7 +161,9 @@ export default {
 }
 
 .gray-text{
+  font-weight: 600;
   color: #EEE;
+  font-weight: 600;
 }
 
 .mobile-gray-text {
