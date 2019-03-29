@@ -14,7 +14,7 @@
                 <b-list-group-item class="py-1">Drop off and Pickup Included</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us?package=I"
+                      to="/contact-us?package=Open"
                       variant="primary"
                       block>
                       Book
@@ -27,7 +27,7 @@
                 <b-list-group-item class="py-1">Photo Album</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us?package=II"
+                      to="/contact-us?package=LED"
                       variant="primary"
                       block>
                       Book
@@ -39,7 +39,7 @@
                 <b-list-group-item class="py-1">Full 4x6 Prints</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us?package=III"
+                      to="/contact-us?package=ENDLESS"
                       variant="primary"
                       block>
                       Book

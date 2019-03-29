@@ -161,7 +161,6 @@ export default {
 }
 
 .gray-text{
-  font-weight: 600;
   color: #EEE;
   font-weight: 600;
 }

@@ -10,7 +10,7 @@
         <br>
         <p>Endless Photo Booths is a family owned and ran company. What got us into the photo booth business was when we started attending events with photo booths in them, we got so excited taking silly pictures and being able to take our print outs home! After realizing how fun it was as well as seeing the joy of other people in the photo booth, that strived us to create our own photo booth business.</p>
         <br>
-        <h4 class="we-specialize-text">Looking for Photo Booth Rentals in Ventura?</h4>
+        <h4 class="we-specialize-text">Looking for Photo Booth Rentals in Ventura or Los Angeles County?</h4>
         <br>
         <p>Endless Photo Booths is a full service photo booth rental company with 2 types of booth styles and  different options.</p>
         <p>We offer amazing photo quality with our DSLR camera, an elegant set up, quality props, many back drop options as well as an Enclosed Set Up, UNLIMITED PRINTS and pricing at a budget because we want everyone to have a joyful photobooth experience, just like we have, without breaking an arm or leg for pricing. Don’t just take our word for it, <a href="https://www.yelp.com/biz/endless-photobooth-oxnard">check out our reviews!</a></p>

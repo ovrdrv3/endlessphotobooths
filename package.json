@@ -19,6 +19,7 @@
     "vue": "^2.6.6"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "medium-zoom": "^1.0.3",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",

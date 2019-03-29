@@ -1,50 +1,51 @@
 <template>
-  <div @keydown="unGrayFields" class="py-3">
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-form-group id="FormName"
-                    label="Name:"
+  <div class="py-3">
+    <b-form @change="validateForm" @submit="onSubmit" @reset="onReset" v-if="show" name="contact-us">
+      <b-form-group label="Name:"
                     label-for="Name">
         <b-form-input id="name"
+                      name="name"
                       type="text"
                       v-model="form.name"
                       placeholder="Name"
-                      :state="nameState">
+                      :state="stateOfElement('name')">
         </b-form-input>
-        <b-form-text v-if="errorMessages.name">
-          {{ errorMessages.name }}
+        <b-form-text v-if="errors.name">
+          {{ errors.name }}
         </b-form-text>
 
       </b-form-group>
-      <b-form-group id="formNumber"
-                    label="Number:"
+      <b-form-group label="Number:"
                     label-for="Phone Number">
         <b-form-input id="phone"
+                      name="phone"
                       type="tel"
                       v-model="form.phone"
                       placeholder="Phone"
-                      :state="phoneState">
+                      :state="stateOfElement('phone')">
         </b-form-input>
-        <b-form-text v-if="errorMessages.phone">
-          {{ errorMessages.phone }}
+        <b-form-text v-if="errors.phone">
+          {{ errors.phone }}
         </b-form-text>
       </b-form-group>
-      <b-form-group id="formEmail"
-                    label="Email:"
+      <b-form-group label="Email:"
                     label-for="email">
         <b-form-input id="email"
+                      name="email"
                       type="email"
                       v-model="form.email"
                       placeholder="Email"
-                      :state="emailState">
+                      :state="stateOfElement('email')">
         </b-form-input>
-        <b-form-text v-if="errorMessages.email">
-          {{ errorMessages.email }}
+        <b-form-text v-if="errors.email">
+          {{ errors.email }}
         </b-form-text>
       </b-form-group>
       <b-form-group id="formComment"
                     label="Comment or Message:"
                     label-for="comment">
-        <b-form-textarea id="exampletextarea1"
+        <b-form-textarea id="comment"
+                      name="comment"
                       type="text"
                       v-model="form.comment"
                       :rows="3"
@@ -55,11 +56,34 @@
                     label="Interested in:"
                     label-for="package">
         <b-form-select id="package"
-                      :options="packages"
-                      v-model="form.packages">
+                       name="package"
+                       :options="packages"
+                       v-model="form.packages">
         </b-form-select>
       </b-form-group>
-      <b-button :disabled="errorsPresent" type="submit" variant="outline-primary">Submit</b-button>
+      <b-form-group label="How did you hear about us?"
+                    label-for="referral">
+        <b-form-radio-group id="referral"
+                            name="referral"
+                            v-model="form.referral"
+                            :options="referralOptions"
+                            stacked>
+        </b-form-radio-group>
+        <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select one</b-form-invalid-feedback>
+        <b-form-input @change="validateForm"
+                      v-show="form.referral == 'Other'"
+                      id="otherReferral"
+                      name="otherReferral"
+                      type="text"
+                      v-model="form.otherReferral"
+                      placeholder="(How did you hear about us?)"
+                      :state="stateOfElement('otherReferral')">
+        </b-form-input>
+        <b-form-text v-if="errors.otherReferral">
+          {{ errors.otherReferral }}
+        </b-form-text>
+      </b-form-group>
+      <b-button :disabled="errors.any || submissionSuccess" type="submit" :variant="submitButtonVariant">{{form.submitText}}</b-button>
       <b-button type="reset" variant="outline-danger">Reset</b-button>
     </b-form>
   </div>
@@ -78,46 +102,25 @@
     // for (let p of searchParams) {
     //   console.log(p);
     // }
+import axios from "axios";
 export default {
   created: function (){
     var paramsString = window.location.search;
     var searchParams = new URLSearchParams(paramsString);
+    var newFormValue = '';
     if (searchParams.has("package")){
       // console.log('Package ' + searchParams.get("package"));
-      this.form.packages = 'Package ' + searchParams.get("package") ;
+      // this.form.packages = 'Package ' + searchParams.get("package") ;
+      var queryValue = searchParams.get("package") ;
+      this.packages.forEach(function findMostSimilarPackage(currentValue) {
+        if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
+          // console.log(currentValue)
+          newFormValue = currentValue;
+        }
+      });
+      this.form.packages = newFormValue;
+      // search for the most similiar package in the set.
     }
-  },
-  computed: {
-    nameState () {
-      if (this.allFormsGray) return null;
-      return this.errorMessages.name ? false : true;
-    },
-    phoneState () {
-      if (this.allFormsGray) return null;
-      return this.errorMessages.phone ? false : true;
-    },
-    emailState () {
-      if (this.allFormsGray) return null;
-      return this.errorMessages.email ? false : true;
-    },
-    errorsPresent () {
-      // do not run any validation until data has started to be input into the display
-      if (!this.allFormsGray) {
-        this.formValidation();
-      }
-      for (var key in this.errorMessages) {
-          // skip loop if the property is from prototype
-          if (!this.errorMessages.hasOwnProperty(key)) continue;
-
-          var obj = this.errorMessages[key];
-          // this loops through and console logs
-          // if there are any error messages present we want to return a condition of true
-          if (obj) return true;
-      }
-      // Making it out of this loop would represent no errors found.
-      return false;
-    }
-
   },
   data () {
     return {
@@ -127,63 +130,146 @@ export default {
         phone: '',
         comment: '',
         packages: null,
+        referral: null,
+        otherReferral: null,
+        submitText: 'Submit'
       },
-      errorMessages: {
+      response: null,
+      submissionAttempt : false,
+      submissionSuccess: false,
+      submitButtonVariant: 'outline-primary',
+      errors: {
+        any: false,
         name: '',
         email: '',
-        phone: ''
+        phone: '',
+        referral: '',
+        otherReferral: ''
       },
       packages: [
         { text: 'Package Types', value: null },
-        'Package I', 'Package II', 'Package III', 'Not Sure Yet'
+        'Open Air Package', 'LED Booth Package', 'ENDLESS VIP Package'
       ],
-      show: true,
-      allFormsGray: true
+      referralOptions: [
+        'Friends','Yelp','Wedding Wire','Instagram','Other'
+      ],
+      show: true
     }
   },
   methods: {
-    formValidation: function(){
-      this.errorMessages.name = '';
-      this.errorMessages.email = '';
-      this.errorMessages.phone = '';
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit () {
+
+    },
+    validateForm: function(){
+      if (!this.submissionAttempt) { return; }
+      this.errors.any = false;
+      this.errors.name = '';
+      this.errors.email = '';
+      this.errors.phone = '';
+      this.errors.referral = '';
+      this.errors.otherReferral = '';
 
       if (!this.form.name) {
-        this.errorMessages.name ='Full Name required';
+        this.errors.any = true;
+        this.errors.name ='Full Name required';
       } else if (!this.form.name.includes(' ')){
-        this.errorMessages.name ='Full Name required';
+        this.errors.any = true;
+        this.errors.name ='Full Name required';
       }
 
       if (!this.form.phone) {
-        this.errorMessages.phone ='Phone required';
-      }
-      if (!this.form.email) {
-        this.errorMessages.email = 'Email required';
-      } else if (!this.validEmail(this.form.email)) {
-        this.errorMessages.email = 'Valid email required';
+        this.errors.any = true;
+        this.errors.phone ='Phone required';
       }
 
+      if (!this.form.email) {
+        this.errors.any = true;
+        this.errors.email = 'Email required';
+      } else if (!this.validEmail(this.form.email)) {
+        this.errors.any = true;
+        this.errors.email = 'Valid email required';
+      }
+
+      if (!this.form.referral) {
+        this.errors.any = true;
+        this.errors.referral ='Referral required';
+      }
+
+      if (this.form.referral == 'Other' && !this.form.otherReferral) {
+        this.errors.any = true;
+        this.errors.otherReferral ='Other referral required';
+      }
+
+      if (this.errors.any) {
+        this.form.submitText = 'Please check above for errors';
+      } else {
+        this.form.submitText = 'Submit';
+      }
+
+      return this.errors.any;
+
+    },
+    stateOfElement(element) {
+      if (!this.submissionAttempt) return null;
+      return this.errors[element] ? false : true;
     },
     onSubmit (evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      this.submissionAttempt = true;
+      var notReadyToProceed = this.validateForm();
+      if (notReadyToProceed) {
+        return;
+      } else {
+        const axiosConfig = {
+          header: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+        axios.post(
+          "/",
+          this.encode({
+            "form-name": "contact-us",
+            ...this.form
+          }),
+          axiosConfig
+        )
+        // .then(function (response) {
+        //   console.log(response);
+        // })
+        .then(response => (this.response = response))
+        .catch(function (error) {
+          console.log(error);
+        });;
+
+        if (this.response.status == 200) {
+          this.form.submitText = 'Success! You will hear from us shortly!';
+          this.submitButtonVariant = 'Success';
+          this.submissionSuccess = true;
+        }
+
+      } // ready to proceed, make POST attempt
     },
     onReset (evt) {
       evt.preventDefault();
-      /* Reset our form values */
+      /* Reset form values */
+      this.form.name =  '';
       this.form.email = '';
-      this.form.name = '';
-      this.form.food = null;
-      this.form.checked = [];
+      this.form.phone = '';
+      this.form.comment = '';
+      this.form.submitText =  'Submit';
+      this.errors.any = false;
       /* Trick to reset/clear native browser form validation state */
-      this.show = false;
       this.$nextTick(() => { this.show = true });
+
     },
     validEmail: function (email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    },
-    unGrayFields(){
-        this.allFormsGray = false;
     }
   }
 }
