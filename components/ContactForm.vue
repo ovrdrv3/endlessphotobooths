@@ -231,7 +231,7 @@ export default {
           header: { "Content-Type": "application/x-www-form-urlencoded" }
         };
         axios.post(
-          "/",
+          "/contact-us",
           this.encode({
             "form-name": "contact-us",
             ...this.form
