@@ -1,8 +1,28 @@
 <template>
   <div class="py-3">
+    <form name="contact" method="POST" data-netlify="true">
+      <p>
+        <label>Your Name: <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Your Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>Your Role: <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+        </select></label>
+      </p>
+      <p>
+        <label>Message: <textarea name="message"></textarea></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
     <b-form @input="validateForm"
             @change="validateForm"
-            @submit="onSubmit"
+            @submit.prevent="onSubmit"
             ref="form"
             @reset="onReset"
             v-if="show"
@@ -218,9 +238,7 @@ export default {
       if (!this.submissionAttempt) return null;
       return this.errors[element] ? false : true;
     },
-    onSubmit (evt) {
-      console.log(evt);
-      evt.preventDefault();
+    onSubmit () {
       this.submissionAttempt = true;
       var notReadyToProceed = this.validateForm();
       if (notReadyToProceed) {
