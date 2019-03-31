@@ -15,10 +15,10 @@
         <!-- <b-nav-item href="tel:+18057108997">Call</b-nav-item> -->
         <!-- <b-nav-item href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">Email</b-nav-item> -->
 
-        <b-nav-item to="packages">Packages</b-nav-item>
-        <b-nav-item to="about-us">About Us</b-nav-item>
-        <b-nav-item to="contact-us">Contact Us</b-nav-item>
-        <b-nav-item to="choose-a-template">Choose a Template</b-nav-item>
+        <b-nav-item to="/packages">Packages</b-nav-item>
+        <b-nav-item to="/about-us">About Us</b-nav-item>
+        <b-nav-item to="/contact-us">Contact Us</b-nav-item>
+        <b-nav-item to="/choose-a-template">Choose a Template</b-nav-item>
       </b-navbar-nav>
 
     </b-collapse>
