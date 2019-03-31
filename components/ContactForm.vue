@@ -10,7 +10,7 @@
             netlify-honeypot="prefix"
             action="/submit-success"
             netlify>
-      <input type="hidden" name="prefix" value="Prefix" />
+      <input type="hidden" name="prefix"/>
       <b-form-group label="Name:"
                     label-for="Name">
         <b-form-input id="name"
