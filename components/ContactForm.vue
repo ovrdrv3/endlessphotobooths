@@ -1,6 +1,16 @@
 <template>
   <div class="py-3">
-    <b-form @change="validateForm" @submit="onSubmit" @reset="onReset" v-if="show" name="contact-us">
+    <b-form @input="validateForm"
+            @change="validateForm"
+            @submit="onSubmit"
+            ref="form"
+            @reset="onReset"
+            v-if="show"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="prefix"
+            action="/submit-success">
+      <input type="hidden" name="prefix" value="Prefix" />
       <b-form-group label="Name:"
                     label-for="Name">
         <b-form-input id="name"
@@ -70,8 +80,7 @@
                             stacked>
         </b-form-radio-group>
         <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select one</b-form-invalid-feedback>
-        <b-form-input @change="validateForm"
-                      v-show="form.referral == 'Other'"
+        <b-form-input v-show="form.referral == 'Other'"
                       id="otherReferral"
                       name="otherReferral"
                       type="text"
@@ -90,18 +99,7 @@
 </template>
 
 <script>
-    // if (searchParams.has("package")){
-    //   console.log('Package ' + searchParams.get("package"));
-    //   this.form.packages = 'Package ' + searchParams.get("package") ;
-    // }
-    // console.log(window.location.search);
-    // var searchParams = new URLSearchParams(window.location.search);
-    // console.log(searchParams.get("package"));
 
-
-    // for (let p of searchParams) {
-    //   console.log(p);
-    // }
 import axios from "axios";
 export default {
   created: function (){
@@ -221,36 +219,38 @@ export default {
       return this.errors[element] ? false : true;
     },
     onSubmit (evt) {
+      console.log(evt);
       evt.preventDefault();
       this.submissionAttempt = true;
       var notReadyToProceed = this.validateForm();
       if (notReadyToProceed) {
         return;
       } else {
-        const axiosConfig = {
-          header: { "Content-Type": "application/x-www-form-urlencoded" }
-        };
-        axios.post(
-          "/contact-us",
-          this.encode({
-            "form-name": "contact-us",
-            ...this.form
-          }),
-          axiosConfig
-        )
-        // .then(function (response) {
-        //   console.log(response);
-        // })
-        .then(response => (this.response = response))
-        .catch(function (error) {
-          console.log(error);
-        });;
+        this.$refs.form.submit();
+        // const axiosConfig = {
+        //   header: { "Content-Type": "application/x-www-form-urlencoded" }
+        // };
+        // axios.post(
+        //   "/contact-us",
+        //   this.encode({
+        //     "form-name": "contact-us",
+        //     ...this.form
+        //   }),
+        //   axiosConfig
+        // )
+        // // .then(function (response) {
+        // //   console.log(response);
+        // // })
+        // .then(response => (this.response = response))
+        // .catch(function (error) {
+        //   console.log(error);
+        // });;
 
-        if (this.response.status == 200) {
-          this.form.submitText = 'Success! You will hear from us shortly!';
-          this.submitButtonVariant = 'Success';
-          this.submissionSuccess = true;
-        }
+        // if (this.response.status == 200) {
+        //   this.form.submitText = 'Success! You will hear from us shortly!';
+        //   this.submitButtonVariant = 'Success';
+        //   this.submissionSuccess = true;
+        // }
 
       } // ready to proceed, make POST attempt
     },

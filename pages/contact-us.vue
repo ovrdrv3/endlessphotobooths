@@ -26,8 +26,6 @@
 
 <script>
 import ContactForm from '~/components/ContactForm.vue';
-import ContactButtons from '~/components/ContactButtons.vue';
-import mediumZoom from 'medium-zoom';
 
 export default {
   head () {
@@ -39,8 +37,7 @@ export default {
     }
   },
   components: {
-    ContactForm,
-    ContactButtons
+    ContactForm
   },
   computed: {
     // Check if mobile
