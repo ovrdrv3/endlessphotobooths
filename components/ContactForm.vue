@@ -8,7 +8,7 @@
             v-if="show"
             method="POST"
             netlify-honeypot="prefix"
-            action="/submit-success"
+            action="/submit-success/"
             netlify>
       <input type="hidden" name="prefix"/>
       <b-form-group label="Name:"
