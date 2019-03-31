@@ -7,9 +7,9 @@
             @reset="onReset"
             v-if="show"
             method="POST"
-            data-netlify="true"
             netlify-honeypot="prefix"
-            action="/submit-success">
+            action="/submit-success"
+            netlify>
       <input type="hidden" name="prefix" value="Prefix" />
       <b-form-group label="Name:"
                     label-for="Name">
