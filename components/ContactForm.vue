@@ -10,7 +10,7 @@
             netlify-honeypot="prefix"
             action="/submit-success/"
             netlify>
-      <input type="hidden" name="prefix"/>
+      <input type="hidden" name="prefix" v-model="form.prefix"/>
       <b-form-group label="Name:"
                     label-for="Name">
         <b-form-input id="name"
@@ -130,6 +130,7 @@ export default {
         email: '',
         phone: '',
         comment: '',
+        prefix: '',
         packages: null,
         referral: null,
         otherReferral: null,
@@ -227,31 +228,31 @@ export default {
       if (notReadyToProceed) {
         return;
       } else {
-        this.$refs.form.submit();
-        // const axiosConfig = {
-        //   header: { "Content-Type": "application/x-www-form-urlencoded" }
-        // };
-        // axios.post(
-        //   "/contact-us",
-        //   this.encode({
-        //     "form-name": "contact-us",
-        //     ...this.form
-        //   }),
-        //   axiosConfig
-        // )
-        // // .then(function (response) {
-        // //   console.log(response);
-        // // })
-        // .then(response => (this.response = response))
-        // .catch(function (error) {
-        //   console.log(error);
-        // });;
+        // this.$refs.form.submit();
+        const axiosConfig = {
+          header: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+        axios.post(
+          "/contact-us",
+          this.encode({
+            "form-name": "contact-us",
+            ...this.form
+          }),
+          axiosConfig
+        )
+        // .then(function (response) {
+        //   console.log(response);
+        // })
+        .then(response => (this.response = response))
+        .catch(function (error) {
+          console.log(error);
+        });;
 
-        // if (this.response.status == 200) {
-        //   this.form.submitText = 'Success! You will hear from us shortly!';
-        //   this.submitButtonVariant = 'Success';
-        //   this.submissionSuccess = true;
-        // }
+        if (this.response.status == 200) {
+          this.form.submitText = 'Submitted! You will hear from us shortly!';
+          this.submitButtonVariant = 'Success';
+          this.submissionSuccess = true;
+        }
 
       } // ready to proceed, make POST attempt
     },
