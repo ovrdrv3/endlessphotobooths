@@ -99,27 +99,30 @@
 </template>
 
 <script>
+ if (process.client) {
+  var axios = require('axios');
 
-import axios from "axios";
-export default {
-  created: function (){
-    var paramsString = window.location.search;
-    var searchParams = new URLSearchParams(paramsString);
-    var newFormValue = '';
-    if (searchParams.has("package")){
-      // console.log('Package ' + searchParams.get("package"));
-      // this.form.packages = 'Package ' + searchParams.get("package") ;
-      var queryValue = searchParams.get("package") ;
-      this.packages.forEach(function findMostSimilarPackage(currentValue) {
-        if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
-          // console.log(currentValue)
-          newFormValue = currentValue;
-        }
-      });
-      this.form.packages = newFormValue;
-      // search for the most similiar package in the set.
+  var checkForParams = function (){
+      var paramsString = window.location.search;
+      var searchParams = new URLSearchParams("test");
+      var newFormValue = '';
+      if (searchParams.has("package")){
+        // console.log('Package ' + searchParams.get("package"));
+        // this.form.packages = 'Package ' + searchParams.get("package") ;
+        var queryValue = searchParams.get("package") ;
+        this.packages.forEach(function findMostSimilarPackage(currentValue) {
+          if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
+            // console.log(currentValue)
+            newFormValue = currentValue;
+          }
+        });
+        this.form.packages = newFormValue;
+        // search for the most similiar package in the set.
+      }
     }
-  },
+    checkForParams();
+}
+export default {
   data () {
     return {
       form: {
