@@ -46,11 +46,14 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     ['bootstrap-vue/nuxt', { css: false }],
   ],
+  generate: {
+    subFolders: false,
+  },
 
   /*
   ** Build configuration
   */
-build: {
-  vendor: ['medium-zoom', 'mobile-device-detect', 'vue-parallaxy']
-}
+  build: {
+    vendor: ['medium-zoom', 'mobile-device-detect', 'vue-parallaxy']
+  }
 }

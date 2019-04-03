@@ -97,10 +97,10 @@
 <script>
 // import HomeCarousel from '~/components/HomeCarousel.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
-if (process.client) {
+if (process.static) {
   var mediumZoom = require('medium-zoom');
   var isMobile = require('mobile-device-detect');
-  var Parallax = require('vue-parallaxy');
+  var Parallax = require('v-model="form.name"');
 }
 export default {
   head () {

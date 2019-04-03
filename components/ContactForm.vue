@@ -10,7 +10,7 @@
             netlify-honeypot="prefix"
             action="/submit-success/"
             netlify>
-      <input type="hidden" name="prefix" v-model="form.prefix"/>
+      <input type="hidden" name="prefix"/>
       <b-form-group label="Name:"
                     label-for="Name">
         <b-form-input id="name"
@@ -101,26 +101,6 @@
 <script>
  if (process.client) {
   var axios = require('axios');
-
-  var checkForParams = function (){
-      var paramsString = window.location.search;
-      var searchParams = new URLSearchParams("test");
-      var newFormValue = '';
-      if (searchParams.has("package")){
-        // console.log('Package ' + searchParams.get("package"));
-        // this.form.packages = 'Package ' + searchParams.get("package") ;
-        var queryValue = searchParams.get("package") ;
-        this.packages.forEach(function findMostSimilarPackage(currentValue) {
-          if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
-            // console.log(currentValue)
-            newFormValue = currentValue;
-          }
-        });
-        this.form.packages = newFormValue;
-        // search for the most similiar package in the set.
-      }
-    }
-    checkForParams();
 }
 export default {
   data () {
@@ -130,7 +110,6 @@ export default {
         email: '',
         phone: '',
         comment: '',
-        prefix: '',
         packages: null,
         referral: null,
         otherReferral: null,
@@ -156,6 +135,26 @@ export default {
         'Friends','Yelp','Wedding Wire','Instagram','Other'
       ],
       show: true
+    }
+  },
+  created: function () {
+    if (process.client) {
+        var paramsString = window.location.search;
+        var searchParams = new URLSearchParams("test");
+        var newFormValue = '';
+        if (searchParams.has("package")){
+          // console.log('Package ' + searchParams.get("package"));
+          // this.form.packages = 'Package ' + searchParams.get("package") ;
+          var queryValue = searchParams.get("package") ;
+          this.packages.forEach(function findMostSimilarPackage(currentValue) {
+            if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
+              // console.log(currentValue)
+              newFormValue = currentValue;
+            }
+          });
+          this.form.packages = newFormValue;
+          // search for the most similiar package in the set.
+        }
     }
   },
   methods: {
@@ -228,31 +227,31 @@ export default {
       if (notReadyToProceed) {
         return;
       } else {
-        // this.$refs.form.submit();
-        const axiosConfig = {
-          header: { "Content-Type": "application/x-www-form-urlencoded" }
-        };
-        axios.post(
-          "/contact-us",
-          this.encode({
-            "form-name": "contact-us",
-            ...this.form
-          }),
-          axiosConfig
-        )
-        // .then(function (response) {
-        //   console.log(response);
-        // })
-        .then(response => (this.response = response))
-        .catch(function (error) {
-          console.log(error);
-        });;
+        this.$refs.form.submit();
+        // const axiosConfig = {
+        //   header: { "Content-Type": "application/x-www-form-urlencoded" }
+        // };
+        // axios.post(
+        //   "/contact-us",
+        //   this.encode({
+        //     "form-name": "contact-us",
+        //     ...this.form
+        //   }),
+        //   axiosConfig
+        // )
+        // // .then(function (response) {
+        // //   console.log(response);
+        // // })
+        // .then(response => (this.response = response))
+        // .catch(function (error) {
+        //   console.log(error);
+        // });;
 
-        if (this.response.status == 200) {
-          this.form.submitText = 'Submitted! You will hear from us shortly!';
-          this.submitButtonVariant = 'Success';
-          this.submissionSuccess = true;
-        }
+        // if (this.response.status == 200) {
+        //   this.form.submitText = 'Success! You will hear from us shortly!';
+        //   this.submitButtonVariant = 'Success';
+        //   this.submissionSuccess = true;
+        // }
 
       } // ready to proceed, make POST attempt
     },
