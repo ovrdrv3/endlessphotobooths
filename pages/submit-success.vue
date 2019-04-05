@@ -26,9 +26,7 @@
 </template>
 
 <script>
-if (process.client) {
-  var isMobile = require('mobile-device-detect');
-}
+
 export default {
   head () {
     return {
@@ -38,10 +36,15 @@ export default {
       ]
     }
   },
-  computed: {
-    // Check if mobile
+ computed: {
     spaceForMobile: function () {
-      return isMobile ? ' ' : '';
+      return this.isMobile ? ' ' : '';
+    },
+    isMobile: function () {
+      if (process.static) {
+        var mobileDeviceDetect = require('mobile-device-detect');
+        return mobileDeviceDetect.isMobile;
+      }
     }
   }
 
