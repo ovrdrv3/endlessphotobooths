@@ -135,7 +135,7 @@ export default {
       show: true
     }
   },
-  created: function () {
+  mounted: function () {
     if (process.client) {
         var paramsString = window.location.search;
         var searchParams = new URLSearchParams(paramsString);
