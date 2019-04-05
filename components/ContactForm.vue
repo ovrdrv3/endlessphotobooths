@@ -3,6 +3,7 @@
     <b-form @input="validateForm"
             @change="validateForm"
             @submit.prevent="onSubmit"
+            name="contact-us"
             ref="form"
             @reset="onReset"
             v-if="show"
