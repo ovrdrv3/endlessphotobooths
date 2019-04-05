@@ -11,10 +11,6 @@
 <script>
 import Packages from '~/components/Packages.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
-if (process.client) {
-  var mediumZoom = require('medium-zoom');
-  var isMobile = require('mobile-device-detect');
-}
 
 export default {
   head () {
@@ -29,13 +25,15 @@ export default {
     Packages,
     PhotoBoothTypes
   },
-  mounted(){
-    mediumZoom('.zoomable-img')
-  },
   computed: {
-    // Check if mobile
     spaceForMobile: function () {
-      return isMobile ? ' ' : '';
+      return this.isMobile ? ' ' : '';
+    },
+    isMobile: function () {
+      if (process.static) {
+        var mobileDeviceDetect = require('mobile-device-detect');
+        return mobileDeviceDetect.isMobile;
+      }
     }
   }
 

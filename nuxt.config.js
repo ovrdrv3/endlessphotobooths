@@ -54,6 +54,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['medium-zoom', 'mobile-device-detect', 'vue-parallaxy']
+    vendor: ['mobile-device-detect', 'vue-parallaxy']
   }
 }

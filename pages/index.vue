@@ -57,18 +57,18 @@
       </b-col>
     </b-row>
     <b-row class="py-3">
-      <b-col order-md="2" md="3">
+      <b-col order-md="2" md="6">
 
         <picture>
-         <source class="d-block img-fluid zoomable-img" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
-         <img class="d-block img-fluid zoomable-img"
+         <source class="img-fluid" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
+         <img class="img-fluid"
                src="~assets/images/home/all_include-min.jpg"
                alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
         </picture>
 
 
       </b-col>
-      <b-col offset-md="1" order-md="1" md="7">
+      <b-col offset-md="1" order-md="1" md="4">
         <ul>
           <li>Props</li>
           <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
@@ -97,11 +97,11 @@
 <script>
 // import HomeCarousel from '~/components/HomeCarousel.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
-if (process.static) {
-  var mediumZoom = require('medium-zoom');
-  var isMobile = require('mobile-device-detect');
-  var Parallax = require('v-model="form.name"');
+
+if (process.client) {
+  var Parallax = require('vue-parallaxy');
 }
+
 export default {
   head () {
     return {
@@ -115,13 +115,15 @@ export default {
     PhotoBoothTypes,
     Parallax
   },
-  mounted(){
-    mediumZoom('.zoomable-img')
-  },
   computed: {
-    // Check if mobile
     spaceForMobile: function () {
-      return isMobile ? ' ' : '';
+      return this.isMobile ? ' ' : '';
+    },
+    isMobile: function () {
+      if (process.static) {
+        var mobileDeviceDetect = require('mobile-device-detect');
+        return mobileDeviceDetect.isMobile;
+      }
     }
   }
 }

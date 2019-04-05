@@ -34,20 +34,20 @@
       </b-col>
       <b-col md="5" offset-md="1">
         <picture>
-          <source srcset="~assets/images/about-us/conrad_and_rocio-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <img src="~assets/images/about-us/conrad_and_rocio-min.jpg" alt="Example of a wedding Four by Six Print" class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/conrad_and_rocio-min.webp" type="image/webp"  class="py-5 img-fluid">
+          <img src="~assets/images/about-us/conrad_and_rocio-min.jpg" alt="Example of a wedding Four by Six Print" class="py-5 img-fluid">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <img src="~assets/images/about-us/elijah_meet_and_greet-min.jpg" alt="Example of a Baby Shower" class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="py-5 img-fluid">
+          <img src="~assets/images/about-us/elijah_meet_and_greet-min.jpg" alt="Example of a Baby Shower" class="py-5 img-fluid">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <img src="~assets/images/about-us/krystal_and_deven_slides-min.jpg" alt="Example of what the slide print out will look like" class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="py-5 img-fluid">
+          <img src="~assets/images/about-us/krystal_and_deven_slides-min.jpg" alt="Example of what the slide print out will look like" class="py-5 img-fluid">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/props-min.webp" type="image/webp"  class="py-5 img-fluid zoomable-img">
-          <img src="~assets/images/about-us/props-min.jpg" alt="Example of what the props will look like" class="py-5 img-fluid zoomable-img">
+          <source srcset="~assets/images/about-us/props-min.webp" type="image/webp"  class="py-5 img-fluid">
+          <img src="~assets/images/about-us/props-min.jpg" alt="Example of what the props will look like" class="py-5 img-fluid">
         </picture>
       </b-col>
     </b-row>
@@ -56,12 +56,6 @@
 </template>
 
 <script>
-if (process.client) {
-  var mediumZoom = require('medium-zoom');
-  var isMobile = require('mobile-device-detect');
-}
-
-// import mediumZoom from 'medium-zoom';
 
 export default {
   head () {
@@ -72,19 +66,17 @@ export default {
       ]
     }
   },
-  mounted(){
-    mediumZoom('.zoomable-img')
-  },
   computed: {
-    // Check if mobile
     spaceForMobile: function () {
-      // var check = isMobile();
-      // var check = true;
-
-      return isMobile ? ' ' : '';
+      return this.isMobile ? ' ' : '';
+    },
+    isMobile: function () {
+      if (process.static) {
+        var mobileDeviceDetect = require('mobile-device-detect');
+        return mobileDeviceDetect.isMobile;
+      }
     }
   }
-
 }
 </script>
 

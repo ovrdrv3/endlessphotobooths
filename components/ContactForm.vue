@@ -8,9 +8,9 @@
             v-if="show"
             method="POST"
             netlify-honeypot="prefix"
-            action="/submit-success/"
+            action="/submit-success"
             netlify>
-      <input type="hidden" name="prefix"/>
+      <input id="prefix" type="hidden" name="prefix"/>
       <b-form-group label="Name:"
                     label-for="Name">
         <b-form-input id="name"
@@ -158,16 +158,16 @@ export default {
     }
   },
   methods: {
-    encode (data) {
-      return Object.keys(data)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join("&");
-    },
-    handleSubmit () {
+    // encode (data) {
+    //   return Object.keys(data)
+    //     .map(
+    //       key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+    //     )
+    //     .join("&");
+    // },
+    // handleSubmit () {
 
-    },
+    // },
     validateForm: function(){
       if (!this.submissionAttempt) { return; }
       this.errors.any = false;

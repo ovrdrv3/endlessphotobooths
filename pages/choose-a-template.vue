@@ -30,9 +30,14 @@ export default {
     }
   },
  computed: {
-   // Check if mobile
    spaceForMobile: function () {
-     return isMobile ? ' ' : '';
+     return this.isMobile ? ' ' : '';
+   },
+   isMobile: function () {
+     if (process.static) {
+       var mobileDeviceDetect = require('mobile-device-detect');
+       return mobileDeviceDetect.isMobile;
+     }
    }
  }
 
