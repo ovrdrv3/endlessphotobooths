@@ -9,7 +9,6 @@
             v-if="show"
             method="POST"
             netlify-honeypot="prefix"
-            action="/submit-success/"
             data-netlify="true">
       <input id="prefix" type="hidden" name="prefix"/>
       <b-form-group label="Name:"
@@ -240,16 +239,20 @@ export default {
         })
           .then(() => {
             // this.$router.push("submit-success");
-            this.form.submitText = 'Thanks';
+            this.form.submitText = 'Thanks! You will hear from us shortly!';
+            this.submitButtonVariant = 'btn-outline-success';
+            this.submissionSuccess = true;
           })
           .catch(() => {
-            this.form.submitText = 'Error';
+            this.form.submitText = 'Please Refresh Your Page or Try a Different Browser - Error Sending Form';
           });
+
         // const axiosConfig = {
         //   header: { "Content-Type": "application/x-www-form-urlencoded" }
         // };
+
         // axios.post(
-        //   "/contact-us",
+        //   "/",
         //   this.encode({
         //     "form-name": "contact-us",
         //     ...this.form
@@ -259,16 +262,16 @@ export default {
         // // .then(function (response) {
         // //   console.log(response);
         // // })
-        // .then(response => (this.response = response))
-        // .catch(function (error) {
-        //   console.log(error);
-        // });;
+        // .then(() => {
+        //     // this.$router.push("submit-success");
+        //     this.form.submitText = 'Thanks! You will hear from us shortly!';
+        //     this.submitButtonVariant = 'btn-outline-success';
+        //     this.submissionSuccess = true;
+        // })
+        // .catch(() => {
+        //     this.form.submitText = 'Please Refresh Your Page - Error Sending Form';
+        // });
 
-        // if (this.response.status == 200) {
-        //   this.form.submitText = 'Success! You will hear from us shortly!';
-        //   this.submitButtonVariant = 'Success';
-        //   this.submissionSuccess = true;
-        // }
 
       } // ready to proceed, make POST attempt
     },
