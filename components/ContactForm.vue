@@ -140,7 +140,7 @@ export default {
   created: function () {
     if (process.client) {
         var paramsString = window.location.search;
-        var searchParams = new URLSearchParams("test");
+        var searchParams = new URLSearchParams(paramsString);
         var newFormValue = '';
         if (searchParams.has("package")){
           // console.log('Package ' + searchParams.get("package"));
