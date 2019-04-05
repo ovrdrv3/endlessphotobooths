@@ -26,9 +26,6 @@
 
 <script>
 
-if (process.client) {
-  var isMobile = require('mobile-device-detect');
-}
 import ContactForm from '~/components/ContactForm.vue';
 
 export default {
