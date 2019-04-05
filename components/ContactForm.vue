@@ -159,16 +159,16 @@ export default {
     }
   },
   methods: {
-    // encode (data) {
-    //   return Object.keys(data)
-    //     .map(
-    //       key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-    //     )
-    //     .join("&");
-    // },
-    // handleSubmit () {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit(e) {
 
-    // },
+    },
     validateForm: function(){
       if (!this.submissionAttempt) { return; }
       this.errors.any = false;
@@ -228,7 +228,23 @@ export default {
       if (notReadyToProceed) {
         return;
       } else {
-        this.$refs.form.submit();
+        // this.$refs.form.submit();
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: this.encode({
+            "form-name": "contact-us",
+            ...this.form
+          })
+        })
+          .then(() => {
+            // this.$router.push("submit-success");
+            this.form.submitText = 'Thanks';
+          })
+          .catch(() => {
+            this.form.submitText = 'Error';
+          });
         // const axiosConfig = {
         //   header: { "Content-Type": "application/x-www-form-urlencoded" }
         // };
