@@ -99,9 +99,7 @@
 </template>
 
 <script>
- if (process.client) {
-  var axios = require('axios');
-}
+
 export default {
   data () {
     return {
@@ -229,7 +227,7 @@ export default {
       } else {
         // this.$refs.form.submit();
 
-        fetch("/", {
+        fetch("/submit-success", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
