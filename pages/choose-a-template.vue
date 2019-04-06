@@ -17,9 +17,7 @@
 </template>
 
 <script>
-if (process.client) {
-  var isMobile = require('mobile-device-detect');
-}
+
 export default {
   head () {
     return {
