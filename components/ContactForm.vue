@@ -1,6 +1,99 @@
 <template>
   <div class="py-3">
-    <h1>contact form</h1>
+    <b-form @input="validateForm"
+            @change="validateForm"
+            @submit.prevent="onSubmit"
+            name="contact-us"
+            ref="form"
+            @reset="onReset"
+            method="POST"
+            netlify-honeypot="prefix"
+            data-netlify="true">
+      <input id="prefix" type="hidden" name="prefix"/>
+      <b-form-group label="Name:"
+                    label-for="Name">
+        <b-form-input id="name"
+                      name="name"
+                      type="text"
+                      v-model="form.name"
+                      placeholder="Name"
+                      :state="stateOfElement('name')">
+        </b-form-input>
+        <b-form-text v-show="errors.name">
+          {{ errors.name }}
+        </b-form-text>
+
+      </b-form-group>
+      <b-form-group label="Number:"
+                    label-for="Phone Number">
+        <b-form-input id="phone"
+                      name="phone"
+                      type="tel"
+                      v-model="form.phone"
+                      placeholder="Phone"
+                      :state="stateOfElement('phone')">
+        </b-form-input>
+        <b-form-text v-show="errors.phone">
+          {{ errors.phone }}
+        </b-form-text>
+      </b-form-group>
+      <b-form-group label="Email:"
+                    label-for="email">
+        <b-form-input id="email"
+                      name="email"
+                      type="email"
+                      v-model="form.email"
+                      placeholder="Email"
+                      :state="stateOfElement('email')">
+        </b-form-input>
+        <b-form-text v-show="errors.email">
+          {{ errors.email }}
+        </b-form-text>
+      </b-form-group>
+      <b-form-group id="formComment"
+                    label="Comment or Message:"
+                    label-for="comment">
+        <b-form-textarea id="comment"
+                      name="comment"
+                      type="text"
+                      v-model="form.comment"
+                      :rows="3"
+                      :max-rows="6">
+        </b-form-textarea>
+      </b-form-group>
+      <b-form-group id="formPackage"
+                    label="Interested in:"
+                    label-for="package">
+        <b-form-select id="package"
+                       name="package"
+                       :options="packages"
+                       v-model="form.packages">
+        </b-form-select>
+      </b-form-group>
+      <b-form-group label="How did you hear about us?"
+                    label-for="referral">
+        <b-form-radio-group id="referral"
+                            name="referral"
+                            v-model="form.referral"
+                            :options="referralOptions"
+                            stacked>
+        </b-form-radio-group>
+        <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select one</b-form-invalid-feedback>
+        <b-form-input v-show="form.referral == 'Other'"
+                      id="otherReferral"
+                      name="otherReferral"
+                      type="text"
+                      v-model="form.otherReferral"
+                      placeholder="(How did you hear about us?)"
+                      :state="stateOfElement('otherReferral')">
+        </b-form-input>
+        <b-form-text v-show="errors.otherReferral">
+          {{ errors.otherReferral }}
+        </b-form-text>
+      </b-form-group>
+      <b-button :disabled="errors.any || submissionSuccess" type="submit" :variant="submitButtonVariant">{{form.submitText}}</b-button>
+      <b-button type="reset" variant="outline-danger">Reset</b-button>
+    </b-form>
   </div>
 </template>
 
@@ -68,9 +161,6 @@ export default {
           key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
         )
         .join("&");
-    },
-    handleSubmit(e) {
-
     },
     validateForm: function(){
       if (!this.submissionAttempt) { return; }
@@ -186,10 +276,13 @@ export default {
       this.form.email = '';
       this.form.phone = '';
       this.form.comment = '';
+      this.form.packages = null;
+      this.errors.referral = '';
+      this.errors.otherReferral = '';
       this.form.submitText =  'Submit';
       this.errors.any = false;
-      /* Trick to reset/clear native browser form validation state */
-      this.$nextTick(() => { this.show = true });
+      this.submissionAttempt = false;
+      this.submissionSuccess = false;
 
     },
     validEmail: function (email) {
