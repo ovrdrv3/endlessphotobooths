@@ -7,12 +7,12 @@
         <!-- <HomeCarousel/> -->
         <!-- <div class="parallax-text title"><h2>Living To Make Your Event Memorable - One Shot at a Time</h2></div> -->
         <div v-if="!isMobile" class="parallax-text title"><h1 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h1><br><h1 class="gray-text">ONE SHOT AT A TIME</h1></div>
-        <parallax v-if="!isMobile" :speed-factor="0.1">
+        <Parallax v-if="!isMobile" :speed-factor="0.1">
           <picture>
             <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
             <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Slide Two" class="img-fluid dark-overlay">
           </picture>
-        </parallax>
+        </Parallax>
 
         <picture v-else>
           <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid">

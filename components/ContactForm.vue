@@ -2,16 +2,21 @@
   <div class="py-3">
     <b-form @input="validateForm"
             @change="validateForm"
-            @submit.prevent="onSubmit"
             name="contact-us"
             ref="form"
             @reset="onReset"
             method="POST"
             netlify-honeypot="prefix"
             data-netlify="true">
-      <input id="prefix" type="hidden" name="prefix"/>
+      <b-form-group v-show="false" label="Prefix:"
+                    label-for="prefix">
+        <b-form-input id="prefix"
+                      name="prefix">
+        </b-form-input>
+      </b-form-group>
       <b-form-group label="Name:"
-                    label-for="Name">
+                    label-for="Name"
+                    :invalid-feedback="errors.name">
         <b-form-input id="name"
                       name="name"
                       type="text"
@@ -19,13 +24,11 @@
                       placeholder="Name"
                       :state="stateOfElement('name')">
         </b-form-input>
-        <b-form-text v-show="errors.name">
-          {{ errors.name }}
-        </b-form-text>
 
       </b-form-group>
       <b-form-group label="Number:"
-                    label-for="Phone Number">
+                    label-for="Phone Number"
+                    :invalid-feedback="errors.phone">
         <b-form-input id="phone"
                       name="phone"
                       type="tel"
@@ -33,12 +36,10 @@
                       placeholder="Phone"
                       :state="stateOfElement('phone')">
         </b-form-input>
-        <b-form-text v-show="errors.phone">
-          {{ errors.phone }}
-        </b-form-text>
       </b-form-group>
       <b-form-group label="Email:"
-                    label-for="email">
+                    label-for="email"
+                    :invalid-feedback="errors.email">
         <b-form-input id="email"
                       name="email"
                       type="email"
@@ -46,9 +47,6 @@
                       placeholder="Email"
                       :state="stateOfElement('email')">
         </b-form-input>
-        <b-form-text v-show="errors.email">
-          {{ errors.email }}
-        </b-form-text>
       </b-form-group>
       <b-form-group id="formComment"
                     label="Comment or Message:"
@@ -71,7 +69,8 @@
         </b-form-select>
       </b-form-group>
       <b-form-group label="How did you hear about us?"
-                    label-for="referral">
+                    label-for="referral"
+                    :invalid-feedback="errors.otherReferral">
         <b-form-radio-group id="referral"
                             name="referral"
                             v-model="form.referral"
@@ -87,11 +86,9 @@
                       placeholder="(How did you hear about us?)"
                       :state="stateOfElement('otherReferral')">
         </b-form-input>
-        <b-form-text v-show="errors.otherReferral">
-          {{ errors.otherReferral }}
-        </b-form-text>
       </b-form-group>
-      <b-button :disabled="errors.any || submissionSuccess" type="submit" :variant="submitButtonVariant">{{form.submitText}}</b-button>
+      <b-button type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
+ :variant="submitButtonVariant">{{form.submitText}}</b-button>
       <b-button type="reset" variant="outline-danger">Reset</b-button>
     </b-form>
   </div>
@@ -130,8 +127,7 @@ export default {
       ],
       referralOptions: [
         'Friends','Yelp','Wedding Wire','Instagram','Other'
-      ],
-      show: true
+      ]
     }
   },
   mounted: function () {
@@ -171,12 +167,9 @@ export default {
       this.errors.referral = '';
       this.errors.otherReferral = '';
 
-      if (!this.form.name) {
+      if (!this.form.name || !this.form.name.includes(' ')) {
         this.errors.any = true;
-        this.errors.name ='Full Name required';
-      } else if (!this.form.name.includes(' ')){
-        this.errors.any = true;
-        this.errors.name ='Full Name required';
+        this.errors.name ='Full name required';
       }
 
       if (!this.form.phone) {
