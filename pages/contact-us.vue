@@ -17,8 +17,9 @@
           <br>
           <a href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">endlessphotobooths@gmail.com</a>
         </div>
-
-        <ContactForm/>
+        <no-ssr>
+          <ContactForm/>
+        </no-ssr>
 
 
   </b-container>

@@ -109,7 +109,6 @@ export default {
         otherReferral: null,
         submitText: 'Submit'
       },
-      response: null,
       submissionAttempt : false,
       submissionSuccess: false,
       submitButtonVariant: 'outline-primary',

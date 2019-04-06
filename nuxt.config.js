@@ -48,6 +48,7 @@ module.exports = {
   ],
   generate: {
     // subFolders: false,
+    //generate.minify has been deprecated and will be removed in the next major version. Use build.html.minify instead!
     minify: {
       collapseWhitespace: false
     }
