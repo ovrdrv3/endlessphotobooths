@@ -46,9 +46,9 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     ['bootstrap-vue/nuxt', { css: false }],
   ],
-  generate: {
-    subFolders: false,
-  },
+  // generate: {
+  //   subFolders: false,
+  // },
 
   /*
   ** Build configuration
