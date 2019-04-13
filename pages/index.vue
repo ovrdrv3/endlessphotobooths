@@ -4,24 +4,55 @@
       <h5 class="subtitle">Ventura County Photo Booth Rentals</h5>
     <b-row class="py-3">
       <b-col>
-        <!-- <HomeCarousel/> -->
-        <!-- <div class="parallax-text title"><h2>Living To Make Your Event Memorable - One Shot at a Time</h2></div> -->
-        <div v-if="!isMobile" class="parallax-text title"><h1 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h1><br><h1 class="gray-text">ONE SHOT AT A TIME</h1></div>
-        <Parallax v-if="!isMobile" :speed-factor="0.1">
+
+        <div v-if="!isMobile">
+          <div class="parallax-text title">
+            <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+            <br>
+            <br>
+            <h2 class="gray-text">ONE SHOT AT A TIME</h2>
+            <h2 class="gray-text" style="font-size: 20px !important; padding-top: 300px;">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
+          </div>
+          <Parallax :speed-factor="0.2">
+            <picture>
+              <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
+              <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash Image" class="img-fluid dark-overlay">
+            </picture>
+          </Parallax>
+        </div>
+        <!-- tablet -->
+       <div v-else-if="isTablet">
+         <div class="mobile-parallax-text title">
+           <br>
+           <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+           <br>
+           <h2 class="gray-text">ONE SHOT AT A TIME</h2>
+           <br>
+           <br>
+           <h2 class="mobile-gray-text" style="font-size: 20px !important; padding-top: 100px;">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
+         </div>
+         <picture>
+           <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
+           <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
+         </picture>
+       </div>
+        <!-- mobile -->
+        <div v-else>
+          <div class="mobile-parallax-text title" >
+            <br>
+            <h2 class="mobile-gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+            <br>
+            <h2 class="mobile-gray-text">ONE SHOT AT A TIME</h2>
+            <br>
+            <br>
+            <h2 class="mobile-gray-text">SANTA&nbspBARBARA VENTURA LOS&nbspANGELES</h2>
+          </div>
           <picture>
             <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
-            <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Slide Two" class="img-fluid dark-overlay">
+            <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
           </picture>
-        </Parallax>
-
-        <picture v-else>
-          <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid">
-          <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Slide Two" class="img-fluid">
-        </picture>
-        <div v-if="isMobile">
-          <br>
-          <h5 class="subtitle">Living To Make Your Event Memorable - One Shot At a Time</h5>
         </div>
+
       </b-col>
     </b-row>
     <!-- Instagram and Yelp Logos -->
@@ -33,6 +64,9 @@
           </a>
           <a href="https://www.yelp.com/biz/endless-photobooth-oxnard">
             <img src="~assets/images/home/yelp.png" alt="Yelp Link" class="logo" style="width: 60px; height: 60px; position: relative;"/>
+          </a>
+          <a href="https://www.weddingwire.com/biz/endless-photo-booths-oxnard/3fc52dcdeb1f53d2.html">
+            <img src="~assets/images/home/wedding_wire.png" alt="Wedding Wire Link" class="logo" style="width: 50px; height: 50px; top:5px; right: 4px; position: relative;"/>
           </a>
         </div>
       </b-col>
@@ -66,7 +100,6 @@
                alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
         </picture>
 
-
       </b-col>
       <b-col offset-md="1" order-md="1" md="4">
         <ul>
@@ -86,9 +119,9 @@
     <!-- End Section -->
     <b-row class="p-4">
       <b-col>
-      <div class="subtitle"> Ventura Photo Booth Rentals will be a perfect addition to any event.
-      <br>
-      <nuxt-link class="contact-us-link" to="/contact-us">Book your photo booth today!</nuxt-link></div>
+        <div class="subtitle"> Ventura Photo Booth Rentals will be a perfect addition to any event.
+        <br>
+        <nuxt-link class="contact-us-link" to="/contact-us">Book your photo booth today!</nuxt-link></div>
       </b-col>
     </b-row>
   </b-container>
@@ -120,10 +153,16 @@ export default {
       return this.isMobile ? ' ' : '';
     },
     isMobile: function () {
-      if (process.static) {
+      // if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
         return mobileDeviceDetect.isMobile;
-      }
+      // }
+    },
+    isTablet: function () {
+      // if (process.static) {
+        var mobileDeviceDetect = require('mobile-device-detect');
+        return mobileDeviceDetect.isTablet || (window.innerWidth < 1400 && window.innerWidth >= 450);
+      // }
     }
   }
 }
@@ -159,18 +198,13 @@ export default {
 
 .gray-text{
   color: #EEE;
-  font-weight: 600;
+  font-size: 40px !important;
 }
 
-.mobile-gray-text {
+.mobile-gray-text{
   color: #EEE;
-  background: #317FBC;
-  /*display: block;*/
-  display:inline;
-  font-weight: 300;
-  text-align: center;
-  word-spacing: 5px;
-  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .parallax-text{
@@ -179,14 +213,26 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   /*background-color: #eee;*/
-  opacity: 0.75;
-  filter: alpha(opacity=75);
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+}
+
+.mobile-parallax-text{
+  position: absolute;
+  bottom: 0px;
+/*  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+  /*transform: translateZ(-1px) scale(1.1);*/
+  /*background-color: #eee;*/
+/*  opacity: 0.8;
+  filter: alpha(opacity=80);*/
+  z-index: 2;
 }
 
 .title {
   letter-spacing: 4px;
   display: block;
-  font-weight: 300;
   /*color: white;*/
   color: #317FBC;
   text-align: center;
