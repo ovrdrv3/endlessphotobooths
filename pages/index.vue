@@ -153,16 +153,16 @@ export default {
       return this.isMobile ? ' ' : '';
     },
     isMobile: function () {
-      // if (process.static) {
+      if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
         return mobileDeviceDetect.isMobile;
-      // }
+      }
     },
     isTablet: function () {
-      // if (process.static) {
+      if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
         return mobileDeviceDetect.isTablet || (window.innerWidth < 1400 && window.innerWidth >= 450);
-      // }
+      }
     }
   }
 }
