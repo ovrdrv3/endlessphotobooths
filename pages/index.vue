@@ -220,13 +220,7 @@ export default {
 .mobile-parallax-text{
   position: absolute;
   bottom: 0px;
-/*  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);*/
-  /*transform: translateZ(-1px) scale(1.1);*/
-  /*background-color: #eee;*/
-/*  opacity: 0.8;
-  filter: alpha(opacity=80);*/
+
   z-index: 2;
 }
 
