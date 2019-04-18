@@ -155,7 +155,7 @@ export default {
     isMobile: function () {
       if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
-        return mobileDeviceDetect.isMobile || (window.innerWidth < 450);
+        return mobileDeviceDetect.isMobile;
       }
     },
     isTablet: function () {
