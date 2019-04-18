@@ -9,9 +9,8 @@
       <b-col offset-md="2" md="4">
           <div class="card border-0">
             <picture>
-              <source srcset="~assets/images/home/enclosed_booth-min.webp" type="image/webp"  class="card-img-top photobooth-style-img">
-              <source srcset="~assets/images/home/enclosed_booth-min.png"class="card-img-top photobooth-style-img">
-              <img src="~assets/images/home/enclosed_booth-min.png" alt="Enclosed Photo Booth" class="card-img-top photobooth-style-img">
+              <source srcset="~assets/images/home/LED-Enclosed.webp"class="img-fluid">
+              <img src="~assets/images/home/LED-Enclosed-min.jpeg" alt="Enclosed Photo Booth" class="img-fluid">
             </picture>
             <div class="card-body">
               <h5 class="card-title">Enclosed Photo Booths</h5>
@@ -22,9 +21,8 @@
       <b-col  md="4">
           <div class="card offset-md-1 border-0">
             <picture>
-              <source srcset="~assets/images/home/open_booth-min.webp" type="image/webp"  class="card-img-top photobooth-style-img">
-              <source srcset="~assets/images/home/open_booth-min.jpg"class="card-img-top photobooth-style-img">
-              <img src="~assets/images/home/open_booth-min.jpg" alt="Open Photo Booth" class="card-img-top photobooth-style-img">
+              <source srcset="~assets/images/home/Open-Air.webp" type="image/webp"  class="img-fluid">
+              <img src="~assets/images/home/Open-Air-min.jpeg" alt="Open Photo Booth" class="img-fluid">
             </picture>
             <div class="card-body">
               <h5 class="card-title">Open Photo Booths</h5>
@@ -35,3 +33,10 @@
     </b-row>
 </div>
 </template>
+
+<style>
+
+.photobooth-style-img {
+  /*max-height: 250px;*/
+}
+</style>

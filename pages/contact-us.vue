@@ -83,10 +83,6 @@ export default {
   background-color: #317FBC;
 }
 
-.photobooth-style-img {
-  max-height: 250px;
-}
-
 ul{
   text-align: left;
 }

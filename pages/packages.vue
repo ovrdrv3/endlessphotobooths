@@ -58,8 +58,4 @@ export default {
   text-align: center;
 }
 
-.photobooth-style-img {
-  max-height: 250px;
-}
-
 </style>

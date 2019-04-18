@@ -5,7 +5,7 @@
     <b-row class="py-3">
       <b-col>
 
-        <div v-if="!isMobile">
+        <div v-if="!isMobile && !isTablet">
           <div class="parallax-text title">
             <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
             <br>
@@ -155,7 +155,7 @@ export default {
     isMobile: function () {
       if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
-        return mobileDeviceDetect.isMobile;
+        return mobileDeviceDetect.isMobile || window.innerWidth < 450;
       }
     },
     isTablet: function () {
@@ -245,9 +245,6 @@ export default {
   text-decoration: underline;
 }
 
-.photobooth-style-img {
-  max-height: 250px;
-}
 
 ul{
   text-align: left;
