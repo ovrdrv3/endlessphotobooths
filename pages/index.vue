@@ -155,13 +155,25 @@ export default {
     isMobile: function () {
       if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
-        return mobileDeviceDetect.isMobile;
+        var smallScreen = false;
+        if (process.client){
+          if (window.innerWidth < 450) {
+            smallScreen = true;
+          }
+        }
+        return mobileDeviceDetect.isMobile || smallScreen;
       }
     },
     isTablet: function () {
       if (process.static) {
         var mobileDeviceDetect = require('mobile-device-detect');
-        return mobileDeviceDetect.isTablet || (window.innerWidth < 1400 && window.innerWidth >= 450);
+        var mediumScreen = false;
+        if (process.client){
+          if (window.innerWidth < 1400 && window.innerWidth >= 450) {
+            mediumScreen = true;
+          }
+        }
+        return mobileDeviceDetect.isTablet || mediumScreen;
       }
     }
   }

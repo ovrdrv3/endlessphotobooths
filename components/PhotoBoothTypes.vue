@@ -33,10 +33,3 @@
     </b-row>
 </div>
 </template>
-
-<style>
-
-.photobooth-style-img {
-  /*max-height: 250px;*/
-}
-</style>
