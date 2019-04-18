@@ -169,7 +169,7 @@ export default {
         var mobileDeviceDetect = require('mobile-device-detect');
         var mediumScreen = false;
         if (process.client){
-          if (window.innerWidth < 1400 && window.innerWidth >= 450) {
+          if (window.innerWidth < 1000 && window.innerWidth >= 450) {
             mediumScreen = true;
           }
         }
