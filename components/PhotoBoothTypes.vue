@@ -9,7 +9,7 @@
       <b-col offset-md="2" md="4">
           <div class="card border-0">
             <picture>
-              <source srcset="~assets/images/home/LED-Enclosed.webp"class="img-fluid">
+              <source srcset="~assets/images/home/LED-Enclosed.webp" type="image/webp" class="img-fluid">
               <img src="~assets/images/home/LED-Enclosed-min.jpg" alt="Enclosed Photo Booth" class="img-fluid">
             </picture>
             <div class="card-body">
