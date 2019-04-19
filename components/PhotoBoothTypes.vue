@@ -10,7 +10,7 @@
           <div class="card border-0">
             <picture>
               <source srcset="~assets/images/home/LED-Enclosed.webp"class="img-fluid">
-              <img src="~assets/images/home/LED-Enclosed-min.jpeg" alt="Enclosed Photo Booth" class="img-fluid">
+              <img src="~assets/images/home/LED-Enclosed-min.jpg" alt="Enclosed Photo Booth" class="img-fluid">
             </picture>
             <div class="card-body">
               <h5 class="card-title">Enclosed Photo Booths</h5>
