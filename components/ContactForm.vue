@@ -2,7 +2,7 @@
   <div class="py-3">
     <b-form @input="validateForm"
             @change="validateForm"
-            name="contact-us"
+            name="contact"
             ref="form"
             @reset="onReset"
             method="POST"
@@ -215,7 +215,7 @@ export default {
       } else {
         // this.$refs.form.submit();
 
-        fetch("/submit-success", {
+        fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
