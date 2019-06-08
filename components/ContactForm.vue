@@ -126,7 +126,11 @@ export default {
         'Open Air Package', 'LED Booth Package', 'ENDLESS VIP Package'
       ],
       referralOptions: [
-        'Friends','Yelp','Wedding Wire','Instagram','Other'
+      { text: 'Friends', value: 'Friends' },
+      { text: 'Yelp', value: 'Yelp' },
+      { text: 'Wedding Wire', value: 'Wedding Wire' },
+      { text: 'Instagram', value: 'Instagram' },
+      { text: 'Other', value: 'Other' }
       ]
     }
   },
