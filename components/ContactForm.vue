@@ -15,7 +15,7 @@
         </b-form-input>
       </b-form-group>
       <b-form-group label="Name:"
-                    label-for="Name"
+                    label-for="name"
                     :invalid-feedback="errors.name">
         <b-form-input id="name"
                       name="name"
@@ -27,7 +27,7 @@
 
       </b-form-group>
       <b-form-group label="Number:"
-                    label-for="Phone Number"
+                    label-for="phone"
                     :invalid-feedback="errors.phone">
         <b-form-input id="phone"
                       name="phone"
@@ -60,12 +60,12 @@
         </b-form-textarea>
       </b-form-group>
       <b-form-group id="formPackage"
-                    label="Interested in:"
+                    label="Package:"
                     label-for="package">
         <b-form-select id="package"
                        name="package"
                        :options="packages"
-                       v-model="form.packages">
+                       v-model="form.package">
         </b-form-select>
       </b-form-group>
       <b-form-group label="How did you hear about us?"
@@ -104,7 +104,7 @@ export default {
         email: '',
         phone: '',
         comment: '',
-        packages: null,
+        package: null,
         referral: null,
         otherReferral: null,
         submitText: 'Submit'
@@ -136,7 +136,7 @@ export default {
         var newFormValue = '';
         if (searchParams.has("package")){
           // console.log('Package ' + searchParams.get("package"));
-          // this.form.packages = 'Package ' + searchParams.get("package") ;
+          // this.form.package = 'Package ' + searchParams.get("package") ;
           var queryValue = searchParams.get("package") ;
           this.packages.forEach(function findMostSimilarPackage(currentValue) {
             if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
@@ -144,7 +144,7 @@ export default {
               newFormValue = currentValue;
             }
           });
-          this.form.packages = newFormValue;
+          this.form.package = newFormValue;
           // search for the most similiar package in the set.
         }
     }
@@ -219,7 +219,7 @@ export default {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
-            "form-name": "contact-us",
+            "form-name": "contact",
             ...this.form
           })
         })
@@ -268,7 +268,7 @@ export default {
       this.form.email = '';
       this.form.phone = '';
       this.form.comment = '';
-      this.form.packages = null;
+      this.form.package = null;
       this.errors.referral = '';
       this.errors.otherReferral = '';
       this.form.submitText =  'Submit';
