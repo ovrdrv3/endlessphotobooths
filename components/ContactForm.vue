@@ -7,7 +7,8 @@
             @reset="onReset"
             method="POST"
             netlify-honeypot="prefix"
-            data-netlify="true">
+            data-netlify="true"
+            action="/submit-success/">
       <b-form-group v-show="false" label="Prefix:"
                     label-for="prefix">
         <b-form-input id="prefix"
@@ -216,7 +217,7 @@ export default {
       } else {
         // this.$refs.form.submit();
 
-        fetch("/", {
+        fetch("/submit-success", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
