@@ -12,19 +12,19 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.16",
+    "bootstrap-vue": "^2.0.0-rc.22",
     "cross-env": "^5.2.0",
-    "medium-zoom": "^1.0.3",
+    "medium-zoom": "^1.0.4",
     "mobile-device-detect": "^0.2.3",
-    "nuxt": "^2.5.1",
-    "serve-static": "^1.13.2",
+    "nuxt": "^2.8.1",
+    "serve-static": "^1.14.1",
     "vue": "^2.6.10",
     "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.18.10",
+    "axios": "^0.18.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
     "sass-loader": "^7.1.0",
     "sharp": "^0.21.3",
     "vue-waypoint": "^3.2.2"
