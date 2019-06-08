@@ -14,6 +14,7 @@
                       name="prefix">
         </b-form-input>
       </b-form-group>
+      <input type="hidden" name="form-name" value="contact" />
       <b-form-group label="Name:"
                     label-for="name"
                     :invalid-feedback="errors.name">
