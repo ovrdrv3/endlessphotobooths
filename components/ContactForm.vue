@@ -7,8 +7,7 @@
             @reset="onReset"
             method="POST"
             netlify-honeypot="prefix"
-            data-netlify="true"
-            action="/submit-success/">
+            data-netlify="true">
       <b-form-group v-show="false" label="Prefix:"
                     label-for="prefix">
         <b-form-input id="prefix"
