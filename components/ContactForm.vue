@@ -71,7 +71,7 @@
       </b-form-group>
       <b-form-group label="How did you hear about us?"
                     label-for="referral"
-                    :invalid-feedback="errors.otherReferral">
+                    :invalid-feedback="errors.referral">
         <b-form-radio-group id="referral"
                             name="referral"
                             v-model="form.referral"
