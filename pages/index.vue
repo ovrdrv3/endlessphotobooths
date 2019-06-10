@@ -5,54 +5,22 @@
     <b-row class="py-3">
       <b-col>
 
-        <div v-if="!isMobile && !isTablet">
+        <div class="parallax-image">
           <div class="parallax-text title">
             <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
             <br>
             <br>
             <h2 class="gray-text">ONE SHOT AT A TIME</h2>
-            <h2 class="gray-text" style="font-size: 20px !important; padding-top: 300px;">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
-          </div>
-          <Parallax :speed-factor="0.2">
-            <picture>
-              <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
-              <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash Image" class="img-fluid dark-overlay">
-            </picture>
-          </Parallax>
-        </div>
-        <!-- tablet -->
-       <div v-else-if="isTablet">
-         <div class="mobile-parallax-text title">
-           <br>
-           <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
-           <br>
-           <h2 class="gray-text">ONE SHOT AT A TIME</h2>
-           <br>
-           <br>
-           <h2 class="mobile-gray-text" style="font-size: 20px !important; padding-top: 100px;">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
-         </div>
-         <picture>
-           <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
-           <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
-         </picture>
-       </div>
-        <!-- mobile -->
-        <div v-else>
-          <div class="mobile-parallax-text title" >
-            <br>
-            <h2 class="mobile-gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
-            <br>
-            <h2 class="mobile-gray-text">ONE SHOT AT A TIME</h2>
             <br>
             <br>
-            <h2 class="mobile-gray-text">SANTA&nbspBARBARA VENTURA LOS&nbspANGELES</h2>
+            <h2 class="bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
           </div>
           <picture>
             <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
             <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
           </picture>
-        </div>
 
+        </div>
       </b-col>
     </b-row>
     <!-- Instagram and Yelp Logos -->
@@ -128,12 +96,7 @@
 </template>
 
 <script>
-// import HomeCarousel from '~/components/HomeCarousel.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
-
-if (process.client) {
-  var Parallax = require('vue-parallaxy');
-}
 
 export default {
   head () {
@@ -145,8 +108,7 @@ export default {
     }
   },
   components: {
-    PhotoBoothTypes,
-    Parallax
+    PhotoBoothTypes
   },
   computed: {
     spaceForMobile: function () {
@@ -157,7 +119,7 @@ export default {
         var mobileDeviceDetect = require('mobile-device-detect');
         var smallScreen = false;
         if (process.client){
-          if (window.innerWidth < 450) {
+          if (window.innerWidth < 600) {
             smallScreen = true;
           }
         }
@@ -169,7 +131,7 @@ export default {
         var mobileDeviceDetect = require('mobile-device-detect');
         var mediumScreen = false;
         if (process.client){
-          if (window.innerWidth < 1000 && window.innerWidth >= 450) {
+          if (window.innerWidth < 1000 && window.innerWidth >= 600) {
             mediumScreen = true;
           }
         }
@@ -180,8 +142,72 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
+$break-small: 600px;
+$break-large: 1000px;
+
+.parallax-text{
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*background-color: #eee;*/
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  @media screen and (max-width: $break-large) {
+    top: initial;
+    left: initial;
+    transform: none;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    bottom: 0px;
+  }
+}
+
+.title {
+  letter-spacing: 4px;
+  display: block;
+  /*color: white;*/
+  color: #317FBC;
+  text-align: center;
+}
+
+.gray-text{
+  color: #EEE;
+  font-size: 40px;
+  @media screen and (max-width: $break-small) {
+    font-weight: 600;
+    font-size: 12px;
+  }
+}
+
+.bottom-gray-text{
+
+  color: #EEE;
+  @media screen and (max-width: $break-large) {
+    font-weight: 600;
+    font-size: 12px;
+    @media screen and (min-width: $break-small) {
+      font-size: 20px;
+      padding-top: 50px;
+    }
+  }
+  @media screen and (min-width: $break-large) {
+    font-size: 20px;
+    padding-top: 150px;
+  }
+
+}
+
+.parallax-image{
+  height: 100%;
+  @media screen and (min-width: $break-large) {
+    // height: 600px;
+    // overflow: hidden;
+  }
+}
 .logo{
     width: 60px;
     height: 60px;
@@ -205,42 +231,6 @@ export default {
   background: #317FBC;
   display:inline;
   font-weight: 300;
-  text-align: center;
-}
-
-.gray-text{
-  color: #EEE;
-  font-size: 40px !important;
-}
-
-.mobile-gray-text{
-  color: #EEE;
-  font-weight: 600;
-  font-size: 12px;
-}
-
-.parallax-text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /*background-color: #eee;*/
-  opacity: 0.85;
-  filter: alpha(opacity=85);
-}
-
-.mobile-parallax-text{
-  position: absolute;
-  bottom: 0px;
-
-  z-index: 2;
-}
-
-.title {
-  letter-spacing: 4px;
-  display: block;
-  /*color: white;*/
-  color: #317FBC;
   text-align: center;
 }
 
