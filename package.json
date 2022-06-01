@@ -26,7 +26,7 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "sass-loader": "^7.1.0",
-    "sharp": "^0.21.3",
+    "sharp": "^0.30.5",
     "vue-waypoint": "^3.2.2"
   }
 }
