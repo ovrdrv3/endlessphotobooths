@@ -11,22 +11,20 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.2.0",
-    "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.22",
-    "cross-env": "^5.2.0",
-    "medium-zoom": "^1.0.4",
-    "mobile-device-detect": "^0.2.3",
-    "nuxt": "^2.8.1",
-    "serve-static": "^1.14.1",
-    "vue": "^2.6.10"
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "bootstrap": "^4.6.1",
+    "bootstrap-vue": "^2.22.0",
+    "cross-env": "^7.0.3",
+    "medium-zoom": "^1.0.6",
+    "mobile-device-detect": "^0.4.3",
+    "nuxt": "^2.15.8",
+    "serve-static": "^1.15.0",
+    "vue": "^2.7.8"
   },
   "devDependencies": {
-    "axios": "^0.18.1",
-    "node-sass": "^4.12.0",
-    "nodemon": "^1.19.1",
-    "sass-loader": "^7.1.0",
-    "sharp": "^0.21.3",
-    "vue-waypoint": "^3.2.2"
+    "nodemon": "^2.0.19",
+    "sass": "^1.54.0",
+    "sass-loader": "^10.1.1",
+    "webpack": "^4.46.0"
   }
 }
