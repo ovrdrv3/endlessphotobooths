@@ -120,7 +120,7 @@ export default {
         comment: '',
         package: null,
         referral: null,
-        otherReferral: null,
+        otherReferral: '',
         submitText: 'Submit'
       },
       submissionAttempt : false,
