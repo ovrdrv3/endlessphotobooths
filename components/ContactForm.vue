@@ -72,13 +72,25 @@
       <b-form-group label="How did you hear about us?"
                     label-for="referral"
                     :invalid-feedback="errors.referral">
+        <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select a referral</b-form-invalid-feedback>
         <b-form-radio-group id="referral"
                             name="referral"
                             v-model="form.referral"
                             :options="referralOptions"
                             stacked>
         </b-form-radio-group>
-        <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select one</b-form-invalid-feedback>
+        </b-form-group>
+        <b-form-group label="What's your budget?"
+                      label-for="budget"
+                      :invalid-feedback="errors.budget">
+          <b-form-invalid-feedback :state="stateOfElement('budget')" v-show="stateOfElement('budget')" >Please select a budget</b-form-invalid-feedback>
+          <b-form-radio-group id="budget"
+                              name="budget"
+                              v-model="form.budget"
+                              :options="budgetOptions"
+                              stacked>
+          </b-form-radio-group>
+        </b-form-group>
         <b-form-input v-show="form.referral == 'Other'"
                       id="otherReferral"
                       name="otherReferral"
@@ -88,6 +100,7 @@
                       :state="stateOfElement('otherReferral')">
         </b-form-input>
       </b-form-group>
+      <br>
       <b-button type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
  :variant="submitButtonVariant">{{form.submitText}}</b-button>
       <b-button type="reset" variant="outline-danger">Reset</b-button>
@@ -131,6 +144,12 @@ export default {
       { text: 'Wedding Wire', value: 'Wedding Wire' },
       { text: 'Instagram', value: 'Instagram' },
       { text: 'Other', value: 'Other' }
+      ],
+      budgetOptions: [
+      { text: '$400 - $600', value: '$400 - $600' },
+      { text: '$600 - $800', value: '$600 - $800' },
+      { text: '$800 - $1,000', value: '$800 - $1,000' },
+      { text: '$1,000 - $2,000', value: '$1,000 - $2,000' }
       ]
     }
   },
@@ -187,6 +206,11 @@ export default {
       } else if (!this.validEmail(this.form.email)) {
         this.errors.any = true;
         this.errors.email = 'Valid email required';
+      }
+
+      if (!this.form.budget) {
+        this.errors.any = true;
+        this.errors.budget ='Budget required';
       }
 
       if (!this.form.referral) {
