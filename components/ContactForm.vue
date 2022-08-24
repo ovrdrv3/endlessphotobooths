@@ -99,10 +99,9 @@
                       placeholder="(How did you hear about us?)"
                       :state="stateOfElement('otherReferral')">
         </b-form-input>
-      </b-form-group>
       <br>
       <b-button type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
- :variant="submitButtonVariant">{{form.submitText}}</b-button>
+      :variant="submitButtonVariant">{{form.submitText}}</b-button>
       <b-button type="reset" variant="outline-danger">Reset</b-button>
     </b-form>
   </div>
