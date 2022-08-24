@@ -4,7 +4,11 @@
 
 ## Build Setup
 
+
 ``` bash
+# using an older version of node.
+$ nvm use --lts
+
 # install dependencies
 $ npm install
 
