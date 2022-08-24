@@ -118,9 +118,10 @@ export default {
         email: '',
         phone: '',
         comment: '',
+        otherReferral: '',
         package: null,
         referral: null,
-        otherReferral: '',
+        budget: null,
         submitText: 'Submit'
       },
       submissionAttempt : false,
@@ -132,6 +133,7 @@ export default {
         email: '',
         phone: '',
         referral: '',
+        budget: '',
         otherReferral: ''
       },
       packages: [
