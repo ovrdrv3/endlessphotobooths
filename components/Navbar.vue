@@ -31,17 +31,16 @@ nav{
    -webkit-transition: all 0.4s;
    transition: all 0.4s;
    -webkit-transform: translateZ(0);
+   background-color: rgba(255, 255, 255, 0.2);
 }
 nav.shrink{
   background-color: #eee;
 }
 nav img{
   transition: all 0.4s;
-  max-height: 92px;
   -webkit-transform: translateZ(0);
 }
 nav img.shrink{
-  max-height: 50px;
 }
 
 .active{

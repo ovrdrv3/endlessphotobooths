@@ -1,26 +1,19 @@
 <template>
   <b-container fluid>
-      <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
-      <h5 class="subtitle">Ventura County Photo Booth Rentals</h5>
     <b-row class="py-3">
       <b-col>
-
-        <div class="parallax-image">
-          <div class="parallax-text title">
-            <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
-            <br>
-            <br>
-            <h2 class="gray-text">ONE SHOT AT A TIME</h2>
-            <br>
-            <br>
+        <video-background
+        src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+        style="height: 100vh"
+        >
+          <div class="middle-text">
+            <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
+            <h5 class="subtitle pb-5">Ventura County Photo Booth Rentals</h5>
+            <h2 class="gray-text pb-5">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+            <h2 class="gray-text pb-5">ONE SHOT AT A TIME</h2>
             <h2 class="bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
           </div>
-          <picture>
-            <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
-            <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
-          </picture>
-
-        </div>
+        </video-background>
       </b-col>
     </b-row>
     <!-- Instagram and Yelp Logos -->
@@ -147,18 +140,23 @@ export default {
 $break-small: 600px;
 $break-large: 1000px;
 
-.parallax-text{
+.middle-text {
   z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px #000000;
   /*background-color: #eee;*/
   opacity: 0.85;
   filter: alpha(opacity=85);
   @media screen and (max-width: $break-large) {
     top: initial;
-    left: initial;
+    left: 10px;
     transform: none;
     opacity: 1;
     filter: alpha(opacity=100);

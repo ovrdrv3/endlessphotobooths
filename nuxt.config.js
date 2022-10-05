@@ -17,7 +17,7 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png'},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Comfortaa' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Amatic+SC' },
       { rel: 'apple-touch-icon', sizes: '57x57', href: '/apple-icon-57x57.png'},
       { rel: 'apple-touch-icon', sizes: '60x60', href: '/apple-icon-60x60.png'},
       { rel: 'apple-touch-icon', sizes: '72x72', href: '/apple-icon-72x72.png'},
@@ -48,7 +48,11 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/scroll-directive.js'
+    '~/plugins/scroll-directive.js',
+    {
+      src: '~/plugins/vue-video-background',
+      ssr: false
+    }
   ],
 
   /*
