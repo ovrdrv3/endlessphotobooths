@@ -19,6 +19,7 @@
         <b-nav-item to="/about-us">About Us</b-nav-item>
         <b-nav-item to="/contact-us">Contact Us</b-nav-item>
         <b-nav-item to="/choose-a-template">Choose a Template</b-nav-item>
+
       </b-navbar-nav>
 
     </b-collapse>
@@ -33,19 +34,24 @@ nav{
    -webkit-transform: translateZ(0);
    background-color: rgba(255, 255, 255, 0.2);
 }
-nav.shrink{
-  background-color: #eee;
+/* when hovering over the navbar make the background white */
+nav:hover{
+   background-color: rgba(255, 255, 255, 1);
 }
+
 nav img{
   transition: all 0.4s;
+  max-height: 92px;
   -webkit-transform: translateZ(0);
 }
-nav img.shrink{
+nav img.hover{
+  max-height: 50px;
 }
 
 .active{
   color: #317FBC !important;
 }
+
 
 </style>
 
