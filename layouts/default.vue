@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar/>
+    <Navbar v-if="$nuxt.$route.path !== '/'"/>
     <nuxt/>
     <Bottombar/>
   </div>
@@ -21,7 +21,7 @@ export default {
 
 <style>
 html {
-  font-size: 20px;
+  font-size: 30px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

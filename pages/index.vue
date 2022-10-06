@@ -1,19 +1,22 @@
 <template>
+  <div>
+    <video-background
+    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+    style="height: 100vh"
+    >
+    <Navbar/>
+    <div class="middle-text">
+      <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
+      <h5 class="subtitle pb-5">Ventura County Photo Booth Rentals</h5>
+      <h2 class="gray-text pb-5">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+      <h2 class="gray-text pb-5">ONE SHOT AT A TIME</h2>
+      <h2 class="bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
+    </div>
+  </video-background>
   <b-container fluid>
     <b-row class="py-3">
       <b-col>
-        <video-background
-        src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-        style="height: 100vh"
-        >
-          <div class="middle-text">
-            <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
-            <h5 class="subtitle pb-5">Ventura County Photo Booth Rentals</h5>
-            <h2 class="gray-text pb-5">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
-            <h2 class="gray-text pb-5">ONE SHOT AT A TIME</h2>
-            <h2 class="bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
-          </div>
-        </video-background>
+
       </b-col>
     </b-row>
     <!-- Instagram and Yelp Logos -->
@@ -86,9 +89,11 @@
       </b-col>
     </b-row>
   </b-container>
+</div>
 </template>
 
 <script>
+import Navbar from '~/components/Navbar.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 
 export default {
@@ -101,7 +106,8 @@ export default {
     }
   },
   components: {
-    PhotoBoothTypes
+    PhotoBoothTypes,
+    Navbar
   },
   computed: {
     spaceForMobile: function () {
