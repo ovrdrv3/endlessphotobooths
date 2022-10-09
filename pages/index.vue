@@ -9,9 +9,9 @@
           <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
         </video>
         <div class="container h-100">
-          <div class="d-flex h-100 text-center align-items-end">
+          <div class="d-flex h-100 text-center">
             <div class="middle-text">
-              <h1 class="title fancy-font gray-text">ENDLESS PHOTOBOOTHS</h1>
+              <h1 class="title fancy-font gray-text pt-150">ENDLESS PHOTOBOOTHS</h1>
               <h2 class="caption-text pt-150">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
               <h2 class="caption-text">ONE SHOT AT A TIME</h2>
               <h2 class="fancy-font caption-text pt-150">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
@@ -37,8 +37,6 @@
         </div>
       </b-col>
     </b-row>
-    <!-- Make a nice description for a photo booth event company -->
-
     <!-- Make a non fluid container for the rest of the content -->
     <!-- Home info section -->
     <b-row class="py-3">
@@ -172,18 +170,15 @@ $grey: #eee;
 
 
 .middle-text {
-  z-index: 2;
   position: absolute;
-  top: initial;
+  top: 50%;
   left: 50%;
-  transform: none;
-  color: #eee;
+  transform: translate(-50%, -50%);
   text-align: center;
-  /*background-color: #eee;*/
-  opacity: 1;
-  filter: alpha(opacity=100);
-  bottom: 0px;
-  left: 10px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  z-index: 3;
 }
 
 .gray-text{
@@ -196,7 +191,7 @@ $grey: #eee;
 
 .caption-text{
 
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 100;
   @media (max-width: $break-large) {
     font-size: 0.5rem;

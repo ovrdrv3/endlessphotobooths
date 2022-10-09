@@ -31,10 +31,9 @@ html {
   .title {
     letter-spacing: 4px;
     display: block;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 400;
     color: $primary;
-    text-align: center;
     text-align: center;
   }
 
@@ -58,4 +57,5 @@ html {
     line-height: 1.25;
     text-align: center;
     text-align: center;
+    color: $primary;
   }

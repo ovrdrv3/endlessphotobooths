@@ -4,22 +4,20 @@
         <h1 class="title fancy-font">CONTACT ENDLESS PHOTOBOOTHS</h1>
         <div class="subtitle">Ventura County Photo Booth Rentals</div>
 
-        <div class="py-3">
+        <div class="py-2">
           We have Photo Booth Rentals in Ventura, Los Angeles, and Santa Barbara Counties. Please give us a call, send us an email, or feel free to fill out the contact form below if you have any questions!
         </div>
-        <div class="py-3">
+        <div class="py-2">
           Our Number:
-          <br>
           <a href="tel:+18057108997">(805) 710-8997</a>
         </div>
-        <div class="py-3">
+        <div class="py-2">
           Our Email:
-          <br>
           <a href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">endlessphotobooths@gmail.com</a>
         </div>
-        <no-ssr>
+        <client-only>
           <ContactForm/>
-        </no-ssr>
+        </client-only>
 
 
   </b-container>

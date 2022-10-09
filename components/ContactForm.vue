@@ -1,5 +1,5 @@
 <template>
-  <div class="py-3">
+  <div class="py-2">
     <b-form @input="validateForm"
             @change="validateForm"
             name="contact"

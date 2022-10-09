@@ -1,28 +1,28 @@
 <template>
-  <b-navbar id="navBar" v-on:scroll="handleScroll" :class="{ shrink: hasScrolled}" sticky toggleable="md">
+  <b-navbar id="navBar" :class="{ shrink: hasScrolled}" sticky toggleable="md">
 
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-  <b-navbar-brand to="/" @click.native="navItemsVisible = false">
-    <img  id="brandLogo"
-          src="~assets/images/best_png_logo.png"
-          alt="Endless Photo Booths Ventura County logo"/>
-  </b-navbar-brand>
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar-brand to="/" @click.native="navItemsVisible = false">
+      <img  id="brandLogo"
+            src="~assets/images/best_png_logo.png"
+            alt="Endless Photo Booths Ventura County logo"/>
+    </b-navbar-brand>
 
-  <b-collapse is-nav id="nav_collapse" v-model="navItemsVisible">
+    <b-collapse is-nav id="nav_collapse" v-model="navItemsVisible">
 
-    <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ml-auto">
 
-      <!-- <b-nav-item href="tel:+18057108997">Call</b-nav-item> -->
-      <!-- <b-nav-item href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">Email</b-nav-item> -->
+        <!-- <b-nav-item href="tel:+18057108997">Call</b-nav-item> -->
+        <!-- <b-nav-item href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">Email</b-nav-item> -->
 
-      <b-nav-item to="/packages">PACKAGES</b-nav-item>
-      <b-nav-item to="/about-us">ABOUT US</b-nav-item>
-      <b-nav-item to="/contact-us">CONTACT US</b-nav-item>
-      <b-nav-item to="/choose-a-template">CHOOSE A TEMPLATE</b-nav-item>
-    </b-navbar-nav>
+        <b-nav-item to="/packages">PACKAGES</b-nav-item>
+        <b-nav-item to="/about-us">ABOUT US</b-nav-item>
+        <b-nav-item to="/contact-us">CONTACT US</b-nav-item>
+        <b-nav-item to="/choose-a-template">CHOOSE A TEMPLATE</b-nav-item>
+      </b-navbar-nav>
 
-  </b-collapse>
-</b-navbar>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <style>
@@ -34,9 +34,10 @@ nav{
  font-size: 0.5rem;
 }
 
-nav:hover{
+.shrink{
   background-color: #eee;
 }
+
 
 nav img{
 transition: all 0.4s;
@@ -53,6 +54,7 @@ color: #317FBC !important;
 <script>
 
 import debounce from 'lodash/debounce';
+
 export default {
 data () {
   return {
@@ -72,7 +74,7 @@ methods: {
   }
 },
 mounted() {
-  this.handleDebouncedScroll = debounce(this.handleScroll, 100);
+  this.handleDebouncedScroll = debounce(this.handleScroll, 50);
   window.addEventListener('scroll', this.handleDebouncedScroll);
 },
 

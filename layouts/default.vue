@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <Navbar v-if="$nuxt.$route.path !== '/'"/> -->
     <Navbar/>
     <nuxt/>
     <Bottombar/>
