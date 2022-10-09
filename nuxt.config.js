@@ -46,13 +46,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    '~/plugins/scroll-directive.js',
-    {
-      src: '~/plugins/vue-video-background',
-      ssr: false
-    }
-  ],
+  plugins: [],
 
   /*
   ** Nuxt.js modules
