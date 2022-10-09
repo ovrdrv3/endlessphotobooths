@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-    <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS PACKAGES</h1>
+    <h1 class="title">ENDLESS PHOTOBOOTHS PACKAGES</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
     <Packages/>
     <PhotoBoothTypes/>
@@ -24,19 +24,7 @@ export default {
   components: {
     Packages,
     PhotoBoothTypes
-  },
-  computed: {
-    spaceForMobile: function () {
-      return this.isMobile ? ' ' : '';
-    },
-    isMobile: function () {
-      if (process.static) {
-        var mobileDeviceDetect = require('mobile-device-detect');
-        return mobileDeviceDetect.isMobile;
-      }
-    }
   }
-
 }
 </script>
 

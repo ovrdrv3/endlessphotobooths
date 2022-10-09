@@ -1,7 +1,7 @@
 <template>
   <b-container>
 
-    <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
+    <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
     <div id="paddee-container" data-key="f89Okf2_1101" data-tags="landscape3l,landscape3p,landscape1l,portrait1p,strip3l" data-categories="">
     </div>
 
@@ -21,19 +21,7 @@ export default {
         { src: 'https://paddee.herokuapp.com/widget_v1.js' }
       ]
     }
-  },
- computed: {
-   spaceForMobile: function () {
-     return this.isMobile ? ' ' : '';
-   },
-   isMobile: function () {
-     if (process.static) {
-       var mobileDeviceDetect = require('mobile-device-detect');
-       return mobileDeviceDetect.isMobile;
-     }
-   }
- }
-
+  }
 }
 </script>
 

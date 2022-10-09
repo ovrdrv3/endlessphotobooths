@@ -1,7 +1,7 @@
 <template>
   <b-container>
 
-        <h1 class="title">Get in Touch with ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
+        <h1 class="title">Get in Touch with ENDLESS PHOTOBOOTHS</h1>
         <div class="subtitle">Ventura County Photo Booth Rentals</div>
 
         <div class="py-3">
@@ -40,19 +40,7 @@ export default {
   },
   components: {
     ContactForm
-  },
-  computed: {
-    spaceForMobile: function () {
-      return this.isMobile ? ' ' : '';
-    },
-    isMobile: function () {
-      if (process.static) {
-        var mobileDeviceDetect = require('mobile-device-detect');
-        return mobileDeviceDetect.isMobile;
-      }
-    }
   }
-
 }
 </script>
 

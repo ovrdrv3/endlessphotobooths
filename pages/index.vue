@@ -37,6 +37,8 @@
         </div>
       </b-col>
     </b-row>
+    <!-- Make a nice description for a photo booth event company -->
+
     <!-- Make a non fluid container for the rest of the content -->
     <!-- Home info section -->
     <b-row class="py-3">
