@@ -1,7 +1,7 @@
 <template>
   <b-container>
 
-        <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
+        <h1 class="title fancy-font">ENDLESS PHOTOBOOTHS</h1>
         <div class="subtitle">Ventura County Photo Booth Rentals</div>
 
         <div class="py-3">

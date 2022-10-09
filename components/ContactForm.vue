@@ -79,6 +79,14 @@
                             :options="referralOptions"
                             stacked>
         </b-form-radio-group>
+        <b-form-input v-show="form.referral == 'Other'"
+                      id="otherReferral"
+                      name="otherReferral"
+                      type="text"
+                      v-model="form.otherReferral"
+                      placeholder="(How did you hear about us?)"
+                      :state="stateOfElement('otherReferral')">
+        </b-form-input>
         </b-form-group>
         <b-form-group label="What's your budget?"
                       label-for="budget"
@@ -91,14 +99,6 @@
                               stacked>
           </b-form-radio-group>
         </b-form-group>
-        <b-form-input v-show="form.referral == 'Other'"
-                      id="otherReferral"
-                      name="otherReferral"
-                      type="text"
-                      v-model="form.otherReferral"
-                      placeholder="(How did you hear about us?)"
-                      :state="stateOfElement('otherReferral')">
-        </b-form-input>
       <br>
       <b-button type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
       :variant="submitButtonVariant">{{form.submitText}}</b-button>
@@ -137,7 +137,7 @@ export default {
       },
       packages: [
         { text: 'Package Types', value: null },
-        'Open Air Package', 'LED Booth Package', 'ENDLESS VIP Package'
+        '360 Booth','Open Air Package', 'LED Booth Package', 'ENDLESS VIP Package'
       ],
       referralOptions: [
       { text: 'Friends', value: 'Friends' },
