@@ -8,27 +8,38 @@
             method="POST"
             netlify-honeypot="prefix"
             data-netlify="true">
-      <b-form-group v-show="false" label="Prefix:"
+      <b-form-group v-show="false" label="Prefix"
                     label-for="prefix">
         <b-form-input id="prefix"
                       name="prefix">
         </b-form-input>
       </b-form-group>
       <input type="hidden" name="form-name" value="contact" />
-      <b-form-group label="Name:"
+      <b-form-group label="Name"
                     label-for="name"
+                    label-cols-sm="4"
+                    label-cols-lg="2"
+                    content-cols-sm
+                    content-cols-lg="10"
                     :invalid-feedback="errors.name">
         <b-form-input id="name"
                       name="name"
                       type="text"
+                      label-cols-sm="4"
+                      label-cols-lg="2"
+                      content-cols-sm
+                      content-cols-lg="10"
                       v-model="form.name"
                       placeholder="Name"
                       :state="stateOfElement('name')">
         </b-form-input>
-
       </b-form-group>
-      <b-form-group label="Number:"
+      <b-form-group label="Number"
                     label-for="phone"
+                    label-cols-sm="4"
+                    label-cols-lg="2"
+                    content-cols-sm
+                    content-cols-lg="10"
                     :invalid-feedback="errors.phone">
         <b-form-input id="phone"
                       name="phone"
@@ -38,8 +49,12 @@
                       :state="stateOfElement('phone')">
         </b-form-input>
       </b-form-group>
-      <b-form-group label="Email:"
+      <b-form-group label="Email"
                     label-for="email"
+                    label-cols-sm="4"
+                    label-cols-lg="2"
+                    content-cols-sm
+                    content-cols-lg="10"
                     :invalid-feedback="errors.email">
         <b-form-input id="email"
                       name="email"
@@ -50,7 +65,7 @@
         </b-form-input>
       </b-form-group>
       <b-form-group id="formComment"
-                    label="Comment or Message:"
+                    label="Comment or Message"
                     label-for="comment">
         <b-form-textarea id="comment"
                       name="comment"
@@ -61,7 +76,11 @@
         </b-form-textarea>
       </b-form-group>
       <b-form-group id="formPackage"
-                    label="Package:"
+                    label="Package"
+                    label-cols-sm="4"
+                    label-cols-lg="2"
+                    content-cols-sm
+                    content-cols-lg="10"
                     label-for="package">
         <b-form-select id="package"
                        name="package"
