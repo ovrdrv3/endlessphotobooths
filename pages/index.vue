@@ -23,14 +23,14 @@
   <b-container class="copy">
     <h1 class="copy-heading pt-3">Check out some recent events:</h1>
     <insta-feed
-    token="{secret}"
+    token=""
     fields="media_url,media_type,caption,permalink"
     container-class="image-container"
     :mediatypes="['IMAGE']"
     class="py-3"
     >
       <template v-slot:loading="props">
-        <h1 v-if="props.loading" class="fancy-loading">
+        <h1 v-if="props.loading" class="fancy-font caption-text">
           Loading, please wait...
         </h1>
       </template>

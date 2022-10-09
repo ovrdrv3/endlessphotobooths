@@ -1,3 +1,4 @@
+.env
 assets/images/home/not_in_use/
 notes.txt
 # Created by .ignore support plugin (hsz.mobi)
@@ -81,3 +82,6 @@ dist
 
 # IDE
 .idea
+
+# Local Netlify folder
+.netlify

@@ -17,6 +17,7 @@
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.22.0",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
     "medium-zoom": "^1.0.6",
     "nuxt": "^2.15.8",
