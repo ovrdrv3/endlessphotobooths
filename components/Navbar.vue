@@ -45,7 +45,7 @@ max-height: 92px;
 -webkit-transform: translateZ(0);
 }
 
-.active{
+.nuxt-link-exact-active{
 color: #317FBC !important;
 }
 
