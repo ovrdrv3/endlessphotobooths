@@ -14,7 +14,7 @@
               <h1 class="title pb-4" v-if="$device.isMobile">ENDLESS PHOTO BOOTHS</h1>
               <h1 class="title pb-4" v-else>ENDLESS PHOTOBOOTHS</h1>
               <h5 class="fancy-font pb-4">Ventura County Photo Booth Rentals</h5>
-              <h2 class="gray-text pb-4">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+              <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
               <h2 class="gray-text pb-4">ONE SHOT AT A TIME</h2>
               <h2 class="fancy-font bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
             </div>
@@ -178,7 +178,6 @@ $break-large: 1000px;
   transform: none;
   color: white;
   text-align: center;
-  text-shadow: 2px 2px 4px #000000;
   /*background-color: #eee;*/
   opacity: 1;
   filter: alpha(opacity=100);
@@ -198,6 +197,8 @@ $break-large: 1000px;
 .bottom-gray-text{
 
   color: #EEE;
+  padding-top: 150px;
+
   @media screen and (max-width: $break-large) {
     font-size: 20px;
     @media screen and (min-width: $break-small) {
@@ -207,7 +208,6 @@ $break-large: 1000px;
   }
   @media screen and (min-width: $break-large) {
     font-size: 36px;
-    padding-top: 150px;
   }
 
 }
