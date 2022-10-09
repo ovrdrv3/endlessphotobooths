@@ -23,7 +23,7 @@
   <b-container class="copy">
     <h1 class="copy-heading pt-3">Check out some recent events:</h1>
     <insta-feed
-    token="IGQVJYVkpSNHl2T21jWl9wMzFmWGpPYnhpcGo2LVNYTEpZAREdEbFNSUVpzRnozakd0VkRYRGR1Q3BFdWQwNGRUM2F5dnhfc2pkX3FFU2NGQk56eTlGWTlmVnVRWjJESXEtRXJSUVU0RU1aRlQxTk9odgZDZD"
+    token="{secret}"
     fields="media_url,media_type,caption,permalink"
     container-class="image-container"
     :mediatypes="['IMAGE']"
