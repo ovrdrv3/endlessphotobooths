@@ -14,6 +14,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
+
   }
 
   *,
@@ -25,7 +26,6 @@ html {
 
   .fancy-font{
     font-family: 'Baskervville', serif;
-    font-size: 36px;
   }
 
   .title {
@@ -33,13 +33,29 @@ html {
     display: block;
     font-size: 3rem;
     font-weight: 400;
+    color: $primary;
     text-align: center;
-    color: #eee;
     text-align: center;
   }
 
     @media (max-width: $break-large) {
         .title {
-        font-size: 2rem;
+        font-size: 1.25rem;
         }
     }
+
+  .copy {
+    font-size: 0.75rem;
+    font-weight: 100;
+    line-height: 1.25;
+    text-align: center;
+    text-align: center;
+  }
+
+  .copy-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-align: center;
+  }

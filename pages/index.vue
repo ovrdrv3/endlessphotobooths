@@ -11,18 +11,16 @@
         <div class="container h-100">
           <div class="d-flex h-100 text-center align-items-end">
             <div class="middle-text">
-              <h1 class="title pb-4" v-if="$device.isMobile">ENDLESS PHOTO BOOTHS</h1>
-              <h1 class="title pb-4" v-else>ENDLESS PHOTOBOOTHS</h1>
-              <h5 class="fancy-font pb-4">Ventura County Photo Booth Rentals</h5>
-              <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
-              <h2 class="gray-text pb-4">ONE SHOT AT A TIME</h2>
-              <h2 class="fancy-font bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
+              <h1 class="title fancy-font gray-text">ENDLESS PHOTOBOOTHS</h1>
+              <h2 class="caption-text pt-150">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+              <h2 class="caption-text">ONE SHOT AT A TIME</h2>
+              <h2 class="fancy-font caption-text pt-150">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
-  <b-container>
+  <b-container class="copy">
     <!-- Instagram and Yelp Logos -->
     <b-row class="py-0">
       <b-col md="10" offset-md="1">
@@ -43,7 +41,7 @@
     <!-- Home info section -->
     <b-row class="py-3">
       <b-col md="10" offset-md="1">
-      <h1 class="title">We provide:</h1>
+      <h1 class="copy-heading">We provide:</h1>
       <ul>
         <li>Service to Ventura County, Los Angeles County and Santa Barbara County for all events!</li>
         <li>A fun way to remember those special days &mdash; not just for you, but for your family & friends as well!</li>
@@ -55,7 +53,7 @@
     <!-- Package Info Section -->
     <b-row>
       <b-col offset-md="1" md="10">
-        <h1 class="title">ALL Photo Booth Packages Include:</h1>
+        <h1 class="copy-heading">ALL Photo Booth Packages Include:</h1>
       </b-col>
     </b-row>
     <b-row class="py-3">
@@ -120,6 +118,7 @@ export default {
 
 $break-small: 600px;
 $break-large: 1000px;
+$grey: #eee;
 
 .video-bg-height {
   height: calc(100vh - 140px);
@@ -176,7 +175,7 @@ $break-large: 1000px;
   top: initial;
   left: 50%;
   transform: none;
-  color: white;
+  color: #eee;
   text-align: center;
   /*background-color: #eee;*/
   opacity: 1;
@@ -186,28 +185,19 @@ $break-large: 1000px;
 }
 
 .gray-text{
-  color: #EEE;
-  font-size: 40px;
-  font-weight: 100;
-  @media screen and (max-width: $break-small) {
-    font-size: 12px;
-  }
+  color: $grey !important;
 }
 
-.bottom-gray-text{
+.pt-150 {
+  padding-top: 150px;
+}
 
-  color: #EEE;
-  padding-top: 100px;
+.caption-text{
 
-  @media screen and (max-width: $break-large) {
-    font-size: 20px;
-    @media screen and (min-width: $break-small) {
-      font-size: 36px;
-      padding-top: 50px;
-    }
-  }
-  @media screen and (min-width: $break-large) {
-    font-size: 36px;
+  font-size: 1rem;
+  font-weight: 100;
+  @media (max-width: $break-large) {
+    font-size: 0.5rem;
   }
 
 }

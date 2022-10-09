@@ -57,7 +57,7 @@ module.exports = {
     ['@nuxtjs/google-fonts', {
         families: {
           'Montserrat': {
-            wght: [100, 400],
+            wght: [100, 400, 700],
           },
           'Baskervville': {
             wght: [400],
