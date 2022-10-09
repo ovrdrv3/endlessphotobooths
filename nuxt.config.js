@@ -59,7 +59,7 @@ module.exports = {
           'Montserrat': {
             wght: [100, 400],
           },
-          'Amatic SC': {
+          'Baskervville': {
             wght: [400],
           }
         },

@@ -197,7 +197,7 @@ $break-large: 1000px;
 .bottom-gray-text{
 
   color: #EEE;
-  padding-top: 150px;
+  padding-top: 100px;
 
   @media screen and (max-width: $break-large) {
     font-size: 20px;
