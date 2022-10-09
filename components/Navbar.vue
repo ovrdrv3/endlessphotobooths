@@ -44,9 +44,6 @@ nav img{
   max-height: 92px;
   -webkit-transform: translateZ(0);
 }
-nav img.hover{
-  max-height: 50px;
-}
 
 .active{
   color: #317FBC !important;

@@ -53,15 +53,6 @@ export default {
 
 <style>
 
-.title {
-  letter-spacing: 4px;
-  display: block;
-  font-weight: 300;
-  /*color: white;*/
-  color: #317FBC;
-  text-align: center;
-}
-
 .subtitle {
   color: #317FBC;
   /*color: white;*/

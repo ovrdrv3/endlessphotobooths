@@ -1,3 +1,47 @@
-$font-family-sans-serif: 'Amatic SC', cursive;
+$font-family: 'Montserrat', sans-serif;
+
 
 $primary: #317FBC;
+
+$break-small: 600px;
+$break-large: 1000px;
+
+html {
+    font-size: 30px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .fancy-font{
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+  }
+
+  .title {
+    letter-spacing: 4px;
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    color: #317FBC;
+    display:inline;
+    text-align: center;
+  }
+
+    @media (max-width: $break-large) {
+        .title {
+        font-size: 2rem;
+        }
+    }

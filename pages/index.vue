@@ -1,24 +1,28 @@
 <template>
   <div>
-    <video-background
-    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-    style="height: 100vh"
-    >
-    <Navbar/>
-    <div class="middle-text">
-      <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS</h1>
-      <h5 class="subtitle pb-5">Ventura County Photo Booth Rentals</h5>
-      <h2 class="gray-text pb-5">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
-      <h2 class="gray-text pb-5">ONE SHOT AT A TIME</h2>
-      <h2 class="bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
-    </div>
-  </video-background>
-  <b-container fluid>
-    <b-row class="py-3">
-      <b-col>
+    <div class="video-bg-height">
+      <div class="video-bg">
+        <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <div class="overlay"></div>
 
-      </b-col>
-    </b-row>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+          <div class="d-flex h-100 text-center align-items-end">
+            <div class="middle-text">
+              <h1 class="title pb-4" v-if="$device.isMobile">ENDLESS PHOTO BOOTHS</h1>
+              <h1 class="title pb-4" v-else>ENDLESS PHOTOBOOTHS</h1>
+              <h5 class="fancy-font pb-4">Ventura County Photo Booth Rentals</h5>
+              <h2 class="gray-text pb-4">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
+              <h2 class="gray-text pb-4">ONE SHOT AT A TIME</h2>
+              <h2 class="fancy-font bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <b-container>
     <!-- Instagram and Yelp Logos -->
     <b-row class="py-0">
       <b-col md="10" offset-md="1">
@@ -108,35 +112,6 @@ export default {
   components: {
     PhotoBoothTypes,
     Navbar
-  },
-  computed: {
-    spaceForMobile: function () {
-      return this.isMobile ? ' ' : '';
-    },
-    isMobile: function () {
-      if (process.static) {
-        var mobileDeviceDetect = require('mobile-device-detect');
-        var smallScreen = false;
-        if (process.client){
-          if (window.innerWidth < 600) {
-            smallScreen = true;
-          }
-        }
-        return mobileDeviceDetect.isMobile || smallScreen;
-      }
-    },
-    isTablet: function () {
-      if (process.static) {
-        var mobileDeviceDetect = require('mobile-device-detect');
-        var mediumScreen = false;
-        if (process.client){
-          if (window.innerWidth < 1000 && window.innerWidth >= 600) {
-            mediumScreen = true;
-          }
-        }
-        return mobileDeviceDetect.isTablet || mediumScreen;
-      }
-    }
   }
 }
 </script>
@@ -146,43 +121,76 @@ export default {
 $break-small: 600px;
 $break-large: 1000px;
 
-.middle-text {
-  z-index: 2;
+.video-bg-height {
+  height: calc(100vh - 140px);
+  overflow-x: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+  top: 0px;
+  overflow-x: hidden;
+}
+
+.video-bg video {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 4px #000000;
-  /*background-color: #eee;*/
-  opacity: 0.85;
-  filter: alpha(opacity=85);
-  @media screen and (max-width: $break-large) {
-    top: initial;
-    left: 10px;
-    transform: none;
-    opacity: 1;
-    filter: alpha(opacity=100);
-    bottom: 0px;
-  }
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
-.title {
-  letter-spacing: 4px;
-  display: block;
-  /*color: white;*/
-  color: #317FBC;
+.video-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.video-bg .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+
+
+.middle-text {
+  z-index: 2;
+  position: absolute;
+  top: initial;
+  left: 50%;
+  transform: none;
+  color: white;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+  /*background-color: #eee;*/
+  opacity: 1;
+  filter: alpha(opacity=100);
+  bottom: 0px;
+  left: 10px;
 }
 
 .gray-text{
   color: #EEE;
   font-size: 40px;
+  font-weight: 100;
   @media screen and (max-width: $break-small) {
-    font-weight: 600;
     font-size: 12px;
   }
 }
@@ -191,27 +199,19 @@ $break-large: 1000px;
 
   color: #EEE;
   @media screen and (max-width: $break-large) {
-    font-weight: 600;
-    font-size: 12px;
+    font-size: 20px;
     @media screen and (min-width: $break-small) {
-      font-size: 20px;
+      font-size: 36px;
       padding-top: 50px;
     }
   }
   @media screen and (min-width: $break-large) {
-    font-size: 20px;
+    font-size: 36px;
     padding-top: 150px;
   }
 
 }
 
-.parallax-image{
-  height: 100%;
-  @media screen and (min-width: $break-large) {
-    // height: 600px;
-    // overflow: hidden;
-  }
-}
 .logo{
     width: 60px;
     height: 60px;
@@ -229,19 +229,9 @@ $break-large: 1000px;
   filter: brightness(50%);
 }
 
-.blue-text{
-  /*color: #317FBC;*/
-  color: #EEE;
-  background: #317FBC;
-  display:inline;
-  font-weight: 300;
-  text-align: center;
-}
-
 .subtitle {
   color: #317FBC;
   /*color: white;*/
-  font-weight: 300;
   word-spacing: 5px;
   text-align: center;
 }

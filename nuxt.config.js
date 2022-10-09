@@ -17,7 +17,6 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png'},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Amatic+SC' },
       { rel: 'apple-touch-icon', sizes: '57x57', href: '/apple-icon-57x57.png'},
       { rel: 'apple-touch-icon', sizes: '60x60', href: '/apple-icon-60x60.png'},
       { rel: 'apple-touch-icon', sizes: '72x72', href: '/apple-icon-72x72.png'},
@@ -61,9 +60,27 @@ module.exports = {
   modules: [,
     // Doc: https://bootstrap-vue.js.org/docs/
     ['bootstrap-vue/nuxt', { css: false }],
+    ['@nuxtjs/google-fonts', {
+        families: {
+          'Montserrat': {
+            wght: [100, 400],
+          },
+          'Amatic SC': {
+            wght: [400],
+          }
+        },
+        display: 'swap',
+        prefetch: false,
+        preconnect: false,
+        preload: false,
+        download: true,
+        base64: false
+      },
+    ],
     ['@nuxtjs/google-analytics', {
         id: 'UA-141746585-1'
-      }]
+      }],
+    ['@nuxtjs/device']
   ],
 
   /*
