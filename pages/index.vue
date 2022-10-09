@@ -21,6 +21,43 @@
       </div>
     </div>
   <b-container class="copy">
+    <h1 class="copy-heading pt-3">Check out some recent events:</h1>
+    <insta-feed
+    token="IGQVJYVkpSNHl2T21jWl9wMzFmWGpPYnhpcGo2LVNYTEpZAREdEbFNSUVpzRnozakd0VkRYRGR1Q3BFdWQwNGRUM2F5dnhfc2pkX3FFU2NGQk56eTlGWTlmVnVRWjJESXEtRXJSUVU0RU1aRlQxTk9odgZDZD"
+    fields="media_url,media_type,caption,permalink"
+    container-class="image-container"
+    :mediatypes="['IMAGE']"
+    class="py-3"
+    >
+      <template v-slot:loading="props">
+        <h1 v-if="props.loading" class="fancy-loading">
+          Loading, please wait...
+        </h1>
+      </template>
+      <template v-slot:feeds="props">
+        <a :href="props.feed.permalink" rel="noopener" target="_blank" style="all: unset;">
+          <b-card
+            :img-src="props.feed.media_url"
+            img-alt="Instagram post"
+            img-top
+            tag="article"
+            style="max-width: 20rem;"
+            class="mb-2"
+          >
+            <b-card-text>
+              {{props.feed.caption}}
+            </b-card-text>
+        </b-card>
+        </a>
+      </template>
+
+
+      <template v-slot:error="props">
+        <div class="fancy-alert">
+          {{ props.error }}
+        </div>
+      </template>
+    </insta-feed>
     <!-- Instagram and Yelp Logos -->
     <b-row class="py-0">
       <b-col md="10" offset-md="1">
@@ -90,13 +127,14 @@
         <nuxt-link class="contact-us-link" to="/contact-us">Book your photo booth today!</nuxt-link></div>
       </b-col>
     </b-row>
-  </b-container>
-</div>
-</template>
+      </b-container>
+    </div>
+    </template>
 
 <script>
 import Navbar from '~/components/Navbar.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
+import InstaFeed from '~/components/InstaFeed.vue';
 
 export default {
   head () {
@@ -109,7 +147,8 @@ export default {
   },
   components: {
     PhotoBoothTypes,
-    Navbar
+    Navbar,
+    InstaFeed
   }
 }
 </script>

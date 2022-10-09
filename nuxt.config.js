@@ -74,8 +74,13 @@ module.exports = {
     ['@nuxtjs/google-analytics', {
         id: 'UA-141746585-1'
       }],
-    ['@nuxtjs/device']
+    ['@nuxtjs/device'],
+    ['@nuxtjs/axios']
+
   ],
+  axios: {
+    // proxy: true
+  },
 
   /*
   ** Build configuration

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-info">
     <Navbar/>
     <nuxt/>
     <Bottombar/>
