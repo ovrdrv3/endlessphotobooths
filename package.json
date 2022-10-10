@@ -5,7 +5,7 @@
   "author": "Donaven Snowden",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "concurrently --kill-others \"nuxt\" \"netlify functions:serve\"",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -16,6 +16,7 @@
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.22.0",
+    "concurrently": "^7.4.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
