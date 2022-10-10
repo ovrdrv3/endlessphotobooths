@@ -59,27 +59,29 @@
     },
     methods: {
       getUserFeed () {
+        const url = process.env.NODE_ENV === 'development' ? 'http://localhost:9999/.netlify/functions/photos' : '/.netlify/functions/photos'
         this.loading = true
         axios
-          .get('https://graph.instagram.com/me/media', {
-            params: { access_token: this.token, fields: this.fields }
-          })
+          .get(url)
           .then((response) => {
             this.loading = false
-            if (response.status === 400) {
-              this.error = response.error.message
-            }
-            if (response.status === 200) {
-              for (const n in response.data.data) {
-                if (this.mediatypes.includes(response.data.data[n].media_type)) {
-                  this.feeds.push(response.data.data[n])
-                  if (this.feeds.length >= this.count) {
-                    return
-                  }
-                }
-              }
-            }
-          })
+        //     if (response.status === 400) {
+        //       this.error = response.error.message
+        //     }
+        //     if (response.status === 200) {
+        //       for (const n in response.data.data) {
+        //         if (this.mediatypes.includes(response.data.data[n].media_type)) {
+        //           this.feeds.push(response.data.data[n])
+        //           if (this.feeds.length >= this.count) {
+        //             return
+        //           }
+        //         }
+        //       }
+        //     }
+        console.log('made it this far')
+        console.log(response)
+          }
+          )
           .catch((error) => {
             throw error
           })
