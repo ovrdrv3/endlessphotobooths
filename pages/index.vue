@@ -21,7 +21,6 @@
       </div>
     </div>
   <b-container class="copy">
-    <h1 class="copy-heading pt-3">Check out some recent events:</h1>
     <insta-feed
     token=""
     fields="media_url,media_type,caption,permalink"
@@ -30,9 +29,7 @@
     class="py-3"
     >
       <template v-slot:loading="props">
-        <h1 v-if="props.loading" class="fancy-font caption-text">
-          Loading, please wait...
-        </h1>
+        <h1 v-if="props.loading" class="copy-heading pt-3">Loading recent instagram events...</h1>
       </template>
       <template v-slot:feeds="props">
         <a :href="props.feed.permalink" rel="noopener" target="_blank" style="all: unset;">
@@ -222,6 +219,10 @@ $grey: #eee;
 
 .gray-text{
   color: $grey !important;
+}
+
+.dark-gray {
+  background-color: #6F7378;
 }
 
 .pt-150 {
