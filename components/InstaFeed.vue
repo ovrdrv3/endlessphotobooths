@@ -65,23 +65,13 @@
           .get(url)
           .then((response) => {
             this.loading = false
-        //     if (response.status === 400) {
-        //       this.error = response.error.message
-        //     }
-        //     if (response.status === 200) {
-        //       for (const n in response.data.data) {
-        //         if (this.mediatypes.includes(response.data.data[n].media_type)) {
-        //           this.feeds.push(response.data.data[n])
-        //           if (this.feeds.length >= this.count) {
-        //             return
-        //           }
-        //         }
-        //       }
-        //     }
-        console.log('made it this far')
-        console.log(response)
-          }
-          )
+            if (response.status === 400) {
+              this.error = response.error.message
+            }
+            if (response.status === 200) {
+                this.feeds.push(...response.data)
+            }
+          })
           .catch((error) => {
             throw error
           })
