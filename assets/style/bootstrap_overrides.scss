@@ -29,6 +29,10 @@ html {
     font-family: 'Baskervville', serif;
   }
 
+  .primary-color {
+    color: $primary;
+  }
+
   .title {
     letter-spacing: 4px;
     display: block;
@@ -52,9 +56,14 @@ html {
 
   .copy-heading {
     font-size: 1.25rem;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 1.25;
     text-align: center;
     text-align: center;
     color: $primary;
+  }
+
+  .card-text {
+    font-weight: 100;
+    line-height: 1.25;
   }

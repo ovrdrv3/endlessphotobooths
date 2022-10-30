@@ -27,13 +27,15 @@ exports.handler = function instagram(event, context, callback) {
         statusCode: 200,
         headers,
         body: JSON.stringify(
-          posts.map(i => ({
+          posts.map((i) => ({
             id: i.id,
             media_url: i.media_url,
             caption: i.caption,
-          })),
+            timestamp: i.timestamp,
+            permalink: i.permalink,
+          }))
         ),
-      })
+      });
     })
     .catch((e) => {
       callback(e)

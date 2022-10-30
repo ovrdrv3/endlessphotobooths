@@ -22,8 +22,6 @@
     </div>
   <b-container class="copy">
     <insta-feed
-    token=""
-    fields="media_url,media_type,caption,permalink"
     container-class="image-container"
     :mediatypes="['IMAGE']"
     class="py-3"
@@ -32,20 +30,19 @@
         <h1 v-if="props.loading" class="copy-heading pt-3">Loading recent instagram events...</h1>
       </template>
       <template v-slot:feeds="props">
-        <a :href="props.feed.permalink" rel="noopener" target="_blank" style="all: unset;">
           <b-card
             :img-src="props.feed.media_url"
             img-alt="Instagram post"
             img-top
             tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
+            class="mb-2 border-rounded"
           >
             <b-card-text>
               {{props.feed.caption}}
             </b-card-text>
+            <a :href="props.feed.permalink" rel="noopener" target="_blank" class="stretched-link"></a>
         </b-card>
-        </a>
+
       </template>
 
 
@@ -55,6 +52,35 @@
         </div>
       </template>
     </insta-feed>
+
+    <google-reviews>
+      <template v-slot:loading="props">
+        <h1 v-if="props.loading" class="copy-heading pt-3">Loading recent Google reviews...</h1>
+      </template>
+      <template v-slot:reviews="props">
+        <b-card
+          class="m-1 rounded shadow"
+          v-if="props.index < 3"
+          >
+          <b-card-text>
+            <span v-for="n in 5" :key="n">
+              <span v-if="n <= props.review.rating" class="primary-color">★</span>
+            </span>
+          </b-card-text>
+          <b-card-text>
+            {{ props.review.text }}
+          </b-card-text>
+          <b-card-text class="small text-muted font-italic">
+            &mdash;
+            {{props.review.author_name.split(' ')[0][0]}}. {{props.review.author_name.split(' ')[1]}}, {{ props.review.relative_time_description }}</b-card-text>
+        </b-card>
+      </template>
+      <template v-slot:error="props">
+        <div class="fancy-alert">
+          {{ props.error }}
+        </div>
+      </template>
+    </google-reviews>
     <!-- Instagram and Yelp Logos -->
     <b-row class="py-0">
       <b-col md="10" offset-md="1">
@@ -132,6 +158,7 @@
 import Navbar from '~/components/Navbar.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import InstaFeed from '~/components/InstaFeed.vue';
+import GoogleReviews from '~/components/GoogleReviews.vue';
 
 export default {
   head () {
@@ -145,7 +172,8 @@ export default {
   components: {
     PhotoBoothTypes,
     Navbar,
-    InstaFeed
+    InstaFeed,
+    GoogleReviews
   }
 }
 </script>
