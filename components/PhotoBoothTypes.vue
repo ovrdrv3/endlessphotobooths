@@ -1,5 +1,6 @@
 <template>
 <div>
+  <b-container class="copy">
     <b-row class="py-3">
       <b-col>
         <h1 class="copy-heading">Our Photo Booth Styles:</h1>
@@ -62,5 +63,6 @@
           <p class="card-text">This Open Air booth is great for house parties or smaller venues and space limitations. Your guest are able to see and even jump in to the shot for a Photo Bomb. Able to fit up to 10 people in a shot. Black, Backdrop Curtain and Curtain Stand. Photo Booth can fit in spaces from 5ft to 8ft and must be at least 6.5ft back from the curtain.</p>
       </b-col>
     </b-row>
+  </b-container>
 </div>
 </template>
