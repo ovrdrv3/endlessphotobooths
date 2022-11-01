@@ -82,8 +82,8 @@
       </template>
     </google-reviews>
     <!-- Instagram and Yelp Logos -->
-    <b-row class="py-0">
-      <b-col md="10" offset-md="1">
+    <b-row class="py-3">
+      <b-col md="12">
         <div class="d-flex justify-content-center">
           <a href="https://www.instagram.com/endlessphotobooths">
             <img src="~assets/images/home/instagram.png" alt="Instagram Link" style="width: 45px; height: 45px; top: 8px; position: relative;"/>
@@ -99,8 +99,8 @@
     </b-row>
     <!-- Make a non fluid container for the rest of the content -->
     <!-- Home info section -->
-    <b-row class="py-3">
-      <b-col md="10" offset-md="1">
+    <b-row class="pb-3">
+      <b-col md="12">
       <h1 class="copy-heading">We provide:</h1>
       <ul>
         <li>Service to Ventura County, Los Angeles County and Santa Barbara County for all events!</li>
@@ -112,22 +112,20 @@
     </b-row>
     <!-- Package Info Section -->
     <b-row>
-      <b-col offset-md="1" md="10">
+      <b-col md="12">
         <h1 class="copy-heading">ALL Photo Booth Packages Include:</h1>
       </b-col>
     </b-row>
     <b-row class="py-3">
-      <b-col order-md="2" md="6">
-
+      <b-col order-md="2" md="7">
         <picture>
-         <source class="img-fluid" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
-         <img class="img-fluid"
-               src="~assets/images/home/all_include-min.jpg"
-               alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
+          <source class="img-fluid" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
+          <img class="img-fluid"
+                src="~assets/images/home/all_include-min.jpg"
+                alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
         </picture>
-
       </b-col>
-      <b-col offset-md="1" order-md="1" md="4">
+      <b-col order-md="1" md="5">
         <ul>
           <li>Props</li>
           <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
