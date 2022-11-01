@@ -30,19 +30,39 @@
         <h1 v-if="props.loading" class="copy-heading pt-3">Loading recent instagram events...</h1>
       </template>
       <template v-slot:feeds="props">
-          <b-card
-            :img-src="props.feed.media_url"
-            img-alt="Instagram post"
-            img-top
-            tag="article"
-            class="mb-2 border-rounded"
-          >
-            <b-card-text>
-              {{props.feed.caption}}
+        <b-card
+          no-body
+          v-if="props.feed.media_url.includes('.mp4')"
+          class="p-0 mb-2 border-rounded"
+        >
+        <!-- embedded video -->
+
+          <video
+            :src="props.feed.media_url"
+            autoplay
+            loop
+            muted
+            class="w-100"
+            >
+          </video>
+          <b-card-text class="p-3">
+              {{props.feed.caption.replace(/#[a-zA-Z0-9]+/g, '')}}
             </b-card-text>
             <a :href="props.feed.permalink" rel="noopener" target="_blank" class="stretched-link"></a>
         </b-card>
-
+        <b-card
+          v-if="!props.feed.media_url.includes('.mp4')"
+          :img-src="props.feed.media_url"
+          img-alt="Instagram post"
+          img-top
+          class="mb-2 border-rounded"
+        >
+          <b-card-text>
+            <!-- caption, but regex hashtags out -->
+            {{props.feed.caption.replace(/#[a-zA-Z0-9]+/g, '')}}
+            </b-card-text>
+            <a :href="props.feed.permalink" rel="noopener" target="_blank" class="stretched-link"></a>
+        </b-card>
       </template>
 
 
