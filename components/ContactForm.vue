@@ -88,40 +88,46 @@
                        v-model="form.package">
         </b-form-select>
       </b-form-group>
-      <b-form-group label="How did you hear about us?"
-                    label-for="referral"
-                    :invalid-feedback="errors.referral">
-        <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select a referral</b-form-invalid-feedback>
-        <b-form-radio-group id="referral"
-                            name="referral"
-                            v-model="form.referral"
-                            :options="referralOptions"
-                            stacked>
-        </b-form-radio-group>
-        <b-form-input v-show="form.referral == 'Other'"
-                      id="otherReferral"
-                      name="otherReferral"
-                      type="text"
-                      v-model="form.otherReferral"
-                      placeholder="(How did you hear about us?)"
-                      :state="stateOfElement('otherReferral')">
-        </b-form-input>
-        </b-form-group>
-        <b-form-group label="What's your budget?"
-                      label-for="budget"
-                      :invalid-feedback="errors.budget">
-          <b-form-invalid-feedback :state="stateOfElement('budget')" v-show="stateOfElement('budget')" >Please select a budget</b-form-invalid-feedback>
-          <b-form-radio-group id="budget"
-                              name="budget"
-                              v-model="form.budget"
-                              :options="budgetOptions"
-                              stacked>
-          </b-form-radio-group>
-        </b-form-group>
-      <br>
-      <b-button type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
+      <!-- how did you hear about us and the bugget on the same row -->
+      <b-row>
+        <b-col cols="12" md="6">
+          <b-form-group label="How did you hear about us?"
+                        label-for="referral"
+                        :invalid-feedback="errors.referral">
+            <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select a referral</b-form-invalid-feedback>
+            <b-form-radio-group id="referral"
+                                name="referral"
+                                v-model="form.referral"
+                                :options="referralOptions"
+                                stacked>
+            </b-form-radio-group>
+            <b-form-input v-show="form.referral == 'Other'"
+                          id="otherReferral"
+                          name="otherReferral"
+                          type="text"
+                          v-model="form.otherReferral"
+                          placeholder="(How did you hear about us?)"
+                          :state="stateOfElement('otherReferral')">
+            </b-form-input>
+            </b-form-group>
+          </b-col>
+        <b-col cols="12" md="6">
+          <b-form-group label="What's your budget?"
+                        label-for="budget"
+                        :invalid-feedback="errors.budget">
+            <b-form-invalid-feedback :state="stateOfElement('budget')" v-show="stateOfElement('budget')" >Please select a budget</b-form-invalid-feedback>
+            <b-form-radio-group id="budget"
+                                name="budget"
+                                v-model="form.budget"
+                                :options="budgetOptions"
+                                stacked>
+            </b-form-radio-group>
+          </b-form-group>
+        </b-col>
+      </b-row>
+      <b-button block size="lg" type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
       :variant="submitButtonVariant">{{form.submitText}}</b-button>
-      <b-button type="reset" variant="outline-danger">Reset</b-button>
+      <b-button block size="sm" type="reset" variant="outline-danger">Reset</b-button>
     </b-form>
   </div>
 </template>
