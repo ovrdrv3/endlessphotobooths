@@ -7,7 +7,7 @@ exports.handler = function instagram(event, context, callback) {
   const fields = 'id,caption,media_url,permalink,timestamp';
 
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-  const limit = 6;
+  const limit = 3;
   const url = `${endpoint}/me/media/?fields=${fields}&access_token=${token}&limit=${limit}`;
 
   // if dev environment then enable cors, otherwise do not add these to headers

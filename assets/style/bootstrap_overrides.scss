@@ -15,54 +15,56 @@ html {
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     // nice darker background color
-
+    font-weight: 400;
   }
 
-  *,
-  *:before,
-  *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
     margin: 0;
-  }
+}
 
-  .fancy-font{
-    font-family: 'Baskervville', serif;
-  }
+.fancy-font{
+  font-family: 'Baskervville', serif;
+}
 
-  .primary-color {
-    color: $primary;
-  }
+.primary-color {
+  color: $primary;
+}
 
-  .title {
-    letter-spacing: 4px;
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    color: $primary;
-    text-align: center;
-  }
+.title {
+  letter-spacing: 4px;
+  display: block;
+  font-size: 2rem;
+  color: $primary;
+  text-align: center;
+}
 
-    @media (max-width: $break-large) {
-        .title {
-        font-size: 1.25rem;
-        }
+@media (max-width: $break-large) {
+    .title {
+    font-size: 1.25rem;
     }
+}
 
-  .copy {
-    font-size: 1rem;
-    font-weight: 100;
-    line-height: 1.25;
+.copy {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.copy-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: $primary;
+}
+
+.caption-text{
+
+  font-size: 0.75rem;
+  font-weight: 100;
+  @media (max-width: $break-large) {
+    font-size: 0.5rem;
   }
 
-  .copy-heading {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.25;
-    color: $primary;
-    font-family: 'Baskervville', serif;
-  }
-
-  .card-text {
-    font-weight: 100;
-    line-height: 1.25;
-  }
+}

@@ -20,48 +20,46 @@
         </div>
       </div>
     </div>
-  <b-container class="copy">
-    <insta-feed
-    container-class="image-container"
-    :mediatypes="['IMAGE']"
-    class="py-3"
-    >
-      <template v-slot:loading="props">
-        <h1 v-if="props.loading" class="copy-heading pt-3">Loading recent instagram events...</h1>
-      </template>
-      <template v-slot:feeds="props">
-        <b-card
-          no-body
-          v-if="props.feed.media_url.includes('.mp4')"
-          class="p-0 mb-2 border-rounded"
-        >
-        <!-- embedded video -->
-
-          <video
-            :src="props.feed.media_url"
-            autoplay
-            loop
-            muted
-            class="w-100"
-            >
-          </video>
-          <b-card-text class="p-3">
-              {{props.feed.caption.replace(/#[a-zA-Z0-9]+/g, '')}}
+    <b-container class="copy">
+      <insta-feed
+      container-class="image-container"
+      :mediatypes="['IMAGE']"
+      class="py-3"
+      >
+        <template v-slot:loading="props">
+          <h1 v-if="props.loading" class="copy-heading pt-3">Loading recent instagram events...</h1>
+        </template>
+        <template v-slot:feeds="props">
+          <b-card
+            no-body
+            v-if="props.feed.media_url.includes('.mp4')"
+            class="p-0 mb-2 border-rounded"
+          >
+            <video
+              :src="props.feed.media_url"
+              autoplay
+              loop
+              muted
+              class="w-100"
+              >
+            </video>
+            <b-card-text class="p-2 caption-text">
+              {{props.feed.caption.replace(/•/g, '').replace(/#[a-zA-Z0-9]+/g, '')}}
+              <a :href="props.feed.permalink" rel="noopener" target="_blank" class="stretched-link"></a>
             </b-card-text>
+          </b-card>
+          <b-card
+            v-else
+            :img-src="props.feed.media_url"
+            img-alt="Instagram post"
+            img-top
+            no-body
+            class="mb-2 border-rounded"
+          >
+          <b-card-text class="p-2 caption-text">
+            {{props.feed.caption.replace(/•/g, '').replace(/#[a-zA-Z0-9]+/g, '')}}
             <a :href="props.feed.permalink" rel="noopener" target="_blank" class="stretched-link"></a>
-        </b-card>
-        <b-card
-          v-if="!props.feed.media_url.includes('.mp4')"
-          :img-src="props.feed.media_url"
-          img-alt="Instagram post"
-          img-top
-          class="mb-2 border-rounded"
-        >
-          <b-card-text>
-            <!-- caption, but regex hashtags out -->
-            {{props.feed.caption.replace(/#[a-zA-Z0-9]+/g, '')}}
-            </b-card-text>
-            <a :href="props.feed.permalink" rel="noopener" target="_blank" class="stretched-link"></a>
+          </b-card-text>
         </b-card>
       </template>
 
@@ -131,12 +129,8 @@
       </b-col>
     </b-row>
     <!-- Package Info Section -->
-    <b-row>
-      <b-col md="12">
-        <h1 class="copy-heading">ALL Photo Booth Packages Include:</h1>
-      </b-col>
-    </b-row>
     <b-row class="py-3">
+      <h1 class="copy-heading">ALL Photo Booth Packages Include:</h1>
       <b-col order-md="2" md="7">
         <picture>
           <source class="img-fluid" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
@@ -147,12 +141,12 @@
       </b-col>
       <b-col order-md="1" md="5">
         <ul>
-          <li>Props</li>
+          <li class="mt-0">Props</li>
           <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
           <li>2 Strips with 3 Photos Taken</li>
           <li>Copies for Everyone in Photo</li>
           <li>Unlimited Use of Booth</li>
-          <li>Open air Photo Booth</li>
+          <li>Open Air Photo Booth</li>
           <li>Custom Text For Bottom Of Picture</li>
           <li>Person to Run Photo Booth</li>
           <li>Drop off and Pickup Included</li>
@@ -168,9 +162,9 @@
         <nuxt-link class="contact-us-link" to="/contact-us">Book your photo booth today!</nuxt-link></div>
       </b-col>
     </b-row>
-      </b-container>
-    </div>
-    </template>
+    </b-container>
+  </div>
+</template>
 
 <script>
 import Navbar from '~/components/Navbar.vue';
@@ -273,16 +267,6 @@ $grey: #eee;
 
 .pt-150 {
   padding-top: 150px;
-}
-
-.caption-text{
-
-  font-size: 0.75rem;
-  font-weight: 100;
-  @media (max-width: $break-large) {
-    font-size: 0.5rem;
-  }
-
 }
 
 .logo{

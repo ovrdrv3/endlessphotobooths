@@ -1,13 +1,9 @@
 <template>
 <div>
   <b-container class="copy">
-    <b-row class="py-3">
-      <b-col>
-        <h1 class="copy-heading">Our Photo Booth Styles:</h1>
-      </b-col>
-    </b-row>
-    <b-row class="py-3">
-      <b-col order-md="1" md="6">
+    <h1 class="copy-heading">Our Photo Booth Styles:</h1>
+    <b-row class="pb-4">
+      <b-col md="6">
         <picture>
           <source srcset="~assets/images/home/360_booth.webp" type="image/webp"  class="img-fluid">
           <img src="~assets/images/home/360_booth.jpg" alt="360 Booth" class="img-fluid">
@@ -20,12 +16,12 @@
                   Book a 360 Booth!
         </b-button>
       </b-col>
-      <b-col order-md="2" md="6">
+      <b-col md="6">
         <h5 class="copy-heading fancy-font">360 Booths</h5>
-        <p class="copy-text">Our 360 Booths are the latest and greatest booth around! The 360 Booths take a video of you at every angle, and breaks it down into slow motion! You can add a custom overlay to the video, and it is a great way to show off your dance moves or just have a little fun.</p>
+        <p class="copy-text lh-base">Our 360 Booths are the latest and greatest booth around! The 360 Booths take a video of you at every angle, and breaks it down into slow motion! You can add a custom overlay to the video, and it is a great way to show off your dance moves or just have a little fun.</p>
       </b-col>
     </b-row>
-    <b-row class="py-3">
+    <b-row class="pb-4">
       <b-col order-md="2" md="6">
         <picture>
           <source srcset="~assets/images/home/LED-Enclosed.webp" type="image/webp" class="img-fluid">
@@ -41,11 +37,11 @@
       </b-col>
       <b-col order-md="1" md="6">
         <h5 class="copy-heading fancy-font">Enclosed Photo Booths</h5>
-        <p class="card-text">The LED Photo Booth Enclosure is great fun for all events and will give your party an amazing look and feel. This gives a more private session for your guest and adds a cool, color changing background texture to brighten up every print. The enclosure is able to fit up to 10 or more people in a shot. So if you want that different look to your party and pictures, the LED enclosure is what you want!</p>
+        <p class="copy-text">The LED Photo Booth Enclosure is great fun for all events and will give your party an amazing look and feel. This gives a more private session for your guest and adds a cool, color changing background texture to brighten up every print. The enclosure is able to fit up to 10 or more people in a shot. So if you want that different look to your party and pictures, the LED enclosure is what you want!</p>
       </b-col>
     </b-row>
-    <b-row class="py-3">
-      <b-col order-md="1" md="6">
+    <b-row class="pb-4">
+      <b-col md="6">
         <picture>
           <source srcset="~assets/images/home/Open-Air.webp" type="image/webp"  class="img-fluid">
           <img src="~assets/images/home/Open-Air-min.jpeg" alt="Open Photo Booth" class="img-fluid">
@@ -58,9 +54,9 @@
                   Book an Open Air Booth!
         </b-button>
       </b-col>
-      <b-col order-md="2" md="6">
+      <b-col md="6">
           <h5 class="copy-heading fancy-font">Open Air Photo Booths</h5>
-          <p class="card-text">This Open Air booth is great for house parties or smaller venues and space limitations. Your guest are able to see and even jump in to the shot for a Photo Bomb. Able to fit up to 10 people in a shot. Black, Backdrop Curtain and Curtain Stand. Photo Booth can fit in spaces from 5ft to 8ft and must be at least 6.5ft back from the curtain.</p>
+          <p class="copy-text">This Open Air booth is great for house parties or smaller venues and space limitations. Your guest are able to see and even jump in to the shot for a Photo Bomb. Able to fit up to 10 people in a shot. Black, Backdrop Curtain and Curtain Stand. Photo Booth can fit in spaces from 5ft to 8ft and must be at least 6.5ft back from the curtain.</p>
       </b-col>
     </b-row>
   </b-container>
