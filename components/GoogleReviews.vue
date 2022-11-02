@@ -1,7 +1,7 @@
 <template>
     <div>
       <slot name="loading" :loading="loading" />
-      <h1 v-show='!loading' class="copy-heading pt-3">Recent Google reviews:</h1>
+      <h1 v-show='!loading' class="copy-heading pt-3">Recent Reviews</h1>
       <b-row>
         <b-col v-for="(review, index) in reviews" :key="review.id" cols="12" md="12" lg="4">
           <slot name="reviews" :review="review" :index="index"/>

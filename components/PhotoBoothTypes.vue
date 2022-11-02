@@ -9,8 +9,8 @@
     <b-row class="py-3">
       <b-col order-md="1" md="6">
         <picture>
-          <source srcset="~assets/images/home/Open-Air.webp" type="image/webp"  class="img-fluid">
-          <img src="~assets/images/home/Open-Air-min.jpeg" alt="Open Photo Booth" class="img-fluid">
+          <source srcset="~assets/images/home/360_booth.webp" type="image/webp"  class="img-fluid">
+          <img src="~assets/images/home/360_booth.jpg" alt="360 Booth" class="img-fluid">
         </picture>
         <b-button slot="footer"
                   to="/contact-us?package=360"

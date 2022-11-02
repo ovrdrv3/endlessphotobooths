@@ -105,7 +105,7 @@
     <b-row class="py-3">
       <b-col md="12">
         <div class="d-flex justify-content-center">
-          <a href="https://www.instagram.com/endlessphotobooths">
+          <a href="https://www.instagram.com/endlessphotobooth">
             <img src="~assets/images/home/instagram.png" alt="Instagram Link" style="width: 45px; height: 45px; top: 8px; position: relative;"/>
           </a>
           <a href="https://www.yelp.com/biz/endless-photobooth-oxnard">

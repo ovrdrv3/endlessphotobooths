@@ -1,7 +1,7 @@
 <template>
     <div>
       <slot name="loading" :loading="loading" />
-      <h1 v-show='!loading' class="copy-heading pt-3">Recent events:</h1>
+      <h1 v-show='!loading' class="copy-heading pt-3">Recent Events</h1>
       <b-row>
         <b-col v-for="(feed, index) in feeds" :key="feed.id" cols="12" md="6" lg="4">
           <slot name="feeds" :feed="feed" :index="index"/>

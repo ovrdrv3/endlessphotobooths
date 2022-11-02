@@ -36,6 +36,10 @@ allFiles.forEach(item => {
           var mobileResizedFile = item.slice(0,-5) + '-mob.webp';
           var itemIsPicture = true;
         }
+        if (item.slice(-4) == "jpeg") {
+          var mobileResizedFile = item.slice(0, -5) + "-mob.webp";
+          var itemIsPicture = true;
+        }
         if(item.slice(-3) == "jpg"){
           var mobileResizedFile = item.slice(0,-4) + '-mob.jpg';
           var itemIsPicture = true;
