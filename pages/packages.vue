@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-    <h1 class="title fancy-font">ENDLESS PHOTOBOOTHS PACKAGES</h1>
+    <h1 class="title fancy-font">ENDLESS PHOTOBOOTH PACKAGES</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
     <Packages/>
     <PhotoBoothTypes/>
@@ -17,7 +17,7 @@ export default {
     return {
       title: 'Packages',
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Packages Page' }
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Packages Page' }
       ]
     }
   },

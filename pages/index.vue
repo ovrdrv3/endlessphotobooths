@@ -11,7 +11,7 @@
         <div class="container h-100">
           <div class="d-flex h-100 text-center">
             <div class="middle-text">
-              <h1 class="title fancy-font gray-text pt-150">ENDLESS PHOTOBOOTHS</h1>
+              <h1 class="title fancy-font gray-text pt-150">ENDLESS PHOTOBOOTH</h1>
               <h2 class="caption-text pt-150">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
               <h2 class="caption-text">ONE SHOT AT A TIME</h2>
               <h2 class="fancy-font caption-text pt-150">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
@@ -177,7 +177,7 @@ export default {
     return {
       title: 'ENDLESS Ventura Photo Booth Rentals',
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Home Page' }
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Home Page' }
       ]
     }
   },

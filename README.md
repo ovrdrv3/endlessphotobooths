@@ -1,6 +1,6 @@
 # endlessphotobooths
 
-> Endless Photo Booths Site
+> Endless Photo Booth Site
 
 ## Build Setup
 

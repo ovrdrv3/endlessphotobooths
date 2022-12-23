@@ -1,7 +1,7 @@
 <template>
   <b-container>
 
-    <h1 class="title">ENDLESS PHOTOBOOTHS</h1>
+    <h1 class="title">ENDLESS PHOTOBOOTH</h1>
     <div id="paddee-container" data-key="f89Okf2_1101" data-tags="landscape3l,landscape3p,landscape1l,portrait1p,strip3l" data-categories="">
     </div>
 
@@ -15,7 +15,7 @@ export default {
     return {
       title: 'Choose a Template',
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals Choose a Template Page' }
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Choose a Template Page' }
       ],
       script: [
         { src: 'https://paddee.herokuapp.com/widget_v1.js' }

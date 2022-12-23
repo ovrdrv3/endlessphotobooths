@@ -1,7 +1,7 @@
 <template>
   <b-container>
 
-    <h1 class="title fancy-font">ABOUT ENDLESS PHOTOBOOTHS</h1>
+    <h1 class="title fancy-font">ABOUT ENDLESS PHOTOBOOTH</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
 
     <b-row >
@@ -62,7 +62,7 @@ export default {
     return {
       title: 'About Us',
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTHS, Ventura Photo Booth Rentals About Us Page' }
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals About Us Page' }
       ]
     }
   }
