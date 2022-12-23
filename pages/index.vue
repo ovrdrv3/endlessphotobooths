@@ -6,7 +6,7 @@
         <div class="overlay"></div>
 
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+          <source src="~assets/video/epb360video.mp4" type="video/mp4">
         </video>
         <div class="container h-100">
           <div class="d-flex h-100 text-center">
