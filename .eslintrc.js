@@ -19,5 +19,8 @@ module.exports = {
   ],
   rules: {
     semi: 'off',
+    'vue/multi-word-component-names': 'off',
+    // for lintimport/no-unresolved
+    'import/no-unresolved': 'off',
   },
 };

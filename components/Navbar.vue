@@ -1,6 +1,5 @@
 <template>
-  <b-navbar id="navBar" :class="{ shrink: hasScrolled}" sticky toggleable="md">
-
+  <b-navbar id="navBar" :class="{ 'bg-dark': !hasScrolled, 'shrink': hasScrolled }" sticky dark toggleable="md">
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-navbar-brand to="/" @click.native="navItemsVisible = false">
       <img  id="brandLogo"
@@ -56,31 +55,31 @@ color: #317FBC !important;
 import debounce from 'lodash/debounce';
 
 export default {
-data () {
-  return {
-    hasScrolled: false,
-    navItemsVisible: false
-  }
-},
-methods: {
-  handleScroll(event) {
-    this.hasScrolled = (window.scrollY > 0);
-  },
-  handleNavBarVisibility: function (){
-    // If the navbar items are not visible we do not want to allow this to show the items, only collapse them.
-    if (this.navItemsVisible) {
-      this.navItemsVisible = false;
+  data() {
+    return {
+      hasScrolled: false,
+      navItemsVisible: false
     }
-  }
-},
-mounted() {
-  this.handleDebouncedScroll = debounce(this.handleScroll, 50);
-  window.addEventListener('scroll', this.handleDebouncedScroll);
-},
+  },
+  methods: {
+    handleScroll(event) {
+      this.hasScrolled = (window.scrollY > 0);
+    },
+    handleNavBarVisibility: function () {
+      // If the navbar items are not visible we do not want to allow this to show the items, only collapse them.
+      if (this.navItemsVisible) {
+        this.navItemsVisible = false;
+      }
+    }
+  },
+  mounted() {
+    this.handleDebouncedScroll = debounce(this.handleScroll, 50);
+    window.addEventListener('scroll', this.handleDebouncedScroll);
+  },
 
-beforeDestroy() {
-  window.removeEventListener('scroll', this.handleDebouncedScroll);
-}
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleDebouncedScroll);
+  }
 }
 
 
