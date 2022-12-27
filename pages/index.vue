@@ -54,7 +54,6 @@
           </video>
         </b-col>
         <b-col
-
           md="2"
           class="text-near-video d-flex flex-column text-rotate-90 justify-content-center"
         >
@@ -304,7 +303,7 @@
             <img
               class="img-fluid"
               src="~assets/images/home/all_include-min.jpg"
-              alt="All Photo Booths Include Props, Different backdrop options,
+              alt="All Photo Booth Include Props, Different backdrop options,
                    Person to Run Photo Booth, and more!"
             >
           </picture>
@@ -540,6 +539,7 @@ li {
 .fade-leave-to {
   opacity: 0;
 }
+
 @keyframes wiggle {
   0% {
     transform: rotate(-2deg);

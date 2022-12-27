@@ -1,11 +1,18 @@
 <template>
-    <b-navbar id="bottom-bar" sticky fixed-bottom toggleable="md">
-
-      <b-navbar-nav class="ml-auto">
-
-        <b-nav-item class="float-left"">© 2022 Endless Photo Booths LLC</b-nav-item>
-
-      </b-navbar-nav>
+  <b-navbar
+    id="bottom-bar"
+    sticky
+    fixed-bottom
+    toggleable="md"
+  >
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item
+        class="float-left"
+        "
+      >
+        © 2022 Endless Photo Booth LLC
+      </b-nav-item>
+    </b-navbar-nav>
   </b-navbar>
 </template>
 
@@ -18,4 +25,3 @@
 }
 
 </style>
-
