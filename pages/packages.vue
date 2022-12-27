@@ -1,10 +1,13 @@
 <template>
-  <b-container fluid>
-    <h1 class="title fancy-font">ENDLESS PHOTOBOOTH PACKAGES</h1>
-    <div class="subtitle">Ventura County Photo Booth Rentals</div>
-    <Packages/>
-    <PhotoBoothTypes/>
-
+  <b-container>
+    <h1 class="title fancy-font">
+      ENDLESS PHOTOBOOTH PACKAGES
+    </h1>
+    <div class="subtitle">
+      Ventura County Photo Booth Rentals
+    </div>
+    <Packages />
+    <PhotoBoothTypes />
   </b-container>
 </template>
 
@@ -13,18 +16,18 @@ import Packages from '~/components/Packages.vue';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 
 export default {
-  head () {
+  components: {
+    Packages,
+    PhotoBoothTypes,
+  },
+  head() {
     return {
       title: 'Packages',
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Packages Page' }
-      ]
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Packages Page' },
+      ],
     }
   },
-  components: {
-    Packages,
-    PhotoBoothTypes
-  }
 }
 </script>
 

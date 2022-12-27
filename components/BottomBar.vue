@@ -6,10 +6,7 @@
     toggleable="md"
   >
     <b-navbar-nav class="ml-auto">
-      <b-nav-item
-        class="float-left"
-        "
-      >
+      <b-nav-item class="float-left">
         © 2022 Endless Photo Booth LLC
       </b-nav-item>
     </b-navbar-nav>
@@ -17,11 +14,9 @@
 </template>
 
 <style>
-
-#bottom-bar{
+#bottom-bar {
 
   background-color: #eee;
 
 }
-
 </style>

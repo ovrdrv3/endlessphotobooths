@@ -61,7 +61,9 @@
             <h1
               v-if="hover"
               :style="{ animation: wiggle }"
-              class="fancy-font gray-text caption-text rounded p-2 bg-secondary"
+              class="fancy-font gray-text caption-text rounded p-2 bg-secondary user-select-none"
+              @mouseenter="handleHover"
+              @mouseleave="delayHover"
             >
               Make your event one to remember with our 360 VIDEO BOOTH! Capture memories from every
               angle. Personalized event graphics. Online access to all of the videos, so you can
