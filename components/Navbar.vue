@@ -14,7 +14,7 @@
       <img
         id="brandLogo"
         src="~assets/images/best_png_logo.png"
-        alt="Endless Photo Booths Ventura County logo"
+        alt="Endless Photo Booth Ventura County logo"
       >
     </b-navbar-brand>
 
