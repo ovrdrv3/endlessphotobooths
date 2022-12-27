@@ -542,15 +542,15 @@ li {
 }
 @keyframes wiggle {
   0% {
-    transform: rotate(-5deg);
+    transform: rotate(-2deg);
   }
 
   50% {
-    transform: rotate(5deg);
+    transform: rotate(2deg);
   }
 
   100% {
-    transform: rotate(-5deg);
+    transform: rotate(-2deg);
   }
 }
 </style>
