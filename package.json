@@ -17,7 +17,7 @@
     "cross-env": "^7.0.3",
     "medium-zoom": "^1.0.6",
     "mobile-device-detect": "^0.4.3",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0",
     "serve-static": "^1.15.0",
     "vue": "^2.7.8"
   },
@@ -25,6 +25,6 @@
     "nodemon": "^2.0.19",
     "sass": "^1.54.0",
     "sass-loader": "^10.1.1",
-    "webpack": "^4.46.0"
+    "webpack": "^5.75.0"
   }
 }
