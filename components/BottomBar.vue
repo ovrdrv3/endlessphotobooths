@@ -4,10 +4,11 @@
     sticky
     fixed-bottom
     toggleable="md"
+    class="mt-5"
   >
     <b-navbar-nav class="ml-auto">
       <b-nav-item class="float-left">
-        © 2022 Endless Photo Booth LLC
+        © 2023 Endless Photo Booth LLC
       </b-nav-item>
     </b-navbar-nav>
   </b-navbar>
@@ -15,8 +16,6 @@
 
 <style>
 #bottom-bar {
-
   background-color: #eee;
-
 }
 </style>

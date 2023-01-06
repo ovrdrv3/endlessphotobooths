@@ -30,10 +30,20 @@
         >
           Email
         </b-nav-item> -->
-
-        <b-nav-item to="/packages">
-          PACKAGES
-        </b-nav-item>
+        <b-nav-item-dropdown
+          text="PACKAGES"
+          right
+        >
+          <b-dropdown-item to="/packages/360-video-booth">
+            360 VIDEO BOOTH
+          </b-dropdown-item>
+          <b-dropdown-item to="/packages/social-booth">
+            SOCIAL BOOTH
+          </b-dropdown-item>
+          <b-dropdown-item to="/packages/open-air-booth">
+            OPEN AIR BOOTH
+          </b-dropdown-item>
+        </b-nav-item-dropdown>
         <b-nav-item to="/about-us">
           ABOUT US
         </b-nav-item>
@@ -84,7 +94,6 @@ export default {
 </script>
 
 <style>
-
 nav{
  -webkit-transition: all 0.4s;
  transition: all 0.4s;
@@ -106,4 +115,8 @@ max-height: 92px;
 color: #317FBC !important;
 }
 
+/* override b-dropdown-item to be the same styling as the nav links */
+.dropdown-item {
+  font-size: initial;
+}
 </style>

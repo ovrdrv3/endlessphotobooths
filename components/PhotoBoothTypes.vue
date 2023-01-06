@@ -14,7 +14,7 @@
             >
             <img
               src="~assets/images/home/360_booth.jpg"
-              alt="360 Booth"
+              alt="360 Video Booth"
               class="img-fluid"
             >
           </picture>
@@ -25,15 +25,18 @@
             squared
             block
           >
-            Book a 360 Booth!
+            Book a 360 Video Booth!
           </b-button>
         </b-col>
         <b-col md="6">
           <h5 class="copy-heading fancy-font">
-            360 Booths
+            360 Video Booths
           </h5>
           <p class="copy-text lh-base">
-            Our 360 Booths are the latest and greatest booth around! The 360 Booths take a video of you at every angle, and breaks it down into slow motion! You can add a custom overlay to the video, and it is a great way to show off your dance moves or just have a little fun.
+            Our 360 Video Booths are the latest and greatest booth! The 360 Video Booth takes a
+            video of you at every angle, and breaks it down into slow motion! You can add a custom
+            overlay to the video, and it is a great way to show off your dance moves or just have a
+            little fun.
           </p>
         </b-col>
       </b-row>
