@@ -7,6 +7,18 @@
       <b-col md="6">
         <picture>
           <source
+            srcset="~assets/images/home/open_air_booth_black_bg.webp"
+            type="image/webp"
+            class="img-fluid"
+          >
+          <img
+            src="~assets/images/home/open_air_booth_black_bg.png"
+            alt="Open Air Booth"
+            class="img-fluid"
+          >
+        </picture>
+        <picture>
+          <source
             srcset="~assets/images/home/Open-Air.webp"
             type="image/webp"
             class="img-fluid"
@@ -24,15 +36,14 @@
           squared
           block
         >
-          Book a Open Air Booth!
+          Book an Open Air Booth!
         </b-button>
       </b-col>
       <b-col md="6">
-        <p class="copy-text lh-base">
+        <p class="copy-text">
           This Open Air booth is great for house parties or smaller venues and space limitations.
           Your guest are able to see and even jump in to the shot for a Photo Bomb. Able to fit up
-          to 10 people in a shot. Black, Backdrop Curtain and Curtain Stand. Photo Booth can fit in
-          spaces from 5ft to 8ft and must be at least 6.5ft back from the curtain.
+          to 10 people in a shot. Black, Backdrop Curtain and Curtain Stand.
         </p>
         <ul>
           <li>Unlimited 2x6 Photo Strip Print outs</li>
@@ -43,6 +54,10 @@
           <li>Custom Template Design</li>
           <li>Free Setup/Tear Down</li>
         </ul>
+        <p>
+          Photo Booth can fit in
+          spaces from 5ft to 8ft and must be at least 6.5ft back from the curtain.
+        </p>
       </b-col>
     </b-row>
   </b-container>
