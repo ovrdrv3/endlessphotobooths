@@ -225,7 +225,7 @@ export default {
       },
       packages: [
         { text: 'Package Types', value: null },
-        '360 Video Booth', 'Open Air Package', 'LED Booth Package', 'ENDLESS VIP Package',
+        '360 Video Booth', 'Open Air Booth', 'Social Booth', 'LED Enclosed Booth',
       ],
       referralOptions: [
         { text: 'Friends', value: 'Friends' },
@@ -248,17 +248,13 @@ export default {
       const searchParams = new URLSearchParams(paramsString);
       let newFormValue = '';
       if (searchParams.has('package')) {
-        // console.log('Package ' + searchParams.get("package"));
-        // this.form.package = 'Package ' + searchParams.get("package") ;
         const queryValue = searchParams.get('package');
         this.packages.forEach((currentValue) => {
-          if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
-            // console.log(currentValue)
+          if (currentValue.toString().substring(0, queryValue.length) === queryValue) {
             newFormValue = currentValue;
           }
         });
         this.form.package = newFormValue;
-        // search for the most similiar package in the set.
       }
     }
   },

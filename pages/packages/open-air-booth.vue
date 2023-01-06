@@ -19,7 +19,7 @@
         </picture>
         <b-button
           slot="footer"
-          to="/contact-us?package=360"
+          to="/contact-us?package=Open"
           variant="primary"
           squared
           block

@@ -141,7 +141,7 @@
           <b-card
             v-if="props.feed.media_url.includes('.mp4')"
             no-body
-            class="p-0 mb-2 border-rounded"
+            class="p-0 mb-2 border-rounded shadow"
           >
             <video
               :src="props.feed.media_url"
@@ -166,7 +166,7 @@
             img-alt="Instagram post"
             img-top
             no-body
-            class="mb-2 border-rounded"
+            class="mb-2 border-rounded shadow"
           >
             <b-card-text class="p-2 caption-text">
               {{ props.feed.caption.replace(/•/g, '').replace(/#[a-zA-Z0-9]+/g, '') }}
