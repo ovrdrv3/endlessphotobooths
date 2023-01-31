@@ -80,7 +80,6 @@ module.exports = {
     }],
     ['@nuxtjs/device'],
     ['@nuxtjs/axios'],
-
   ],
   axios: {
     // proxy: true
@@ -90,6 +89,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['mobile-device-detect', 'vue-parallaxy'],
+    vendor: ['mobile-device-detect', 'vue-parallaxy', '@nuxtjs/device'],
   },
 }
