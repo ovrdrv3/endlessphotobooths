@@ -1,12 +1,15 @@
 <template>
   <b-navbar
     id="navBar"
-    :class="{ 'shrink': hasScrolled }"
+    :class="{ 'shrink': hasScrolled || hamburgerClicked }"
     sticky
     dark
     toggleable="sm"
   >
-    <b-navbar-toggle target="nav_collapse" />
+    <b-navbar-toggle
+      target="nav_collapse"
+      @click="hamburgerClicked = !hamburgerClicked"
+    />
     <b-navbar-brand
       to="/"
       @click="navItemsVisible = false"
@@ -67,6 +70,7 @@ export default {
     return {
       hasScrolled: false,
       navItemsVisible: false,
+      hamburgerClicked: false,
     }
   },
   mounted() {
@@ -99,10 +103,6 @@ nav{
  transition: all 0.4s;
  -webkit-transform: translateZ(0);
  font-size: 0.5rem;
-}
-
-.navbar-inner {
-  background: transparent;
 }
 
 .shrink{
