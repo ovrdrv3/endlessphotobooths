@@ -29,9 +29,9 @@
       </b-col>
       <b-col md="6">
         <p class="copy-text lh-base">
-          Our 360 Video Booths are the latest and greatest! The 360 Video Booth takes a video
-          of you at every angle, and break it down into slow motion! You can add a custom overlay to
-          the video, and it is a great way to show off your dance moves or just have a little fun.
+          Our 360 Video Booths are the latest and greatest! The 360 Video Booth takes a video of you
+          at every angle, and breaks it down into slow motion! You can add a custom overlay to the
+          video, and it is a great way to show off your dance moves or just have a little fun.
         </p>
         <ul>
           <li>Unlimited Video Sessions</li>

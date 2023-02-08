@@ -1,7 +1,7 @@
 <template>
   <b-navbar
     id="navBar"
-    :class="{ 'bg-dark': !hasScrolled && $route.path === '/', 'shrink': hasScrolled }"
+    :class="{ 'shrink': hasScrolled }"
     sticky
     dark
     toggleable="sm"
@@ -99,6 +99,10 @@ nav{
  transition: all 0.4s;
  -webkit-transform: translateZ(0);
  font-size: 0.5rem;
+}
+
+.navbar-inner {
+  background: transparent;
 }
 
 .shrink{

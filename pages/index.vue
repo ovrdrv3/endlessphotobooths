@@ -61,18 +61,17 @@
             <transition name="fade">
               <h1
                 v-if="hover"
-                :style="{ animation: wiggle }"
                 class="fancy-font gray-text caption-text rounded p-2 bg-secondary user-select-none"
                 @mouseenter="handleHover"
                 @mouseleave="delayHover"
               >
-                Make your event one to remember with our 360 VIDEO BOOTH! Capture memories from every
-                angle. Personalized event graphics. Online access to all of the videos, so you can
-                relive the fun anytime, anywhere.
+                Make your event one to remember with our 360 VIDEO BOOTH! Capture memories from
+                every angle. Personalized event graphics. Online access to all of the videos, so you
+                can relive the fun anytime, anywhere.
                 <br>
                 <br>
                 <b-button
-                  to="/contact-us?package=LED"
+                  to="/contact-us?package=360"
                   variant="primary"
                   class="p-2"
                   block
@@ -366,7 +365,6 @@ export default {
     return {
       hover: false,
       hoverTimeoutId: null,
-      wiggle: 'wiggle 2s ease-in-out infinite',
     }
   },
   head() {
@@ -542,19 +540,5 @@ li {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
-}
-
-@keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(1deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
 }
 </style>
