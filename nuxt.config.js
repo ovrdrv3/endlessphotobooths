@@ -80,6 +80,6 @@ module.exports = {
       id: 'UA-141746585-1',
     }],
     ['@nuxtjs/axios'],
-    '@nuxtjs/device',
+    ['@nuxtjs/device'],
   ],
 }
