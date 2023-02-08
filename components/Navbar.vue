@@ -4,7 +4,7 @@
     :class="{ 'bg-dark': !hasScrolled && $route.path === '/', 'shrink': hasScrolled }"
     sticky
     dark
-    toggleable="md"
+    toggleable="sm"
   >
     <b-navbar-toggle target="nav_collapse" />
     <b-navbar-brand

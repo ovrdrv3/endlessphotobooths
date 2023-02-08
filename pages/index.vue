@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-if="$device.isDesktop"
+      v-if="!isMobile"
       class="bg-dark text-near-video"
     >
       <b-row class="m-0">
@@ -350,6 +350,7 @@
 </template>
 
 <script>
+import mobileDeviceDetect from 'mobile-device-detect';
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import InstaFeed from '~/components/InstaFeed.vue';
 import GoogleReviews from '~/components/GoogleReviews.vue';
@@ -374,6 +375,29 @@ export default {
         { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Home Page' },
       ],
     }
+  },
+  computed: {
+    spaceForMobile() {
+      return this.isMobile ? ' ' : '';
+    },
+    isMobile() {
+      let smallScreen = false;
+      if (process.client) {
+        if (window.innerWidth < 600) {
+          smallScreen = true;
+        }
+      }
+      return mobileDeviceDetect.isMobile || smallScreen;
+    },
+    isTablet() {
+      let mediumScreen = false;
+      if (process.client) {
+        if (window.innerWidth < 1000 && window.innerWidth >= 600) {
+          mediumScreen = true;
+        }
+      }
+      return mobileDeviceDetect.isTablet || mediumScreen;
+    },
   },
   methods: {
     handleHover() {

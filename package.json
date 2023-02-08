@@ -22,13 +22,13 @@
     "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
     "medium-zoom": "^1.0.6",
+    "mobile-device-detect": "^0.4.3",
     "nuxt": "^2.15.8",
     "serve-static": "^1.15.0",
     "vue": "^2.7.8"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
-    "@nuxtjs/device": "2.1",
     "eslint": "^8.30.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",

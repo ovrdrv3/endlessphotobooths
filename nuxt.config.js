@@ -1,6 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
+  target: 'static',
   /*
   ** Headers of the page
   */
@@ -78,17 +79,15 @@ module.exports = {
     ['@nuxtjs/google-analytics', {
       id: 'UA-141746585-1',
     }],
-    ['@nuxtjs/device'],
     ['@nuxtjs/axios'],
   ],
   axios: {
     // proxy: true
   },
-
   /*
   ** Build configuration
   */
   build: {
-    vendor: ['mobile-device-detect', 'vue-parallaxy', '@nuxtjs/device'],
+    vendor: ['mobile-device-detect', 'vue-parallaxy'],
   },
 }
