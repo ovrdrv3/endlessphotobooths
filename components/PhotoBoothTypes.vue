@@ -4,7 +4,7 @@
       <h1 class="copy-heading">
         Our Photo Booth Styles:
       </h1>
-      <b-row class="pb-4">
+      <b-row class="pb-4 border">
         <b-col md="6">
           <picture>
             <source
