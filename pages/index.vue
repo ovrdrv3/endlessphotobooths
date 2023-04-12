@@ -42,7 +42,7 @@
       </div>
       <b-container
         fluid
-        class="copy bg-dark px-5"
+        class="copy bg-dark lg-px-5"
       >
         <insta-feed
           container-class="image-container"
