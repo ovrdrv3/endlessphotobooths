@@ -2,89 +2,6 @@
   <client-only>
     <div>
       <div
-        v-if="!$device.isMobile"
-        class="bg-dark text-near-video"
-      >
-        <b-row class="m-0">
-          <b-col
-            md="4"
-            offset-md="2"
-          >
-            <div class="text-center">
-              <div class="text-near-video text-center">
-                <div class="text-right">
-                  <div class="vh-50 d-flex flex-column justify-content-center">
-                    <h1 class="title fancy-font gray-text ">
-                      ENDLESS
-                    </h1>
-                    <h1 class="title fancy-font gray-text">
-                      PHOTOBOOTH
-                    </h1>
-                  </div>
-                  <div class="vh-25">
-                    <h2 class="caption-text gray-text ">
-                      LIVING TO MAKE YOUR EVENT MEMORABLE
-                    </h2>
-                    <h2 class="caption-text gray-text">
-                      ONE SHOT AT A TIME
-                    </h2>
-                  </div>
-                  <div class="vh-25">
-                    <h2 class="fancy-font gray-text caption-text  ">
-                      SANTA&nbsp;BARBARA • VENTURA • LOS&nbsp;ANGELES • CALIFORNIA
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </b-col>
-          <b-col md="3">
-            <video
-              autoplay
-              loop
-              muted
-              class="rounded video-bg-height"
-              :style="{ hover: hover }"
-              @mouseenter="handleHover"
-              @mouseleave="delayHover"
-            >
-              <source
-                src="~assets/video/epb360video.mp4"
-                type="video/mp4"
-              >
-            </video>
-          </b-col>
-          <b-col
-            md="2"
-            class="text-near-video d-flex flex-column text-rotate-90 justify-content-center"
-          >
-            <transition name="fade">
-              <h1
-                v-if="hover"
-                class="fancy-font gray-text caption-text rounded p-2 bg-secondary user-select-none"
-                @mouseenter="handleHover"
-                @mouseleave="delayHover"
-              >
-                Make your event one to remember with our 360 VIDEO BOOTH! Capture memories from
-                every angle. Personalized event graphics. Online access to all of the videos, so you
-                can relive the fun anytime, anywhere.
-                <br>
-                <br>
-                <b-button
-                  to="/contact-us?package=360"
-                  variant="primary"
-                  class="p-2"
-                  block
-                >
-                  BOOK OUR 360 VIDEO BOOTH!
-                </b-button>
-              </h1>
-            </transition>
-          </b-col>
-        </b-row>
-      </div>
-      <div
-        v-else
         class="video-bg-height"
       >
         <div class="video-bg">
@@ -123,7 +40,10 @@
           </div>
         </div>
       </div>
-      <b-container class="copy">
+      <b-container
+        fluid
+        class="copy bg-dark px-5"
+      >
         <insta-feed
           container-class="image-container"
           :mediatypes="['IMAGE']"
@@ -261,90 +181,92 @@
         </b-row>
         <!-- Make a non fluid container for the rest of the content -->
         <!-- Home info section -->
-        <b-row class="pb-3">
-          <b-col md="12">
+        <b-container>
+          <b-row class="pb-3">
+            <b-col md="12">
+              <h1 class="copy-heading">
+                We provide:
+              </h1>
+              <ul>
+                <li>
+                  Service to Ventura County, Los Angeles County
+                  and Santa Barbara County for all events!
+                </li>
+                <li>
+                  A fun way to remember those special days &mdash;
+                  not just for you, but for your family & friends as well!
+                </li>
+                <li>
+                  Flexibility for every type of event or occasion you have. If there is a photo booth
+                  at a wedding, corporate party, or any event, everyone will want to jump in and take a
+                  set of fun pictures that they can take home.
+                </li>
+                <li>
+                  Affordable and quality photo booth rentals with many great and amazing options.
+                  Different backdrop options including Rose Gold, Red, Silver and more.
+                </li>
+              </ul>
+            </b-col>
+          </b-row>
+          <!-- Package Info Section -->
+          <b-row class="py-3">
             <h1 class="copy-heading">
-              We provide:
+              ALL Photo Booth Packages Include:
             </h1>
-            <ul>
-              <li>
-                Service to Ventura County, Los Angeles County
-                and Santa Barbara County for all events!
-              </li>
-              <li>
-                A fun way to remember those special days &mdash;
-                not just for you, but for your family & friends as well!
-              </li>
-              <li>
-                Flexibility for every type of event or occasion you have. If there is a photo booth
-                at a wedding, corporate party, or any event, everyone will want to jump in and take a
-                set of fun pictures that they can take home.
-              </li>
-              <li>
-                Affordable and quality photo booth rentals with many great and amazing options.
-                Different backdrop options including Rose Gold, Red, Silver and more.
-              </li>
-            </ul>
-          </b-col>
-        </b-row>
-        <!-- Package Info Section -->
-        <b-row class="py-3">
-          <h1 class="copy-heading">
-            ALL Photo Booth Packages Include:
-          </h1>
-          <b-col
-            order-md="2"
-            md="7"
-          >
-            <picture>
-              <source
-                class="img-fluid"
-                srcset="~assets/images/home/all_include-min.webp"
-                type="image/webp"
-              >
-              <img
-                class="img-fluid"
-                src="~assets/images/home/all_include-min.jpg"
-                alt="All Photo Booth Include Props, Different backdrop options,
+            <b-col
+              order-md="2"
+              md="7"
+            >
+              <picture>
+                <source
+                  class="img-fluid"
+                  srcset="~assets/images/home/all_include-min.webp"
+                  type="image/webp"
+                >
+                <img
+                  class="img-fluid"
+                  src="~assets/images/home/all_include-min.jpg"
+                  alt="All Photo Booth Include Props, Different backdrop options,
                    Person to Run Photo Booth, and more!"
-              >
-            </picture>
-          </b-col>
-          <b-col
-            order-md="1"
-            md="5"
-          >
-            <ul>
-              <li class="mt-0">
-                Props
-              </li>
-              <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
-              <li>2 Strips with 3 Photos Taken</li>
-              <li>Copies for Everyone in Photo</li>
-              <li>Unlimited Use of Booth</li>
-              <li>Open Air Photo Booth</li>
-              <li>Custom Text For Bottom Of Picture</li>
-              <li>Person to Run Photo Booth</li>
-              <li>Drop off and Pickup Included</li>
-            </ul>
-          </b-col>
-        </b-row>
-        <PhotoBoothTypes />
-        <!-- End Section -->
-        <b-row class="p-4">
-          <b-col>
-            <div class="subtitle">
-              Ventura Photo Booth Rentals will be a perfect addition to any event.
-              <br>
-              <nuxt-link
-                class="contact-us-link"
-                to="/contact-us"
-              >
-                Book your photo booth today!
-              </nuxt-link>
-            </div>
-          </b-col>
-        </b-row>
+                >
+              </picture>
+            </b-col>
+            <b-col
+              order-md="1"
+              md="5"
+            >
+              <ul>
+                <li class="mt-0">
+                  Props
+                </li>
+                <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
+                <li>2 Strips with 3 Photos Taken</li>
+                <li>Copies for Everyone in Photo</li>
+                <li>Unlimited Use of Booth</li>
+                <li>Open Air Photo Booth</li>
+                <li>Custom Text For Bottom Of Picture</li>
+                <li>Person to Run Photo Booth</li>
+                <li>Drop off and Pickup Included</li>
+              </ul>
+            </b-col>
+          </b-row>
+          <PhotoBoothTypes />
+          <!-- End Section -->
+          <b-row class="p-4">
+            <b-col>
+              <div class="subtitle">
+                Ventura Photo Booth Rentals will be a perfect addition to any event.
+                <br>
+                <nuxt-link
+                  class="contact-us-link"
+                  to="/contact-us"
+                >
+                  Book your photo booth today!
+                </nuxt-link>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
       </b-container>
     </div>
   </client-only>
@@ -375,20 +297,6 @@ export default {
       ],
     }
   },
-  methods: {
-    handleHover() {
-      if (this.hoverTimeoutId) {
-        clearTimeout(this.hoverTimeoutId)
-        this.hoverTimeoutId = null
-      }
-      this.hover = true
-    },
-    delayHover() {
-      this.hoverTimeoutId = setTimeout(() => {
-        this.hover = false
-      }, 3000) // delay for 3 seconds
-    },
-  },
 };
 </script>
 
@@ -413,11 +321,11 @@ $grey: #eee;
 }
 
 .text-near-video {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 141px);
 }
 
 .video-bg-height {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 141px);
   overflow-x: hidden;
 }
 
@@ -459,7 +367,7 @@ $grey: #eee;
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.9;
   z-index: 1;
 }
 
