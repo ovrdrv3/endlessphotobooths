@@ -58,8 +58,7 @@
           </div>
         </b-nav-item>
         <b-nav-item
-          to="
-            contact-us"
+          to="contact-us"
         >
           <div
             :class="{ 'text-white' : !hasScrolled}"

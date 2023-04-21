@@ -44,6 +44,44 @@
         fluid
         class="copy bg-dark lg-px-5"
       >
+        <b-row align-h="center">
+          <b-col
+            sm="4"
+            class="text-center bg-red"
+          >
+            <insta-feed
+              container-class="image-container"
+              :mediatypes="['IMAGE']"
+              class="py-3"
+            >
+              <template #loading="props">
+                <h1
+                  v-if="props.loading"
+                  class="copy-heading pt-3"
+                >
+                  Loading recent instagram events...
+                </h1>
+              </template>
+              <template #feeds="props">
+                <carousel-loader :feeds="[props.feed]" />
+              </template>
+
+              <template #error="props">
+                <div class="fancy-alert">
+                  {{ props.error }}
+                </div>
+              </template>
+            </insta-feed>
+          </b-col>
+          <b-col
+            sm="4"
+            offset-sm="2"
+            class="text-center bg-blue"
+          />
+
+          (google reviews)
+        </b-row>
+
         <insta-feed
           container-class="image-container"
           :mediatypes="['IMAGE']"
