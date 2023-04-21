@@ -10,21 +10,16 @@
     >
       Recent Reviews
     </h1>
-    <b-row>
-      <b-col
-        v-for="(review, index) in reviews"
-        :key="review.id"
-        cols="12"
-        md="12"
-        lg="4"
-      >
-        <slot
-          name="reviews"
-          :review="review"
-          :index="index"
-        />
-      </b-col>
-    </b-row>
+    <div
+      v-for="(review, index) in reviews"
+      :key="review.id"
+    >
+      <slot
+        name="reviews"
+        :review="review"
+        :index="index"
+      />
+    </div>
     <slot
       name="error"
       :error="error"

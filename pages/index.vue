@@ -44,10 +44,11 @@
         fluid
         class="copy bg-dark lg-px-5"
       >
-        <b-row align-h="center">
+        <b-row align-h="around">
           <b-col
-            sm="4"
-            class="text-center bg-red"
+            md="12"
+            lg="4"
+            class="text-center bg-blue"
           >
             <insta-feed
               container-class="image-container"
@@ -74,119 +75,54 @@
             </insta-feed>
           </b-col>
           <b-col
-            sm="4"
-            offset-sm="2"
+            md="12"
+            lg="4"
             class="text-center bg-blue"
-          />
-
-          (google reviews)
-        </b-row>
-
-        <insta-feed
-          container-class="image-container"
-          :mediatypes="['IMAGE']"
-          class="py-3"
-        >
-          <template #loading="props">
-            <h1
-              v-if="props.loading"
-              class="copy-heading pt-3"
-            >
-              Loading recent instagram events...
-            </h1>
-          </template>
-          <template #feeds="props">
-            <b-card
-              v-if="props.feed.media_url.includes('.mp4')"
-              no-body
-              class="p-0 mb-2 border-rounded shadow"
-            >
-              <video
-                :src="props.feed.media_url"
-                autoplay
-                loop
-                muted
-                class="w-100"
-              />
-              <b-card-text class="p-2 caption-text">
-                {{ props.feed.caption.replace(/•/g, '').replace(/#[a-zA-Z0-9]+/g, '') }}
-                <a
-                  :href="props.feed.permalink"
-                  rel="noopener"
-                  target="_blank"
-                  class="stretched-link"
-                />
-              </b-card-text>
-            </b-card>
-            <b-card
-              v-else
-              :img-src="props.feed.media_url"
-              img-alt="Instagram post"
-              img-top
-              no-body
-              class="mb-2 border-rounded shadow"
-            >
-              <b-card-text class="p-2 caption-text">
-                {{ props.feed.caption.replace(/•/g, '').replace(/#[a-zA-Z0-9]+/g, '') }}
-                <a
-                  :href="props.feed.permalink"
-                  rel="noopener"
-                  target="_blank"
-                  class="stretched-link"
-                />
-              </b-card-text>
-            </b-card>
-          </template>
-
-          <template #error="props">
-            <div class="fancy-alert">
-              {{ props.error }}
-            </div>
-          </template>
-        </insta-feed>
-
-        <google-reviews>
-          <template #loading="props">
-            <h1
-              v-if="props.loading"
-              class="copy-heading pt-3"
-            >
-              Loading recent Google reviews...
-            </h1>
-          </template>
-          <template #reviews="props">
-            <b-card
-              v-if="props.index < 3"
-              class="m-1 rounded shadow"
-            >
-              <b-card-text>
-                <span
-                  v-for="n in 5"
-                  :key="n"
+          >
+            <google-reviews>
+              <template #loading="props">
+                <h1
+                  v-if="props.loading"
+                  class="copy-heading pt-3"
                 >
-                  <span
-                    v-if="n <= props.review.rating"
-                    class="primary-color"
-                  >★</span>
-                </span>
-              </b-card-text>
-              <b-card-text>
-                {{ props.review.text }}
-              </b-card-text>
-              <b-card-text class="small text-muted font-italic">
-                &mdash;
-                {{ props.review.author_name.split(' ')[0][0] }}.
-                {{ props.review.author_name.split(' ')[1] }},
-                {{ props.review.relative_time_description }}
-              </b-card-text>
-            </b-card>
-          </template>
-          <template #error="props">
-            <div class="fancy-alert">
-              {{ props.error }}
-            </div>
-          </template>
-        </google-reviews>
+                  Loading recent Google reviews...
+                </h1>
+              </template>
+              <template #reviews="props">
+                <b-card
+                  v-if="props.index < 3"
+                  class="m-1 rounded shadow"
+                >
+                  <b-card-text>
+                    <span
+                      v-for="n in 5"
+                      :key="n"
+                    >
+                      <span
+                        v-if="n <= props.review.rating"
+                        class="primary-color"
+                      >★</span>
+                    </span>
+                  </b-card-text>
+                  <b-card-text>
+                    {{ props.review.text }}
+                  </b-card-text>
+                  <b-card-text class="small text-muted font-italic">
+                    &mdash;
+                    {{ props.review.author_name.split(' ')[0][0] }}.
+                    {{ props.review.author_name.split(' ')[1] }},
+                    {{ props.review.relative_time_description }}
+                  </b-card-text>
+                </b-card>
+              </template>
+              <template #error="props">
+                <div class="fancy-alert">
+                  {{ props.error }}
+                </div>
+              </template>
+            </google-reviews>
+          </b-col>
+        </b-row>
         <!-- Instagram and Yelp Logos -->
         <b-row class="py-3">
           <b-col md="12">
