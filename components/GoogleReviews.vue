@@ -1,29 +1,51 @@
 <template>
   <div>
-    <slot
-      name="loading"
-      :loading="loading"
-    />
+    <h1
+      v-if="loading"
+      class="copy-heading pt-3"
+    >
+      Loading recent Google reviews...
+    </h1>
     <h1
       v-show="!loading"
       class="copy-heading pt-3"
     >
       Recent Reviews
     </h1>
-    <div
-      v-for="(review, index) in reviews"
-      :key="review.id"
+    <CarouselCore
+      v-if="!loading"
+      :feeds="reviews"
     >
-      <slot
-        name="reviews"
-        :review="review"
-        :index="index"
-      />
-    </div>
-    <slot
-      name="error"
-      :error="error"
-    />
+      <template #card="{post}">
+        <b-card
+          class="m-1 rounded"
+        >
+          <b-card-text>
+            <span
+              v-for="n in 5"
+              :key="n"
+            >
+              <span
+                v-if="n <= post.rating"
+                class="primary-color"
+              >★</span>
+            </span>
+          </b-card-text>
+          <b-card-text>
+            {{ post.text }}
+          </b-card-text>
+          <b-card-text class="small text-muted font-italic">
+            &mdash;
+            {{ post.author_name.split(' ')[0][0] }}.
+            {{ post.author_name.split(' ')[1] }},
+            {{ post.relative_time_description }}
+          </b-card-text>
+        </b-card>
+      </template>
+      <div class="fancy-alert">
+        {{ error }}
+      </div>
+    </CarouselCore>
   </div>
 </template>
 
@@ -31,6 +53,11 @@
 import axios from 'axios'
 
 export default {
+  components: {
+    CarouselCore: () => (process.client
+      ? import('./CarouselCore.vue')
+      : () => ({ render: (h) => h('div') })),
+  },
   data: () => ({
     error: null,
     loading: false,
@@ -52,6 +79,7 @@ export default {
           }
           if (response.status === 200) {
             this.reviews.push(...response.data)
+            console.log('Reviews:', this.reviews);
           }
         })
         .catch((error) => {

@@ -22,5 +22,14 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     // for lintimport/no-unresolved
     'import/no-unresolved': 'off',
+    'vue/html-closing-bracket-newline': ['error', {
+      singleline: 'never',
+      multiline: 'always',
+    }],
+    'vue/html-closing-bracket-spacing': ['error', {
+      startTag: 'never',
+      endTag: 'never',
+      selfClosingTag: 'always',
+    }],
   },
 };

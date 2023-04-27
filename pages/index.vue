@@ -44,83 +44,20 @@
         fluid
         class="copy bg-dark lg-px-5"
       >
-        <b-row align-h="around">
+        <b-row align-h="center">
           <b-col
             md="12"
             lg="4"
             class="text-center bg-blue"
           >
-            <insta-feed
-              container-class="image-container"
-              :mediatypes="['IMAGE']"
-              class="py-3"
-            >
-              <template #loading="props">
-                <h1
-                  v-if="props.loading"
-                  class="copy-heading pt-3"
-                >
-                  Loading recent instagram events...
-                </h1>
-              </template>
-              <template #feeds="props">
-                <carousel-loader :feeds="[props.feed]" />
-              </template>
-
-              <template #error="props">
-                <div class="fancy-alert">
-                  {{ props.error }}
-                </div>
-              </template>
-            </insta-feed>
+            <InstaFeed />
           </b-col>
           <b-col
             md="12"
             lg="4"
             class="text-center bg-blue"
           >
-            <google-reviews>
-              <template #loading="props">
-                <h1
-                  v-if="props.loading"
-                  class="copy-heading pt-3"
-                >
-                  Loading recent Google reviews...
-                </h1>
-              </template>
-              <template #reviews="props">
-                <b-card
-                  v-if="props.index < 3"
-                  class="m-1 rounded shadow"
-                >
-                  <b-card-text>
-                    <span
-                      v-for="n in 5"
-                      :key="n"
-                    >
-                      <span
-                        v-if="n <= props.review.rating"
-                        class="primary-color"
-                      >★</span>
-                    </span>
-                  </b-card-text>
-                  <b-card-text>
-                    {{ props.review.text }}
-                  </b-card-text>
-                  <b-card-text class="small text-muted font-italic">
-                    &mdash;
-                    {{ props.review.author_name.split(' ')[0][0] }}.
-                    {{ props.review.author_name.split(' ')[1] }},
-                    {{ props.review.relative_time_description }}
-                  </b-card-text>
-                </b-card>
-              </template>
-              <template #error="props">
-                <div class="fancy-alert">
-                  {{ props.error }}
-                </div>
-              </template>
-            </google-reviews>
+            <GoogleReviews />
           </b-col>
         </b-row>
         <!-- Instagram and Yelp Logos -->
