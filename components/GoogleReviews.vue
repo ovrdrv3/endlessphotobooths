@@ -18,7 +18,7 @@
     >
       <template #card="{post}">
         <b-card
-          class="m-1 rounded"
+          class="m-1 rounded dark-gray"
         >
           <b-card-text>
             <span
@@ -27,14 +27,14 @@
             >
               <span
                 v-if="n <= post.rating"
-                class="primary-color"
+                class="gold-star"
               >★</span>
             </span>
           </b-card-text>
           <b-card-text>
             {{ post.text }}
           </b-card-text>
-          <b-card-text class="small text-muted font-italic">
+          <b-card-text class="small caption-text font-italic">
             &mdash;
             {{ post.author_name.split(' ')[0][0] }}.
             {{ post.author_name.split(' ')[1] }},
@@ -79,7 +79,6 @@ export default {
           }
           if (response.status === 200) {
             this.reviews.push(...response.data)
-            console.log('Reviews:', this.reviews);
           }
         })
         .catch((error) => {
@@ -89,3 +88,11 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.gold-star {
+  color: gold;
+  font-size: 1.5em;
+}
+
+</style>

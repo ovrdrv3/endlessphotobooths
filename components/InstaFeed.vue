@@ -21,7 +21,7 @@
         <b-card
           v-if="post.media_url.includes('.mp4')"
           no-body
-          class="m-2 border-rounded "
+          class="m-2 border-rounded dark-gray"
         >
           <video
             :src="post.media_url"
@@ -51,7 +51,7 @@
           img-alt="Instagram post"
           img-top
           no-body
-          class="m-2 border-rounded "
+          class="m-2 border-rounded dark-gray"
         >
           <b-card-text class="p-2 caption-text">
             {{

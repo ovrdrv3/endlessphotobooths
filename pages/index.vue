@@ -44,6 +44,8 @@
         fluid
         class="copy bg-dark lg-px-5"
       >
+        <CallToAction />
+        <!-- Recent Instagram history and Google reviews -->
         <b-row align-h="center">
           <b-col
             md="12"
@@ -95,9 +97,6 @@
         <b-container>
           <b-row class="pb-3">
             <b-col md="12">
-              <h1 class="copy-heading">
-                We provide:
-              </h1>
               <ul>
                 <li>
                   Service to Ventura County, Los Angeles County
@@ -114,16 +113,15 @@
                 </li>
                 <li>
                   Affordable and quality photo booth rentals with many great and amazing options.
-                  Different backdrop options including Rose Gold, Red, Silver and more.
                 </li>
               </ul>
             </b-col>
           </b-row>
           <!-- Package Info Section -->
+          <h1 class="copy-heading">
+            Photo Booth Packages Include:
+          </h1>
           <b-row class="py-3">
-            <h1 class="copy-heading">
-              ALL Photo Booth Packages Include:
-            </h1>
             <b-col
               order-md="2"
               md="7"
@@ -178,6 +176,7 @@
             </b-col>
           </b-row>
         </b-container>
+        </calltoaction>
       </b-container>
     </div>
   </client-only>
@@ -187,12 +186,14 @@
 import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
 import InstaFeed from '~/components/InstaFeed.vue';
 import GoogleReviews from '~/components/GoogleReviews.vue';
+import CallToAction from '~/components/CallToAction.vue';
 
 export default {
   components: {
-    PhotoBoothTypes,
-    InstaFeed,
+    CallToAction,
     GoogleReviews,
+    InstaFeed,
+    PhotoBoothTypes,
   },
   data() {
     return {
@@ -307,7 +308,7 @@ $grey: #eee;
 }
 
 .dark-gray {
-  background-color: #6F7378;
+  background-color: #5A5A5A;
 }
 
 .pt-150 {

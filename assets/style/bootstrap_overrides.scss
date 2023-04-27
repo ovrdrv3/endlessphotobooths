@@ -1,6 +1,5 @@
 $font-family: 'Montserrat', sans-serif;
 
-
 $primary: #317FBC;
 
 $break-small: 600px;
@@ -48,21 +47,20 @@ html {
 }
 
 .copy {
-  font-size: 1rem;
+  font-size: 0.75rem;
   line-height: 1.25;
+  color: #F8F9FA;
 }
 
 .copy-heading {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.25;
   color: $primary;
 }
 
 .caption-text{
-
   font-size: 0.75rem;
-  font-weight: 100;
   @media (max-width: $break-large) {
     font-size: 0.5rem;
   }

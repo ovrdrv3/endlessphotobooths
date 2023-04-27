@@ -3,7 +3,6 @@
     id="navBar"
     :class="{ 'shrink': hasScrolled || hamburgerClicked }"
     sticky
-    dark
     toggleable="sm"
   >
     <b-navbar-toggle
