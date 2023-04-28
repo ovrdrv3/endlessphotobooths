@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5">
+  <div class="py-5">
     <!--  center text 'Celebrating something special?' with special highlighted in a way. Below that, There will be three call to action buttons that will be stacked on mobile, Add a CTA for Corporate, Weddings, and Special Occasions above -->
     <h2 class="pb-5 text-center fancy-font">
       <strong class="p-1 special-highlight">Celebrating</strong> something?

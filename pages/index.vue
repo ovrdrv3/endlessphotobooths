@@ -176,7 +176,6 @@
             </b-col>
           </b-row>
         </b-container>
-        </calltoaction>
       </b-container>
     </div>
   </client-only>
