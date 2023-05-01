@@ -53,15 +53,17 @@
         <b-col
           lg="6"
         >
-          LOCATIONS
-          <div>
-            SANTA&nbsp;BARBARA • VENTURA • OXNARD • OJAI • LOS&nbsp;ANGELES • SAN&nbsp;LUIS&nbsp;OBISPO • SANTA&nbsp;MARIA • AGOURA&nbsp;HILLS • CALABASAS • SOUTHERN CALIFORNIA • CENTRAL COAST
+          <div class="py-2 py-lg-1">
+            LOCATIONS
+            <div>
+              SANTA&nbsp;BARBARA • VENTURA • OXNARD • OJAI • LOS&nbsp;ANGELES • SAN&nbsp;LUIS&nbsp;OBISPO • SANTA&nbsp;MARIA • AGOURA&nbsp;HILLS • CALABASAS • SOUTHERN CALIFORNIA • CENTRAL COAST
+            </div>
           </div>
         </b-col>
         <b-col
           lg="3"
         >
-          <div class="d-flex flex-column justify-contents-start py-3 py-lg-1">
+          <div class="d-flex flex-column justify-contents-start py-2 py-lg-1">
             <div>
               CONTACT US
             </div>
