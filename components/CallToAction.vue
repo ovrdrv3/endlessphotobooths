@@ -4,7 +4,7 @@
     class="copy bg-ghostwhite px-lg-5"
   >
     <h2 class="mb-0 py-3 text-center fancy-font title text-secondary">
-      <strong>Celebrating</strong> something?
+      Choose your unforgettable <strong>celebration</strong>  below:
     </h2>
     <b-row align-h="center">
       <b-col
@@ -54,20 +54,20 @@ export default {
     return {
       cards: [
         {
-          title: 'Corporate Events',
-          text: 'Boost your team\'s spirit and unleash creativity with our electrifying corporate event experience.',
-          imgSrc: 'https://placekitten.com/1920/1080',
-          specialClass: 'special-highlight-blue',
-        },
-        {
           title: 'Weddings',
-          text: 'Unite in love and embark on a lifelong journey together. Say "I do" in style with a photobooth.',
+          text: 'Blissful Beginnings',
           imgSrc: 'https://placekitten.com/1920/1080',
           specialClass: 'special-highlight-white',
         },
         {
+          title: 'Corporate Events',
+          text: 'Power-Up Party',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-blue',
+        },
+        {
           title: 'Special Events',
-          text: 'Capture smiles and laughter! Our photo booth rentals bring a lively touch to any special event.',
+          text: 'Magic Moments',
           imgSrc: 'https://placekitten.com/1920/1080',
           specialClass: 'special-highlight-gold',
         },
@@ -90,10 +90,10 @@ $break-small: 600px;
 $break-large: 1000px;
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   @media (max-width: $break-large) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 .card-overlay {
@@ -102,7 +102,6 @@ $break-large: 1000px;
 }
 
 .card-subtext {
-  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   position: absolute;
   bottom: 0;

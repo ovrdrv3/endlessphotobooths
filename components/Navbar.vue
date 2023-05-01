@@ -35,7 +35,7 @@
         <b-nav-item-dropdown
           text="PACKAGES"
           right
-          :toggle-class="{'text-white': !hasScrolled}"
+          :toggle-class="{'text-white': !hasScrolled && !hamburgerClicked}"
         >
           <b-dropdown-item to="/packages/360-video-booth">
             360 VIDEO BOOTH
@@ -51,7 +51,7 @@
           to="/about-us"
         >
           <div
-            :class="{ 'text-white' : !hasScrolled}"
+            :class="{ 'text-white' : !hasScrolled && !hamburgerClicked}"
           >
             ABOUT US
           </div>
@@ -60,14 +60,14 @@
           to="contact-us"
         >
           <div
-            :class="{ 'text-white' : !hasScrolled}"
+            :class="{ 'text-white' : !hasScrolled && !hamburgerClicked}"
           >
             CONTACT US
           </div>
         </b-nav-item>
         <b-nav-item to="/choose-a-template">
           <div
-            :class="{ 'text-white' : !hasScrolled}"
+            :class="{ 'text-white' : !hasScrolled && !hamburgerClicked}"
           >
             CHOOSE A TEMPLATE
           </div>

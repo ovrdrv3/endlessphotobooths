@@ -149,36 +149,6 @@
             <GoogleReviews />
           </b-col>
         </b-row>
-        <!-- Instagram and Yelp Logos -->
-        <b-row class="py-3">
-          <b-col md="12">
-            <div class="d-flex justify-content-center">
-              <a href="https://www.instagram.com/endlessphotobooth">
-                <img
-                  src="~assets/images/home/instagram.png"
-                  alt="Instagram Link"
-                  style="width: 45px; height: 45px; top: 8px; position: relative;"
-                >
-              </a>
-              <a href="https://www.yelp.com/biz/endless-photobooth-oxnard">
-                <img
-                  src="~assets/images/home/yelp.png"
-                  alt="Yelp Link"
-                  class="logo"
-                  style="width: 60px; height: 60px; position: relative;"
-                >
-              </a>
-              <a href="https://www.weddingwire.com/biz/endless-photo-booths-oxnard/3fc52dcdeb1f53d2.html">
-                <img
-                  src="~assets/images/home/wedding_wire.svg"
-                  alt="Wedding Wire Link"
-                  class="logo"
-                  style="width: 300px; height: 50px; top:5px; right: 4px; position: relative;"
-                >
-              </a>
-            </div>
-          </b-col>
-        </b-row>
       </b-container>
     </div>
   </client-only>

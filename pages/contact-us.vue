@@ -1,26 +1,24 @@
 <template>
   <b-container>
-
-        <h1 class="title fancy-font">CONTACT ENDLESS PHOTOBOOTH</h1>
-        <div class="subtitle">Ventura County Photo Booth Rentals</div>
-        <div class="copy">
-          <div class="py-2">
-            We have Photo Booth Rentals in Ventura, Los Angeles, and Santa Barbara Counties. Please give us a call, send us an email, or feel free to fill out the contact form below if you have any questions!
-          </div>
-          <div class="py-2">
-            Our Number:
-            <a href="tel:+18057108997">(805) 710-8997</a>
-          </div>
-          <div class="py-2">
-            Our Email:
-            <a href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">endlessphotobooths@gmail.com</a>
-          </div>
-        </div>
-        <client-only>
-          <ContactForm/>
-        </client-only>
-
-
+    <h1 class="title fancy-font">
+      CONTACT ENDLESS PHOTOBOOTH
+    </h1>
+    <div class="copy">
+      <div class="py-2">
+        We have Photo Booth Rentals in Ventura, Los Angeles, and Santa Barbara Counties. Please give us a call, send us an email, or feel free to fill out the contact form below if you have any questions!
+      </div>
+      <div class="py-2">
+        Our Number:
+        <a href="tel:+18057108997">(805) 710-8997</a>
+      </div>
+      <div class="py-2">
+        Our Email:
+        <a href="mailto:endlessphotobooths@gmail.com?subject=Photo%20Booth%20Inquiry">endlessphotobooths@gmail.com</a>
+      </div>
+    </div>
+    <client-only>
+      <ContactForm />
+    </client-only>
   </b-container>
 </template>
 
@@ -29,17 +27,17 @@
 import ContactForm from '~/components/ContactForm.vue';
 
 export default {
-  head () {
+  components: {
+    ContactForm,
+  },
+  head() {
     return {
       title: 'Contact Us',
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Contact Us Page' }
-      ]
+        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Contact Us Page' },
+      ],
     }
   },
-  components: {
-    ContactForm
-  }
 }
 </script>
 
