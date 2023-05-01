@@ -28,8 +28,8 @@
             autoplay
             loop
             muted
-            class="w-100"
-            style="height: 80vh; object-fit: cover;"
+            class="w-100 video-height"
+            style="object-fit: cover;"
           />
           <b-card-text class="p-2 caption-text">
             {{
@@ -117,3 +117,15 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+
+$break-large: 1000px;
+.video-height {
+  max-height: 80vh;
+  object-fit: cover;
+  @media (min-width: $break-large) {
+    max-height: 436px;
+  }
+}
+</style>

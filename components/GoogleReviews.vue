@@ -16,7 +16,7 @@
       v-if="!loading"
       :feeds="reviews"
     >
-      <template #card="{post}">
+      <template #card="{post, index}">
         <b-card
           class="m-1 rounded dark-gray"
         >
@@ -32,7 +32,15 @@
             </span>
           </b-card-text>
           <b-card-text>
-            {{ post.text }}
+            {{ getDisplayText(post, index) }}
+          </b-card-text>
+          <b-card-text v-if="post.text.length > 350">
+            <div
+              class="show-more-link"
+              @click.prevent="toggleFullText(index)"
+            >
+              {{ getButtonText(index) }}
+            </div>
           </b-card-text>
           <b-card-text class="small caption-text font-italic">
             &mdash;
@@ -62,6 +70,7 @@ export default {
     error: null,
     loading: false,
     reviews: [],
+    showFullText: [],
   }),
   mounted() {
     this.getReviews()
@@ -74,7 +83,7 @@ export default {
         .get(url)
         .then((response) => {
           this.loading = false
-          if (response.status === 400) {
+          if (response.status === 350) {
             this.error = response.error.message
           }
           if (response.status === 200) {
@@ -85,6 +94,18 @@ export default {
           throw error
         })
     },
+    getDisplayText(review, index) {
+      if (this.showFullText[index]) {
+        return review.text;
+      }
+      return review.text.length > 350 ? `${review.text.slice(0, 350)}...` : review.text;
+    },
+    getButtonText(index) {
+      return this.showFullText[index] ? '(Show less)' : '(Show more)';
+    },
+    toggleFullText(index) {
+      this.$set(this.showFullText, index, !this.showFullText[index]);
+    },
   },
 }
 </script>
@@ -94,5 +115,9 @@ export default {
   color: gold;
   font-size: 1.5em;
 }
-
+.show-more-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
