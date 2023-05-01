@@ -54,6 +54,28 @@ html {
   color: $primary;
 }
 
+.copy-heading-no-color {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .caption-text{
   font-size: 0.75rem;
+}
+
+.slate-gray {
+  color: #708090;
+}
+
+.slate-gray-bg {
+  background-color: #708090;
+}
+
+.ghostwhite {
+  color: ghostwhite;
+}
+
+.bg-ghostwhite {
+  background-color: ghostwhite;
 }

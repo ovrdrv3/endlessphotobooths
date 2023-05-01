@@ -1,14 +1,15 @@
 <template>
   <b-container
     fluid
-    class="copy bg-ghostwhite px-lg-5"
+    class="pb-3 copy bg-ghostwhite px-lg-5"
   >
-    <h2 class="mb-0 py-3 text-center fancy-font title text-secondary">
+    <h2 class="mb-0 py-3 text-center fancy-font title slate-gray">
       Choose your unforgettable <strong>celebration</strong>  below:
     </h2>
     <b-row align-h="center">
       <b-col
-        v-for="card in cards"
+        v-for="(card, index) in cards"
+        :key="index"
         md="12"
         lg="4"
         class="d-flex justify-content-center"
@@ -159,6 +160,10 @@ $break-large: 1000px;
   100% {
     background-position: -200% 0;
   }
+}
+
+.slate-gray {
+  color: #708090;
 }
 
 </style>

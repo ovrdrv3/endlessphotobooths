@@ -46,87 +46,71 @@
       </div>
       <CallToAction />
       <!-- Home info section -->
-      <b-container>
-        <b-row class="pb-3">
-          <b-col md="12">
-            <ul>
-              <li>
-                Service to Ventura County, Los Angeles County
-                and Santa Barbara County for all events!
-              </li>
-              <li>
-                A fun way to remember those special days &mdash;
-                not just for you, but for your family & friends as well!
-              </li>
-              <li>
-                Flexibility for every type of event or occasion you have. If there is a photo booth
-                at a wedding, corporate party, or any event, everyone will want to jump in and take a
-                set of fun pictures that they can take home.
-              </li>
-              <li>
-                Affordable and quality photo booth rentals with many great and amazing options.
-              </li>
-            </ul>
-          </b-col>
-        </b-row>
-        <!-- Package Info Section -->
-        <h1 class="copy-heading">
-          Photo Booth Packages Include:
-        </h1>
-        <b-row class="py-3">
-          <b-col
-            order-md="2"
-            md="7"
-          >
-            <picture>
-              <source
-                class="img-fluid"
-                srcset="~assets/images/home/all_include-min.webp"
-                type="image/webp"
-              >
-              <img
-                class="img-fluid"
-                src="~assets/images/home/all_include-min.jpg"
-                alt="All Photo Booth Include Props, Different backdrop options,
+      <b-container
+        fluid
+        class="bg-ghostwhite slate-gray"
+      >
+        <b-container>
+          <!-- Package Info Section -->
+          <h1 class="copy-heading-no-color">
+            Photo Booth Packages Include:
+          </h1>
+          <b-row class="py-3">
+            <b-col
+              order-md="2"
+              md="7"
+            >
+              <picture>
+                <source
+                  class="img-fluid"
+                  srcset="~assets/images/home/all_include-min.webp"
+                  type="image/webp"
+                >
+                <img
+                  class="img-fluid"
+                  src="~assets/images/home/all_include-min.jpg"
+                  alt="All Photo Booth Include Props, Different backdrop options,
                    Person to Run Photo Booth, and more!"
-              >
-            </picture>
-          </b-col>
-          <b-col
-            order-md="1"
-            md="5"
-          >
-            <ul>
-              <li class="mt-0">
-                Props
-              </li>
-              <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
-              <li>2 Strips with 3 Photos Taken</li>
-              <li>Copies for Everyone in Photo</li>
-              <li>Unlimited Use of Booth</li>
-              <li>Open Air Photo Booth</li>
-              <li>Custom Text For Bottom Of Picture</li>
-              <li>Person to Run Photo Booth</li>
-              <li>Drop off and Pickup Included</li>
-            </ul>
-          </b-col>
-        </b-row>
-        <PhotoBoothTypes />
-        <!-- End Section -->
-        <b-row class="p-4">
-          <b-col>
-            <div class="subtitle">
-              Ventura Photo Booth Rentals will be a perfect addition to any event.
-              <br>
-              <nuxt-link
-                class="contact-us-link"
-                to="/contact-us"
-              >
-                Book your photo booth today!
-              </nuxt-link>
-            </div>
-          </b-col>
-        </b-row>
+                >
+              </picture>
+            </b-col>
+            <b-col
+              order-md="1"
+              md="5"
+              class="copy"
+            >
+              <ul>
+                <li class="mt-0">
+                  Props
+                </li>
+                <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
+                <li>2 Strips with 3 Photos Taken</li>
+                <li>Copies for Everyone in Photo</li>
+                <li>Unlimited Use of Booth</li>
+                <li>Custom Text For Bottom Of Picture</li>
+                <li>Person to Run Photo Booth</li>
+                <li>Drop off and Pickup Included</li>
+              </ul>
+            </b-col>
+          </b-row>
+          <PhotoBoothTypes />
+          <!-- End Section -->
+          <b-row class="p-4">
+            <b-col>
+              <div class="subtitle">
+                Ventura Photo Booth Rentals will be a perfect addition to any event.
+                <b-button class="mt-3">
+                  <nuxt-link
+                    class="ghostwhite text-decoration-none color-inherit"
+                    to="/contact-us"
+                  >
+                    Book your photo booth today!
+                  </nuxt-link>
+                </b-button>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
       </b-container>
       <b-container
         fluid
@@ -188,10 +172,6 @@ export default {
 $break-small: 600px;
 $break-large: 1000px;
 $grey: #eee;
-
-.bg-ghostwhite {
-  background-color: ghostwhite;
-}
 
 .chat-bubble {
   border-radius: 10px;
@@ -276,6 +256,10 @@ $grey: #eee;
 
 .dark-gray {
   background-color: #5A5A5A;
+}
+
+.ivory {
+  color: #FFFFF0;
 }
 
 .pt-150 {
