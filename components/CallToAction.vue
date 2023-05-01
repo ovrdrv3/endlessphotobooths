@@ -162,8 +162,4 @@ $break-large: 1000px;
   }
 }
 
-.slate-gray {
-  color: #708090;
-}
-
 </style>

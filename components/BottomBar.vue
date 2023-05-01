@@ -6,10 +6,10 @@
     >
       <b-row align-v="center">
         <b-col
-          lg="4"
+          lg="3"
         >
           <!-- Instagram and Yelp Logos -->
-          <div class="d-flex">
+          <div class="d-flex align-items-center">
             <div>
               <a
                 href="https://www.instagram.com/endlessphotobooth"
@@ -31,7 +31,7 @@
                   src="~assets/images/home/yelp.png"
                   alt="Yelp Link"
                   class="logo"
-                  style="width: 55px; height: 55px; bottom: 8px; position: relative;"
+                  style="width: 55px; height: 55px; left: 3px; position: relative;"
                 >
               </a>
             </div>
@@ -51,18 +51,17 @@
           </div>
         </b-col>
         <b-col
-          lg="4"
+          lg="6"
         >
           LOCATIONS
-
           <div>
             SANTA&nbsp;BARBARA • VENTURA • OXNARD • OJAI • LOS&nbsp;ANGELES • SAN&nbsp;LUIS&nbsp;OBISPO • SANTA&nbsp;MARIA • AGOURA&nbsp;HILLS • CALABASAS • SOUTHERN CALIFORNIA • CENTRAL COAST
           </div>
         </b-col>
         <b-col
-          lg="4"
+          lg="3"
         >
-          <div class="d-flex flex-column justify-contents-start">
+          <div class="d-flex flex-column justify-contents-start py-3 py-lg-1">
             <div>
               CONTACT US
             </div>

@@ -312,4 +312,9 @@ li {
 .fade-leave-to {
   opacity: 0;
 }
+.color-inherit:hover {
+  color: white;
+  text-decoration: none;
+}
+
 </style>
