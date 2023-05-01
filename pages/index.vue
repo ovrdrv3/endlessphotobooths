@@ -80,9 +80,7 @@
               class="copy"
             >
               <ul>
-                <li class="mt-0">
-                  Props
-                </li>
+                <li>Props</li>
                 <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
                 <li>2 Strips with 3 Photos Taken</li>
                 <li>Copies for Everyone in Photo</li>
