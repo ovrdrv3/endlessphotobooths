@@ -1,56 +1,79 @@
 <template>
-  <div class="py-5">
-    <!--  center text 'Celebrating something special?' with special highlighted in a way. Below that, There will be three call to action buttons that will be stacked on mobile, Add a CTA for Corporate, Weddings, and Special Occasions above -->
-    <h2 class="pb-5 text-center fancy-font">
-      <strong class="p-1 special-highlight">Celebrating</strong> something?
+  <b-container
+    fluid
+    class="copy bg-ghostwhite px-lg-5"
+  >
+    <h2 class="mb-0 py-3 text-center fancy-font title text-secondary">
+      <strong>Celebrating</strong> something?
     </h2>
     <b-row align-h="center">
       <b-col
+        v-for="card in cards"
         md="12"
         lg="4"
+        class="d-flex justify-content-center"
       >
         <b-card
-          title="Corporate"
-          tag="article"
           style="max-width: 20rem;"
-          class="mb-2 dark-gray fancy-font"
-          @mouseover="addHighlight($event, 'special-highlight-blue')"
-          @mouseout="removeHighlight($event, 'special-highlight-blue')"
-        />
-      </b-col>
-      <b-col
-        md="12"
-        lg="4"
-      >
-        <b-card
-          title="Weddings"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2 dark-gray fancy-font"
-          :class="{'special-highlight-white': isHovering}"
+          class="mb-2 dark-gray cursor-pointer shadow"
+          :img-src="card.imgSrc"
+          overlay
+          body-class="card-overlay"
           @mouseover="addHighlight($event, 'special-highlight-white')"
           @mouseout="removeHighlight($event, 'special-highlight-white')"
-        />
-      </b-col>
-      <b-col
-        md="12"
-        lg="4"
-      >
-        <b-card
-          title="Special Occasions"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2 dark-gray fancy-font "
-          @mouseover="addHighlight($event, 'special-highlight')"
-          @mouseout="removeHighlight($event, 'special-highlight')"
-        />
+        >
+          <b-card-title>
+            <span
+              class="p-2 fancy-font text-white font-italic card-title"
+              :class="card.specialClass"
+            >
+              {{ card.title }}
+            </span>
+          </b-card-title>
+          <b-card-text
+            class="
+              p-1
+              fancy-font
+              card-subtext
+              flex-grow-1
+              d-flex
+              flex-column
+              justify-content-end"
+          >
+            {{ card.text }}
+          </b-card-text>
+        </b-card>
       </b-col>
     </b-row>
-  </div>
+  </b-container>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      cards: [
+        {
+          title: 'Corporate Events',
+          text: 'Boost your team\'s spirit and unleash creativity with our electrifying corporate event experience.',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-blue',
+        },
+        {
+          title: 'Weddings',
+          text: 'Unite in love and embark on a lifelong journey together. Say "I do" in style with a photobooth.',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-white',
+        },
+        {
+          title: 'Special Events',
+          text: 'Capture smiles and laughter! Our photo booth rentals bring a lively touch to any special event.',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-gold',
+        },
+      ],
+    };
+  },
   methods: {
     addHighlight(event, className) {
       event.target.closest('.card').classList.add(className);
@@ -62,42 +85,72 @@ export default {
 };
 </script>
 
-<style scoped>
-.special-highlight {
-  color: #f7c08a;
+<style lang="scss">
+$break-small: 600px;
+$break-large: 1000px;
+
+.card-title {
+  font-size: 2rem;
+
+  @media (max-width: $break-large) {
+    font-size: 1.25rem;
+  }
+}
+.card-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.card-subtext {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @media (max-width: $break-large) {
+    font-size: 0.5rem;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.special-highlight-gold {
   background-image: linear-gradient(
     90deg,
-    rgba(255, 127, 80, 0.1) 25%,
-    rgba(255, 127, 80, 0.4) 50%,
-    rgba(255, 127, 80, 0.1) 75%
+    rgba(255, 127, 80, 0.05) 25%,
+    rgba(255, 127, 80, 0.2) 50%,
+    rgba(255, 127, 80, 0.05) 75%
   );
   background-size: 200% 100%;
   animation: loading 5s infinite;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .special-highlight-white {
   background-image: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.1) 25%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.1) 75%
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.05) 85%
   );
   background-size: 200% 100%;
   animation: loading 5s infinite;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .special-highlight-blue {
   background-image: linear-gradient(
     90deg,
-    rgba(0, 0, 255, 0.1) 25%,
-    rgba(0, 0, 255, 0.4) 50%,
-    rgba(0, 0, 255, 0.1) 75%
+    rgba(0, 0, 255, 0.05) 25%,
+    rgba(0, 0, 255, 0.2) 50%,
+    rgba(0, 0, 255, 0.05) 75%
   );
   background-size: 200% 100%;
   animation: loading 5s infinite;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 @keyframes loading {

@@ -15,7 +15,7 @@ html {
     box-sizing: border-box;
     // nice darker background color
     font-weight: 400;
-    background-color: gray;
+    background-color: antiquewhite;
   }
 
 *,
@@ -37,14 +37,12 @@ html {
   letter-spacing: 4px;
   display: block;
   font-size: 2rem;
-  color: $primary;
+
+  @media (max-width: $break-large) {
+    font-size: 1.25rem;
+  }
 }
 
-@media (max-width: $break-large) {
-    .title {
-    font-size: 1.25rem;
-    }
-}
 
 .copy {
   font-size: 0.75rem;
@@ -61,8 +59,4 @@ html {
 
 .caption-text{
   font-size: 0.75rem;
-  @media (max-width: $break-large) {
-    font-size: 0.5rem;
-  }
-
 }
