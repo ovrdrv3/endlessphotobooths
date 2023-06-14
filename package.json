@@ -34,9 +34,10 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.8.0",
+    "node-sass": "^7.0.3",
     "nodemon": "^2.0.19",
     "sass": "^1.54.0",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^10.4.1",
     "webpack": "^4.46.0"
   }
 }
