@@ -41,7 +41,11 @@
               target="_blank"
               class="float-right"
             >
-              🌐
+              <img
+                src="~assets/images/home/instagram.png"
+                alt="Instagram Link"
+                style="width: 20px; height: 20px; position: relative;"
+              >
             </a>
           </b-card-text>
         </b-card>
@@ -63,7 +67,11 @@
               target="_blank"
               class="float-right"
             >
-              🌐
+              <img
+                src="~assets/images/home/instagram.png"
+                alt="Instagram Link"
+                style="width: 20px; height: 20px; position: relative;"
+              >
             </a>
           </b-card-text>
         </b-card>
