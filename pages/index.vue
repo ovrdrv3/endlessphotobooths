@@ -1,9 +1,7 @@
 <template>
   <client-only>
     <div>
-      <div
-        class="video-bg-height"
-      >
+      <div class="video-bg-height">
         <div class="video-bg">
           <!-- This div is  intentionally blank. It creates the transparent black overlay over the
         video which you can modify in the CSS -->
@@ -15,29 +13,16 @@
             muted="muted"
             loop="loop"
           >
-            <source
-              src="~assets/video/epb360video.mp4"
-              type="video/mp4"
-            >
+            <source src="~assets/video/epb360video.mp4" type="video/mp4" />
           </video>
           <div class="container h-100">
             <div
-              class="
-              d-flex
-              flex-column
-              h-100
-              text-center
-              justify-content-around
-              text-white
-              fancy-font
-              z-index-3"
+              class="d-flex flex-column h-100 text-center justify-content-around text-white fancy-font z-index-3"
             >
-              <h1 class="title">
-                ENDLESS PHOTOBOOTH
-              </h1>
+              <h1 class="title">ENDLESS PHOTOBOOTH</h1>
               <div class="caption-text">
                 LIVING TO MAKE YOUR EVENT MEMORABLE
-                <br>
+                <br />
                 ONE SHOT AT A TIME
               </div>
             </div>
@@ -46,88 +31,37 @@
       </div>
       <CallToAction />
       <!-- Home info section -->
-      <b-container
-        fluid
-        class="bg-ghostwhite slate-gray"
-      >
-        <b-container>
-          <!-- Package Info Section -->
-          <h1 class="copy-heading-no-color">
-            Photo Booth Packages Include:
-          </h1>
-          <b-row class="py-3">
-            <b-col
-              order-md="2"
-              md="7"
+      <b-container fluid class="bg-ghostwhite slate-gray">
+        <PhotoBoothTypes />
+        <!-- End Section -->
+        <b-row class="p-4">
+          <b-col>
+            <div
+              class="d-flex flex-column justify-content-center align-items-center"
             >
-              <picture>
-                <source
-                  class="img-fluid"
-                  srcset="~assets/images/home/all_include-min.webp"
-                  type="image/webp"
+              <p class="copy-heading">
+                Ventura Photo Booth Rentals will be a perfect addition to any
+                event.
+              </p>
+              <b-button class="mt-3 mt-md-0">
+                <nuxt-link
+                  class="copy-heading-no-color ghostwhite text-decoration-none color-inherit"
+                  to="/contact-us"
                 >
-                <img
-                  class="img-fluid"
-                  src="~assets/images/home/all_include-min.jpg"
-                  alt="All Photo Booth Include Props, Different backdrop options,
-                   Person to Run Photo Booth, and more!"
-                >
-              </picture>
-            </b-col>
-            <b-col
-              order-md="1"
-              md="5"
-              class="copy"
-            >
-              <ul>
-                <li>Props</li>
-                <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
-                <li>2 Strips with 3 Photos Taken</li>
-                <li>Copies for Everyone in Photo</li>
-                <li>Unlimited Use of Booth</li>
-                <li>Custom Text For Bottom Of Picture</li>
-                <li>Person to Run Photo Booth</li>
-                <li>Drop off and Pickup Included</li>
-              </ul>
-            </b-col>
-          </b-row>
-          <PhotoBoothTypes />
-          <!-- End Section -->
-          <b-row class="p-4">
-            <b-col>
-              <div class="subtitle">
-                Ventura Photo Booth Rentals will be a perfect addition to any event.
-                <b-button class="mt-3">
-                  <nuxt-link
-                    class="ghostwhite text-decoration-none color-inherit"
-                    to="/contact-us"
-                  >
-                    Book your photo booth today!
-                  </nuxt-link>
-                </b-button>
-              </div>
-            </b-col>
-          </b-row>
-        </b-container>
+                  Book your photo booth today!
+                </nuxt-link>
+              </b-button>
+            </div>
+          </b-col>
+        </b-row>
       </b-container>
-      <b-container
-        fluid
-        class="copy bg-dark lg-px-5"
-      >
+      <b-container fluid class="copy bg-dark lg-px-5">
         <!-- Recent Instagram history and Google reviews -->
         <b-row align-h="center">
-          <b-col
-            md="12"
-            lg="4"
-            class="text-center bg-blue"
-          >
+          <b-col md="12" lg="4" class="text-center bg-blue">
             <InstaFeed />
           </b-col>
-          <b-col
-            md="12"
-            lg="4"
-            class="text-center bg-blue"
-          >
+          <b-col md="12" lg="4" class="text-center bg-blue">
             <GoogleReviews />
           </b-col>
         </b-row>
@@ -137,10 +71,11 @@
 </template>
 
 <script>
-import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
-import InstaFeed from '~/components/InstaFeed.vue';
-import GoogleReviews from '~/components/GoogleReviews.vue';
-import CallToAction from '~/components/CallToAction.vue';
+import PhotoBoothTypes from "~/components/PhotoBoothTypes.vue";
+import PhotoBoothsInclude from "~/components/PhotoBoothsInclude.vue";
+import InstaFeed from "~/components/InstaFeed.vue";
+import GoogleReviews from "~/components/GoogleReviews.vue";
+import CallToAction from "~/components/CallToAction.vue";
 
 export default {
   components: {
@@ -148,20 +83,25 @@ export default {
     GoogleReviews,
     InstaFeed,
     PhotoBoothTypes,
+    PhotoBoothsInclude,
   },
   data() {
     return {
       hover: false,
       hoverTimeoutId: null,
-    }
+    };
   },
   head() {
     return {
-      title: 'ENDLESS Ventura Photo Booth Rentals',
+      title: "ENDLESS Ventura Photo Booth Rentals",
       meta: [
-        { hid: 'description', name: 'description', content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Home Page' },
+        {
+          hid: "description",
+          name: "description",
+          content: "ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Home Page",
+        },
       ],
-    }
+    };
   },
 };
 </script>
@@ -253,11 +193,11 @@ $grey: #eee;
 }
 
 .dark-gray {
-  background-color: #5A5A5A;
+  background-color: #5a5a5a;
 }
 
 .ivory {
-  color: #FFFFF0;
+  color: #fffff0;
 }
 
 .pt-150 {
@@ -282,14 +222,14 @@ $grey: #eee;
 }
 
 .subtitle {
-  color: #317FBC;
+  color: #317fbc;
   /*color: white;*/
   word-spacing: 5px;
   text-align: center;
 }
 
 .contact-us-link {
-  color: #317FBC;
+  color: #317fbc;
   text-decoration: underline;
 }
 
@@ -314,5 +254,4 @@ li {
   color: white;
   text-decoration: none;
 }
-
 </style>
