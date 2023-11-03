@@ -225,7 +225,9 @@ export default {
       },
       packages: [
         { text: 'Package Types', value: null },
-        '360 Video Booth', 'Open Air Booth', 'Social Booth', 'LED Enclosed Booth',
+        '360 Video Booth',
+        'Open Air Booth',
+        'Social Booth',
       ],
       referralOptions: [
         { text: 'Friends', value: 'Friends' },
@@ -240,7 +242,7 @@ export default {
         { text: '$800 - $1,000', value: '$800 - $1,000' },
         { text: '$1,000 - $2,000', value: '$1,000 - $2,000' },
       ],
-    }
+    };
   },
   mounted() {
     if (process.client) {
@@ -250,7 +252,10 @@ export default {
       if (searchParams.has('package')) {
         const queryValue = searchParams.get('package');
         this.packages.forEach((currentValue) => {
-          if (currentValue.toString().substring(0, queryValue.length) === queryValue) {
+          if (
+            currentValue.toString().substring(0, queryValue.length)
+            === queryValue
+          ) {
             newFormValue = currentValue;
           }
         });
@@ -267,7 +272,9 @@ export default {
         .join('&');
     },
     validateForm() {
-      if (!this.submissionAttempt) { return; }
+      if (!this.submissionAttempt) {
+        return;
+      }
       this.errors.any = false;
       this.errors.name = '';
       this.errors.email = '';
@@ -392,5 +399,5 @@ export default {
       return re.test(email);
     },
   },
-}
+};
 </script>

@@ -13,25 +13,32 @@
             muted="muted"
             loop="loop"
           >
-            <source src="~assets/video/epb360video.mp4" type="video/mp4" />
+            <source
+              src="~assets/video/epb360video.mp4"
+              type="video/mp4"
+            >
           </video>
           <div class="container h-100">
             <div
               class="d-flex flex-column h-100 text-center justify-content-around text-white fancy-font z-index-3"
             >
-              <h1 class="title">ENDLESS PHOTOBOOTH</h1>
+              <h1 class="title">
+                ENDLESS PHOTOBOOTH
+              </h1>
               <div class="caption-text">
                 LIVING TO MAKE YOUR EVENT MEMORABLE
-                <br />
+                <br>
                 ONE SHOT AT A TIME
               </div>
             </div>
           </div>
         </div>
       </div>
-      <CallToAction />
       <!-- Home info section -->
-      <b-container fluid class="bg-ghostwhite slate-gray">
+      <b-container
+        fluid
+        class="bg-ghostwhite slate-gray"
+      >
         <PhotoBoothTypes />
         <!-- End Section -->
         <b-row class="p-4">
@@ -55,13 +62,28 @@
           </b-col>
         </b-row>
       </b-container>
-      <b-container fluid class="copy bg-dark lg-px-5">
+      <b-container
+        fluid
+        class="copy bg-dark lg-px-5"
+      >
         <!-- Recent Instagram history and Google reviews -->
         <b-row align-h="center">
-          <b-col md="12" lg="4" class="text-center bg-blue">
-            <InstaFeed />
+          <b-col
+            md="12"
+            lg="4"
+            class="text-center bg-blue"
+          >
+            <figure data-behold-id="3vUxqa6uk8oytfwvpbF6" />
+            <script
+              src="https://w.behold.so/widget.js"
+              type="module"
+            />
           </b-col>
-          <b-col md="12" lg="4" class="text-center bg-blue">
+          <b-col
+            md="12"
+            lg="4"
+            class="text-center bg-blue"
+          >
             <GoogleReviews />
           </b-col>
         </b-row>
@@ -71,15 +93,13 @@
 </template>
 
 <script>
-import PhotoBoothTypes from "~/components/PhotoBoothTypes.vue";
-import PhotoBoothsInclude from "~/components/PhotoBoothsInclude.vue";
-import InstaFeed from "~/components/InstaFeed.vue";
-import GoogleReviews from "~/components/GoogleReviews.vue";
-import CallToAction from "~/components/CallToAction.vue";
+import PhotoBoothTypes from '~/components/PhotoBoothTypes.vue';
+import PhotoBoothsInclude from '~/components/PhotoBoothsInclude.vue';
+import InstaFeed from '~/components/InstaFeed.vue';
+import GoogleReviews from '~/components/GoogleReviews.vue';
 
 export default {
   components: {
-    CallToAction,
     GoogleReviews,
     InstaFeed,
     PhotoBoothTypes,
@@ -93,12 +113,12 @@ export default {
   },
   head() {
     return {
-      title: "ENDLESS Ventura Photo Booth Rentals",
+      title: 'ENDLESS Ventura Photo Booth Rentals',
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: "ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Home Page",
+          hid: 'description',
+          name: 'description',
+          content: 'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals Home Page',
         },
       ],
     };

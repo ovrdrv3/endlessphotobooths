@@ -1,5 +1,8 @@
 <template>
-  <b-container fluid class="pb-3 copy bg-ghostwhite px-lg-5 py-5">
+  <b-container
+    fluid
+    class="pb-3 copy bg-ghostwhite px-lg-5 py-5"
+  >
     <h2 class="mb-0 py-3 text-center fancy-font title slate-gray">
       Choose your unforgettable <strong>celebration</strong>:
     </h2>
@@ -45,32 +48,32 @@ export default {
     return {
       cards: [
         {
-          title: "Weddings",
-          text: "Blissful Beginnings",
-          imgSrc: "https://placekitten.com/1920/1080",
-          specialClass: "special-highlight-white",
+          title: 'Weddings',
+          text: 'Blissful Beginnings',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-white',
         },
         {
-          title: "Corporate Events",
-          text: "Power-Up Party",
-          imgSrc: "https://placekitten.com/1920/1080",
-          specialClass: "special-highlight-blue",
+          title: 'Corporate Events',
+          text: 'Power-Up Party',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-blue',
         },
         {
-          title: "Special Events",
-          text: "Magic Moments",
-          imgSrc: "https://placekitten.com/1920/1080",
-          specialClass: "special-highlight-gold",
+          title: 'Special Events',
+          text: 'Magic Moments',
+          imgSrc: 'https://placekitten.com/1920/1080',
+          specialClass: 'special-highlight-gold',
         },
       ],
     };
   },
   methods: {
     addHighlight(event, className) {
-      event.target.closest(".card").classList.add(className);
+      event.target.closest('.card').classList.add(className);
     },
     removeHighlight(event, className) {
-      event.target.closest(".card").classList.remove(className);
+      event.target.closest('.card').classList.remove(className);
     },
   },
 };
