@@ -10,7 +10,7 @@
       v-show="!loading"
       class="copy-heading pt-3"
     >
-      Recent Events
+      Events
     </h1>
 
     <CarouselCore
@@ -19,12 +19,12 @@
     >
       <template #card="{post}">
         <b-card
-          v-if="post.media_url.includes('.mp4')"
+          v-if="post.mediaType == 'VIDEO'"
           no-body
           class="m-2 border-rounded dark-gray"
         >
           <video
-            :src="post.media_url"
+            :src="post.mediaUrl"
             autoplay
             loop
             muted
@@ -51,7 +51,7 @@
         </b-card>
         <b-card
           v-else
-          :img-src="post.media_url"
+          :img-src="post.mediaUrl"
           img-alt="Instagram post"
           img-top
           no-body
@@ -103,9 +103,7 @@ export default {
   },
   methods: {
     getUserFeed() {
-      const url = process.env.NODE_ENV === 'development'
-        ? 'http://localhost:9999/.netlify/functions/photos'
-        : '/.netlify/functions/photos';
+      const url = 'https://feeds.behold.so/AeYYwPQ41Vc4XcaKfwo8'
       this.loading = true;
       axios
         .get(url)

@@ -1,23 +1,28 @@
 <template>
-  <div class="copy">
+  <div class="copy pt-4">
     <b-row class="d-flex align-items-center">
       <b-col class="text-center">
-        <h1 class="copy-heading-no-color">Our Photo Booth Types:</h1>
+        <h1 class="copy-heading-no-color">
+          Our Photo Booth Types:
+        </h1>
       </b-col>
     </b-row>
-    <b-row class="pb-4" align-h="center">
+    <b-row
+      class="pb-4"
+      align-h="center"
+    >
       <b-col md="4">
         <picture>
           <source
             srcset="~assets/images/home/360_booth.webp"
             type="image/webp"
             class="img-fluid"
-          />
+          >
           <img
             src="~assets/images/home/360_booth.jpg"
             alt="360 Video Booth"
             class="img-fluid"
-          />
+          >
         </picture>
         <b-button
           slot="footer"
@@ -31,7 +36,9 @@
       </b-col>
       <b-col md="4">
         <div class="col d-flex justify-content-center align-items-center">
-          <h5 class="copy-heading-no-color">360 Video Booth</h5>
+          <h5 class="copy-heading-no-color">
+            360 Video Booth
+          </h5>
         </div>
         <p class="copy-text lh-base">
           Our 360 Video Booth is the latest and greatest booth! The 360 Video
@@ -41,19 +48,25 @@
         </p>
       </b-col>
     </b-row>
-    <b-row class="pb-4" align-h="center">
-      <b-col order-md="2" md="4">
+    <b-row
+      class="pb-4"
+      align-h="center"
+    >
+      <b-col
+        order-md="2"
+        md="4"
+      >
         <picture>
           <source
             srcset="~assets/images/home/LED-Enclosed.webp"
             type="image/webp"
             class="img-fluid"
-          />
+          >
           <img
             src="~assets/images/home/LED-Enclosed-min.jpg"
             alt="Enclosed Photo Booth"
             class="img-fluid"
-          />
+          >
         </picture>
         <b-button
           slot="footer"
@@ -65,9 +78,14 @@
           Book an LED Enclosed Booth!
         </b-button>
       </b-col>
-      <b-col order-md="1" md="4">
+      <b-col
+        order-md="1"
+        md="4"
+      >
         <div class="col d-flex justify-content-center align-items-center">
-          <h5 class="copy-heading-no-color">Enclosed Photo Booth</h5>
+          <h5 class="copy-heading-no-color">
+            Enclosed Photo Booth
+          </h5>
         </div>
         <p class="copy-text">
           The LED Photo Booth Enclosure is great fun for all events and will
@@ -79,19 +97,22 @@
         </p>
       </b-col>
     </b-row>
-    <b-row class="pb-4" align-h="center">
+    <b-row
+      class="pb-4"
+      align-h="center"
+    >
       <b-col md="4">
         <picture>
           <source
             srcset="~assets/images/home/Open-Air.webp"
             type="image/webp"
             class="img-fluid"
-          />
+          >
           <img
             src="~assets/images/home/Open-Air-min.jpeg"
             alt="Open Photo Booth"
             class="img-fluid"
-          />
+          >
         </picture>
         <b-button
           slot="footer"
@@ -105,7 +126,9 @@
       </b-col>
       <b-col md="4">
         <div class="col d-flex justify-content-center align-items-center">
-          <h5 class="copy-heading-no-color">Open Air Photo Booth</h5>
+          <h5 class="copy-heading-no-color">
+            Open Air Photo Booth
+          </h5>
         </div>
         <p class="copy-text">
           This Open Air booth is great for house parties or smaller venues and

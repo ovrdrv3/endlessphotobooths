@@ -73,11 +73,7 @@
             lg="4"
             class="text-center bg-blue"
           >
-            <figure data-behold-id="3vUxqa6uk8oytfwvpbF6" />
-            <script
-              src="https://w.behold.so/widget.js"
-              type="module"
-            />
+            <InstaFeed />
           </b-col>
           <b-col
             md="12"

@@ -10,7 +10,7 @@
       v-show="!loading"
       class="copy-heading pt-3"
     >
-      Recent Reviews
+      Reviews
     </h1>
     <CarouselCore
       v-if="!loading"
