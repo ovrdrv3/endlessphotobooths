@@ -31,7 +31,10 @@
             class="w-100 video-height"
             style="object-fit: cover;"
           />
-          <b-card-text class="p-2 caption-text">
+          <b-card-text
+            class="p-2 caption-text overflow-auto"
+            style="max-height: 150px;"
+          >
             {{
               post.caption.replace(/•/g, "").replace(/#[a-zA-Z0-9]+/g, "")
             }}
@@ -57,7 +60,10 @@
           no-body
           class="m-2 border-rounded dark-gray"
         >
-          <b-card-text class="p-2 caption-text">
+          <b-card-text
+            class="p-2 caption-text overflow-auto"
+            style="max-height: 150px;"
+          >
             {{
               post.caption.replace(/•/g, "").replace(/#[a-zA-Z0-9]+/g, "")
             }}

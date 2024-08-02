@@ -1,11 +1,20 @@
 <template>
   <b-container>
-    <h1 class="title fancy-font">ABOUT ENDLESS PHOTOBOOTH</h1>
-    <div class="subtitle">Ventura County Photo Booth Rentals</div>
+    <h1 class="title fancy-font">
+      ABOUT ENDLESS PHOTOBOOTH
+    </h1>
+    <div class="subtitle">
+      Ventura County Photo Booth Rentals
+    </div>
 
     <b-row>
-      <b-col md="6" class="py-5">
-        <h4 class="copy-heading">Our Story</h4>
+      <b-col
+        md="6"
+        class="py-5"
+      >
+        <h4 class="copy-heading">
+          Our Story
+        </h4>
         <p>
           Endless Photo Booth is a family owned and ran company. What got us
           into the photo booth business was when we started attending events
@@ -14,7 +23,7 @@
           as well as seeing the joy of other people in the photo booth, that
           strived us to create our own photo booth business.
         </p>
-        <br />
+        <br>
         <h4 class="copy-heading">
           Looking for Photo Booth Rentals in Ventura or Los Angeles County?
         </h4>
@@ -28,29 +37,30 @@
           Up, UNLIMITED PRINTS and pricing at a budget because we want everyone
           to have a joyful photobooth experience, just like we have, without
           breaking an arm or leg for pricing. Don’t just take our word for it,
-          <a href="https://www.yelp.com/biz/endless-photobooth-oxnard"
-            >check out our reviews!</a
-          >
+          <a href="https://www.yelp.com/biz/endless-photobooth-oxnard">check out our reviews!</a>
         </p>
         <p>
           Where we are living to make your event memorable one shot at a time
           and always strive to give you the 5 star service everyone deserves!
         </p>
         <p>
-          Photo Booth aren’t just great to rent for weddings but for any other
+          Photo Booths aren’t just great to rent for weddings but for any other
           special event as well. Here at Endless Photo Booth, we offer
           affordable photo booth rentals with many great and amazing options.
           Endless Photo Booth will be a perfect addition to any and all events!
         </p>
-        <br />
-        <h4 class="copy-heading">Areas we service:</h4>
+        <br>
+        <h4 class="copy-heading">
+          Areas we service:
+        </h4>
         <p>
-          Endless Photo Booth services Ventura County, Los Angeles, Santa
-          Barbara and California, with small travel fees outside of Ventura
-          County.
+          Endless Photo Booth Ventura County, Los Angeles and Santa Barbara with
+          small travel fees outside of Ventura County.
         </p>
-        <br />
-        <h4 class="copy-heading">We specialize in:</h4>
+        <br>
+        <h4 class="copy-heading">
+          We specialize in:
+        </h4>
         <ul>
           <li>Corporate Events​​</li>
           <li>Baby Showers</li>
@@ -60,54 +70,45 @@
           <li>Many More!</li>
         </ul>
       </b-col>
-      <b-col md="5" offset-md="1">
-        <picture>
-          <source
-            srcset="~assets/images/about-us/conrad_and_rocio-min.webp"
-            type="image/webp"
-            class="py-5 img-fluid"
-          />
-          <img
-            src="~assets/images/about-us/conrad_and_rocio-min.jpg"
-            alt="Example of a wedding Four by Six Print"
-            class="py-5 img-fluid"
-          />
-        </picture>
+      <b-col
+        md="5"
+        offset-md="1"
+      >
         <picture>
           <source
             srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp"
             type="image/webp"
             class="py-5 img-fluid"
-          />
+          >
           <img
             src="~assets/images/about-us/elijah_meet_and_greet-min.jpg"
             alt="Example of a Baby Shower"
             class="py-5 img-fluid"
-          />
+          >
         </picture>
         <picture>
           <source
             srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp"
             type="image/webp"
             class="py-5 img-fluid"
-          />
+          >
           <img
             src="~assets/images/about-us/krystal_and_deven_slides-min.jpg"
             alt="Example of what the slide print out will look like"
             class="py-5 img-fluid"
-          />
+          >
         </picture>
         <picture>
           <source
             srcset="~assets/images/about-us/props-min.webp"
             type="image/webp"
             class="py-5 img-fluid"
-          />
+          >
           <img
             src="~assets/images/about-us/props-min.jpg"
             alt="Example of what the props will look like"
             class="py-5 img-fluid"
-          />
+          >
         </picture>
       </b-col>
     </b-row>
@@ -116,7 +117,7 @@
 </template>
 
 <script>
-import PhotoBoothsInclude from "~/components/PhotoBoothsInclude.vue";
+import PhotoBoothsInclude from '~/components/PhotoBoothsInclude.vue';
 
 export default {
   components: {
@@ -124,13 +125,13 @@ export default {
   },
   head() {
     return {
-      title: "About Us",
+      title: 'About Us',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals About Us Page",
+            'ENDLESS PHOTOBOOTH, Ventura Photo Booth Rentals About Us Page',
         },
       ],
     };

@@ -48,7 +48,7 @@
         />
       </b-form-group>
       <b-form-group
-        label="Number"
+        label="Phone"
         label-for="phone"
         label-cols-sm="4"
         label-cols-lg="2"

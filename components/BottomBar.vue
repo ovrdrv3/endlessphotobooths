@@ -6,7 +6,7 @@
     >
       <b-row align-v="center">
         <b-col
-          lg="3"
+          lg="6"
         >
           <!-- Instagram and Yelp Logos -->
           <div class="d-flex align-items-center">
@@ -51,12 +51,14 @@
           </div>
         </b-col>
         <b-col
-          lg="6"
+          lg="3"
         >
           <div class="py-2 py-lg-1">
-            LOCATIONS
             <div>
-              SANTA&nbsp;BARBARA • VENTURA • OXNARD • OJAI • LOS&nbsp;ANGELES • SAN&nbsp;LUIS&nbsp;OBISPO • SANTA&nbsp;MARIA • AGOURA&nbsp;HILLS • CALABASAS • SOUTHERN CALIFORNIA • CENTRAL COAST
+              AREAS WE SERVE:
+            </div>
+            <div>
+              SANTA&nbsp;BARBARA, VENTURA, LOS&nbsp;ANGELES COUNTIES
             </div>
           </div>
         </b-col>
@@ -96,7 +98,7 @@
     >
       <div class="d-flex justify-content-between">
         <div>
-          🛠️:
+          🛠️
           <a
             href="https://www.snowd3n.com"
             target="_blank"
@@ -107,7 +109,7 @@
           </a>
         </div>
         <div>
-          © 2023 Endless Photo Booth LLC
+          © {{ new Date().getFullYear() }} Endless Photo Booth LLC
         </div>
       </div>
     </b-container>

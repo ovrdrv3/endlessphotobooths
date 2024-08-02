@@ -52,7 +52,7 @@
               </p>
               <b-button class="mt-3 mt-md-0">
                 <nuxt-link
-                  class="copy-heading-no-color ghostwhite text-decoration-none color-inherit"
+                  class="copy-heading-no-color ghostwhite text-decoration-none color-inherit fancy-font"
                   to="/contact-us"
                 >
                   Book your photo booth today!

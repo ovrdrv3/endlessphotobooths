@@ -1,6 +1,8 @@
 <template>
   <div class="pb-5">
-    <h1 class="copy-heading">ALL Photo Booth Packages Include:</h1>
+    <h1 class="copy-heading">
+      ALL Photo Booth Packages Include:
+    </h1>
     <ul>
       <li>Props</li>
       <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
@@ -11,26 +13,12 @@
       <li>Person to Run Photo Booth</li>
       <li>Drop off and Pickup Included</li>
     </ul>
-
-    <picture>
-      <source
-        class="img-fluid"
-        srcset="~assets/images/home/all_include-min.webp"
-        type="image/webp"
-      />
-      <img
-        class="img-fluid"
-        src="~assets/images/home/all_include-min.jpg"
-        alt="All Photo Booth Include Props, Different backdrop options,
-                 Person to Run Photo Booth, and more!"
-      />
-    </picture>
   </div>
 </template>
 
 <script>
 export default {
-  name: "PhotoBoothsInclude",
+  name: 'PhotoBoothsInclude',
 };
 </script>
 
