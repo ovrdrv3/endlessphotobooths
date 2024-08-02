@@ -61,12 +61,12 @@
     <b-row class="py-3">
       <b-col order-md="2" md="6">
 
-        <picture>
+        <!-- <picture>
          <source class="img-fluid" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
          <img class="img-fluid"
                src="~assets/images/home/all_include-min.jpg"
                alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
-        </picture>
+        </picture> -->
 
       </b-col>
       <b-col offset-md="1" order-md="1" md="4">

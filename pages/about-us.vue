@@ -34,10 +34,6 @@
       </b-col>
       <b-col md="5" offset-md="1">
         <picture>
-          <source srcset="~assets/images/about-us/conrad_and_rocio-min.webp" type="image/webp"  class="py-5 img-fluid">
-          <img src="~assets/images/about-us/conrad_and_rocio-min.jpg" alt="Example of a wedding Four by Six Print" class="py-5 img-fluid">
-        </picture>
-        <picture>
           <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="py-5 img-fluid">
           <img src="~assets/images/about-us/elijah_meet_and_greet-min.jpg" alt="Example of a Baby Shower" class="py-5 img-fluid">
         </picture>
