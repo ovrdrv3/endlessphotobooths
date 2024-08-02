@@ -59,7 +59,7 @@
       </b-col>
     </b-row>
     <b-row class="py-3">
-      <b-col order-md="2" md="6">
+      <!-- <b-col order-md="2" md="6"> -->
 
         <!-- <picture>
          <source class="img-fluid" srcset="~assets/images/home/all_include-min.webp" type="image/webp">
@@ -68,9 +68,10 @@
                alt="All Photo Booths Include Props, Different backdrop options, Person to Run Photo Booth, and more!">
         </picture> -->
 
-      </b-col>
-      <b-col offset-md="1" order-md="1" md="4">
-        <ul>
+      <!-- </b-col> -->
+        <b-col>
+        <!-- Single list for mobile view -->
+        <ul class="d-md-none">
           <li>Props</li>
           <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
           <li>2 Strips with 3 Photos Taken</li>
@@ -81,6 +82,26 @@
           <li>Person to Run Photo Booth</li>
           <li>Drop off and Pickup Included</li>
         </ul>
+        <!-- Two-column list for larger screens -->
+        <b-row class="d-none d-md-flex">
+          <b-col offset-md="1" md="5">
+            <ul>
+              <li>Props</li>
+              <li>Different backdrop options: Rose Gold, Red, Silver and more</li>
+              <li>2 Strips with 3 Photos Taken</li>
+              <li>Copies for Everyone in Photo</li>
+              <li>Unlimited Use of Booth</li>
+            </ul>
+          </b-col>
+          <b-col md="5">
+            <ul>
+              <li>Open air Photo Booth</li>
+              <li>Custom Text For Bottom Of Picture</li>
+              <li>Person to Run Photo Booth</li>
+              <li>Drop off and Pickup Included</li>
+            </ul>
+          </b-col>
+        </b-row>
       </b-col>
     </b-row>
     <PhotoBoothTypes/>
