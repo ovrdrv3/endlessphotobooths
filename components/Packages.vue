@@ -27,7 +27,7 @@
                 <b-list-group-item class="py-1">Photo Album</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us?package=LED"
+                      to="/contact-us?package=Open"
                       variant="primary"
                       block>
                       Book
@@ -39,7 +39,7 @@
                 <b-list-group-item class="py-1">Full 4x6 Prints</b-list-group-item>
             </b-list-group>
             <b-button slot="footer"
-                      to="/contact-us?package=ENDLESS"
+                      to="/contact-us?package=Open"
                       variant="primary"
                       block>
                       Book

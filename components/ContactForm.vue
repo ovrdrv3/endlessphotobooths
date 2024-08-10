@@ -1,96 +1,196 @@
 <template>
-  <div class="py-3">
-    <b-form @input="validateForm"
-            @change="validateForm"
-            name="contact"
-            ref="form"
-            @reset="onReset"
-            method="POST"
-            netlify-honeypot="prefix"
-            data-netlify="true">
-      <b-form-group v-show="false" label="Prefix:"
-                    label-for="prefix">
-        <b-form-input id="prefix"
-                      name="prefix">
-        </b-form-input>
+  <div class="py-2">
+    <b-form
+      ref="form"
+      name="contact"
+      method="POST"
+      netlify-honeypot="prefix"
+      data-netlify="true"
+      @input="validateForm"
+      @change="validateForm"
+      @reset="onReset"
+    >
+      <b-form-group
+        v-show="false"
+        label="Prefix"
+        label-for="prefix"
+      >
+        <b-form-input
+          id="prefix"
+          name="prefix"
+        />
       </b-form-group>
-      <input type="hidden" name="form-name" value="contact" />
-      <b-form-group label="Name:"
-                    label-for="name"
-                    :invalid-feedback="errors.name">
-        <b-form-input id="name"
-                      name="name"
-                      type="text"
-                      v-model="form.name"
-                      placeholder="Name"
-                      :state="stateOfElement('name')">
-        </b-form-input>
-
+      <input
+        type="hidden"
+        name="form-name"
+        value="contact"
+      >
+      <b-form-group
+        label="Name"
+        label-for="name"
+        label-cols-sm="4"
+        label-cols-lg="2"
+        content-cols-sm
+        content-cols-lg="10"
+        :invalid-feedback="errors.name"
+      >
+        <b-form-input
+          id="name"
+          v-model="form.name"
+          name="name"
+          type="text"
+          label-cols-sm="4"
+          label-cols-lg="2"
+          content-cols-sm
+          content-cols-lg="10"
+          placeholder="Name"
+          :state="stateOfElement('name')"
+        />
       </b-form-group>
-      <b-form-group label="Number:"
-                    label-for="phone"
-                    :invalid-feedback="errors.phone">
-        <b-form-input id="phone"
-                      name="phone"
-                      type="tel"
-                      v-model="form.phone"
-                      placeholder="Phone"
-                      :state="stateOfElement('phone')">
-        </b-form-input>
+      <b-form-group
+        label="Phone"
+        label-for="phone"
+        label-cols-sm="4"
+        label-cols-lg="2"
+        content-cols-sm
+        content-cols-lg="10"
+        :invalid-feedback="errors.phone"
+      >
+        <b-form-input
+          id="phone"
+          v-model="form.phone"
+          name="phone"
+          type="tel"
+          placeholder="Phone"
+          :state="stateOfElement('phone')"
+        />
       </b-form-group>
-      <b-form-group label="Email:"
-                    label-for="email"
-                    :invalid-feedback="errors.email">
-        <b-form-input id="email"
-                      name="email"
-                      type="email"
-                      v-model="form.email"
-                      placeholder="Email"
-                      :state="stateOfElement('email')">
-        </b-form-input>
+      <b-form-group
+        label="Email"
+        label-for="email"
+        label-cols-sm="4"
+        label-cols-lg="2"
+        content-cols-sm
+        content-cols-lg="10"
+        :invalid-feedback="errors.email"
+      >
+        <b-form-input
+          id="email"
+          v-model="form.email"
+          name="email"
+          type="email"
+          placeholder="Email"
+          :state="stateOfElement('email')"
+        />
       </b-form-group>
-      <b-form-group id="formComment"
-                    label="Comment or Message:"
-                    label-for="comment">
-        <b-form-textarea id="comment"
-                      name="comment"
-                      type="text"
-                      v-model="form.comment"
-                      :rows="3"
-                      :max-rows="6">
-        </b-form-textarea>
+      <b-form-group
+        id="formComment"
+        label="Comment or Message"
+        label-for="comment"
+      >
+        <b-form-textarea
+          id="comment"
+          v-model="form.comment"
+          name="comment"
+          type="text"
+          :rows="3"
+          :max-rows="6"
+        />
       </b-form-group>
-      <b-form-group id="formPackage"
-                    label="Package:"
-                    label-for="package">
-        <b-form-select id="package"
-                       name="package"
-                       :options="packages"
-                       v-model="form.package">
-        </b-form-select>
+      <b-form-group
+        id="formPackage"
+        label="Package"
+        label-cols-sm="4"
+        label-cols-lg="2"
+        content-cols-sm
+        content-cols-lg="10"
+        label-for="package"
+      >
+        <b-form-select
+          id="package"
+          v-model="form.package"
+          name="package"
+          :options="packages"
+        />
       </b-form-group>
-      <b-form-group label="How did you hear about us?"
-                    label-for="referral"
-                    :invalid-feedback="errors.referral">
-        <b-form-radio-group id="referral"
-                            name="referral"
-                            v-model="form.referral"
-                            :options="referralOptions"
-                            stacked>
-        </b-form-radio-group>
-        <b-form-invalid-feedback :state="stateOfElement('referral')" v-show="stateOfElement('referral')" >Please select one</b-form-invalid-feedback>
-        <b-form-input v-show="form.referral == 'Other'"
-                      id="otherReferral"
-                      name="otherReferral"
-                      type="text"
-                      v-model="form.otherReferral"
-                      placeholder="(How did you hear about us?)"
-                      :state="stateOfElement('otherReferral')">
-        </b-form-input>
-      </b-form-group>
-      <b-button type="button" :disabled="errors.any || submissionSuccess" @click.prevent="onSubmit"
- :variant="submitButtonVariant">{{form.submitText}}</b-button>
-      <b-button type="reset" variant="outline-danger">Reset</b-button>
+      <!-- how did you hear about us and the bugget on the same row -->
+      <b-row>
+        <b-col
+          cols="12"
+          md="6"
+        >
+          <b-form-group
+            label="How did you hear about us?"
+            label-for="referral"
+            :invalid-feedback="errors.referral"
+          >
+            <b-form-invalid-feedback
+              v-show="stateOfElement('referral')"
+              :state="stateOfElement('referral')"
+            >
+              Please select a referral
+            </b-form-invalid-feedback>
+            <b-form-radio-group
+              id="referral"
+              v-model="form.referral"
+              name="referral"
+              :options="referralOptions"
+              stacked
+            />
+            <b-form-input
+              v-show="form.referral == 'Other'"
+              id="otherReferral"
+              v-model="form.otherReferral"
+              name="otherReferral"
+              type="text"
+              placeholder="(How did you hear about us?)"
+              :state="stateOfElement('otherReferral')"
+            />
+          </b-form-group>
+        </b-col>
+        <b-col
+          cols="12"
+          md="6"
+        >
+          <b-form-group
+            label="What's your budget?"
+            label-for="budget"
+            :invalid-feedback="errors.budget"
+          >
+            <b-form-invalid-feedback
+              v-show="stateOfElement('budget')"
+              :state="stateOfElement('budget')"
+            >
+              Please select a budget
+            </b-form-invalid-feedback>
+            <b-form-radio-group
+              id="budget"
+              v-model="form.budget"
+              name="budget"
+              :options="budgetOptions"
+              stacked
+            />
+          </b-form-group>
+        </b-col>
+      </b-row>
+      <b-button
+        block
+        size="lg"
+        type="button"
+        :disabled="errors.any || submissionSuccess"
+        :variant="submitButtonVariant"
+        @click.prevent="onSubmit"
+      >
+        {{ form.submitText }}
+      </b-button>
+      <b-button
+        block
+        size="sm"
+        type="reset"
+        variant="outline-danger"
+      >
+        Reset
+      </b-button>
     </b-form>
   </div>
 </template>
@@ -98,19 +198,20 @@
 <script>
 
 export default {
-  data () {
+  data() {
     return {
       form: {
         name: '',
         email: '',
         phone: '',
         comment: '',
+        otherReferral: '',
         package: null,
         referral: null,
-        otherReferral: null,
-        submitText: 'Submit'
+        budget: null,
+        submitText: 'Submit',
       },
-      submissionAttempt : false,
+      submissionAttempt: false,
       submissionSuccess: false,
       submitButtonVariant: 'outline-primary',
       errors: {
@@ -119,66 +220,77 @@ export default {
         email: '',
         phone: '',
         referral: '',
-        otherReferral: ''
+        budget: '',
+        otherReferral: '',
       },
       packages: [
         { text: 'Package Types', value: null },
-        'Open Air Package', 'LED Booth Package', 'ENDLESS VIP Package'
+        '360 Video Booth',
+        'Open Air Booth',
+        'Social Booth',
       ],
       referralOptions: [
-      { text: 'Friends', value: 'Friends' },
-      { text: 'Yelp', value: 'Yelp' },
-      { text: 'Wedding Wire', value: 'Wedding Wire' },
-      { text: 'Instagram', value: 'Instagram' },
-      { text: 'Other', value: 'Other' }
-      ]
-    }
+        { text: 'Friends', value: 'Friends' },
+        { text: 'Yelp', value: 'Yelp' },
+        { text: 'Wedding Wire', value: 'Wedding Wire' },
+        { text: 'Instagram', value: 'Instagram' },
+        { text: 'Other', value: 'Other' },
+      ],
+      budgetOptions: [
+        { text: '$400 - $600', value: '$400 - $600' },
+        { text: '$600 - $800', value: '$600 - $800' },
+        { text: '$800 - $1,000', value: '$800 - $1,000' },
+        { text: '$1,000 - $2,000', value: '$1,000 - $2,000' },
+      ],
+    };
   },
-  mounted: function () {
+  mounted() {
     if (process.client) {
-        var paramsString = window.location.search;
-        var searchParams = new URLSearchParams(paramsString);
-        var newFormValue = '';
-        if (searchParams.has("package")){
-          // console.log('Package ' + searchParams.get("package"));
-          // this.form.package = 'Package ' + searchParams.get("package") ;
-          var queryValue = searchParams.get("package") ;
-          this.packages.forEach(function findMostSimilarPackage(currentValue) {
-            if (currentValue.toString().substring(0, queryValue.length) == queryValue) {
-              // console.log(currentValue)
-              newFormValue = currentValue;
-            }
-          });
-          this.form.package = newFormValue;
-          // search for the most similiar package in the set.
-        }
+      const paramsString = window.location.search;
+      const searchParams = new URLSearchParams(paramsString);
+      let newFormValue = '';
+      if (searchParams.has('package')) {
+        const queryValue = searchParams.get('package');
+        this.packages.forEach((currentValue) => {
+          if (
+            currentValue.toString().substring(0, queryValue.length)
+            === queryValue
+          ) {
+            newFormValue = currentValue;
+          }
+        });
+        this.form.package = newFormValue;
+      }
     }
   },
   methods: {
     encode(data) {
       return Object.keys(data)
         .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
         )
-        .join("&");
+        .join('&');
     },
-    validateForm: function(){
-      if (!this.submissionAttempt) { return; }
+    validateForm() {
+      if (!this.submissionAttempt) {
+        return;
+      }
       this.errors.any = false;
       this.errors.name = '';
       this.errors.email = '';
       this.errors.phone = '';
+      this.errors.budget = '';
       this.errors.referral = '';
       this.errors.otherReferral = '';
 
       if (!this.form.name || !this.form.name.includes(' ')) {
         this.errors.any = true;
-        this.errors.name ='Full name required';
+        this.errors.name = 'Full name required';
       }
 
       if (!this.form.phone) {
         this.errors.any = true;
-        this.errors.phone ='Phone required';
+        this.errors.phone = 'Phone required';
       }
 
       if (!this.form.email) {
@@ -189,14 +301,19 @@ export default {
         this.errors.email = 'Valid email required';
       }
 
-      if (!this.form.referral) {
+      if (!this.form.budget) {
         this.errors.any = true;
-        this.errors.referral ='Referral required';
+        this.errors.budget = 'Budget required';
       }
 
-      if (this.form.referral == 'Other' && !this.form.otherReferral) {
+      if (!this.form.referral) {
         this.errors.any = true;
-        this.errors.otherReferral ='Other referral required';
+        this.errors.referral = 'Referral required';
+      }
+
+      if (this.form.referral === 'Other' && !this.form.otherReferral) {
+        this.errors.any = true;
+        this.errors.otherReferral = 'Other referral required';
       }
 
       if (this.errors.any) {
@@ -206,27 +323,26 @@ export default {
       }
 
       return this.errors.any;
-
     },
     stateOfElement(element) {
       if (!this.submissionAttempt) return null;
-      return this.errors[element] ? false : true;
+      return !this.errors[element];
     },
-    onSubmit () {
+    onSubmit() {
       this.submissionAttempt = true;
-      var notReadyToProceed = this.validateForm();
+      const notReadyToProceed = this.validateForm();
       if (notReadyToProceed) {
-        return;
+
       } else {
         // this.$refs.form.submit();
 
-        fetch("/submit-success", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        fetch('/submit-success', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: this.encode({
-            "form-name": "contact",
-            ...this.form
-          })
+            'form-name': 'contact',
+            ...this.form,
+          }),
         })
           .then(() => {
             // this.$router.push("submit-success");
@@ -262,30 +378,28 @@ export default {
         // .catch(() => {
         //     this.form.submitText = 'Please Refresh Your Page - Error Sending Form';
         // });
-
-
       } // ready to proceed, make POST attempt
     },
-    onReset (evt) {
+    onReset(evt) {
       evt.preventDefault();
       /* Reset form values */
-      this.form.name =  '';
+      this.form.name = '';
       this.form.email = '';
       this.form.phone = '';
       this.form.comment = '';
       this.form.package = null;
+      this.errors.budget = '';
       this.errors.referral = '';
       this.errors.otherReferral = '';
-      this.form.submitText =  'Submit';
+      this.form.submitText = 'Submit';
       this.errors.any = false;
       this.submissionAttempt = false;
       this.submissionSuccess = false;
-
     },
-    validEmail: function (email) {
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    validEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    }
-  }
-}
+    },
+  },
+};
 </script>
