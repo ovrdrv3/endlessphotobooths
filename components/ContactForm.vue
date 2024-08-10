@@ -279,6 +279,7 @@ export default {
       this.errors.name = '';
       this.errors.email = '';
       this.errors.phone = '';
+      this.errors.budget = '';
       this.errors.referral = '';
       this.errors.otherReferral = '';
 
@@ -310,7 +311,7 @@ export default {
         this.errors.referral = 'Referral required';
       }
 
-      if (this.form.referral == 'Other' && !this.form.otherReferral) {
+      if (this.form.referral === 'Other' && !this.form.otherReferral) {
         this.errors.any = true;
         this.errors.otherReferral = 'Other referral required';
       }
@@ -387,6 +388,7 @@ export default {
       this.form.phone = '';
       this.form.comment = '';
       this.form.package = null;
+      this.errors.budget = '';
       this.errors.referral = '';
       this.errors.otherReferral = '';
       this.form.submitText = 'Submit';
