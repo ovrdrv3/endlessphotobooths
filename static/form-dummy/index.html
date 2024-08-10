@@ -1,59 +1,14 @@
 <form name="contact" action="/submit-success/" netlify-honeypot="prefix" netlify>
     <input type="hidden" name="form-name" value="contact" />
-    <br>
     <input type="hidden" label="Prefix:" name="prefix" id="prefix">
-    <br>
-    <label for="name">Name:</label>
-    <br>
     <input type="text" name="name" id="name">
-    <br>
-    <label for="name">Number:</label>
-    <br>
     <input type="tel" name="phone" id="phone">
-    <br>
-    <label for="email">Email:</label>
-    <br>
     <input type="email" name="email" id="email">
-    <br>
-    <label for="comment">Comment or Message:</label>
-    <br>
     <input type="text" name="comment" id="comment">
-    <br>
-    <label for="package">Package:</label>
-    <div>
-        <select id="package" name="package" class="custom-select">
-            <option value="">Package Types</option>
-            <option value="Open Air Package">Open Air Package</option>
-            <option value="LED Booth Package">LED Booth Package</option>
-            <option value="ENDLESS VIP Package">ENDLESS VIP Package</option>
-        </select>
-    </div>
-    <br>
-
-    <div>
-      <label for="referral">How did you hear about us?</label>
-      <input type="radio" id="Friends"
-       name="referral" value="Friends">
-      <label for="Friends">Friends</label>
-
-      <input type="radio" id="Yelp"
-       name="referral" value="Yelp">
-      <label for="Yelp">Yelp</label>
-
-      <input type="radio" id="Wedding Wire"
-       name="referral" value="Wedding Wire">
-      <label for="Wedding Wire">Wedding Wire</label>
-
-      <input type="radio" id="Instagram"
-       name="referral" value="Instagram">
-      <label for="Instagram">Instagram</label>
-
-      <input type="radio" id="Other"
-       name="referral" value="Other">
-      <label for="Other">Other</label>
-
-      <input id="otherReferral" name="otherReferral" type="text" placeholder="(How did you hear about us?)" class="form-control is-valid" style="">
-    </div>
+    <select id="package" name="package"></select>
+    <input id="budget" name="budget" type="radio" value="Budget">
+    <input type="radio" id="Referral" name="referral" value="Referral">
+    <input id="otherReferral" name="otherReferral" type="text" placeholder="(How did you hear about us?)">
 
     <input type="submit" value="Send Request">
 </form>

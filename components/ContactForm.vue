@@ -331,11 +331,7 @@ export default {
     onSubmit() {
       this.submissionAttempt = true;
       const notReadyToProceed = this.validateForm();
-      if (notReadyToProceed) {
-
-      } else {
-        // this.$refs.form.submit();
-
+      if (!notReadyToProceed) {
         fetch('/submit-success', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -345,7 +341,6 @@ export default {
           }),
         })
           .then(() => {
-            // this.$router.push("submit-success");
             this.form.submitText = 'Thanks! You will hear from us shortly!';
             this.submitButtonVariant = 'btn-outline-success';
             this.submissionSuccess = true;
@@ -354,31 +349,7 @@ export default {
             this.form.submitText = 'Please Refresh Your Page or Try a Different Browser - Error Sending Form';
           });
 
-        // const axiosConfig = {
-        //   header: { "Content-Type": "application/x-www-form-urlencoded" }
-        // };
-
-        // axios.post(
-        //   "/",
-        //   this.encode({
-        //     "form-name": "contact-us",
-        //     ...this.form
-        //   }),
-        //   axiosConfig
-        // )
-        // // .then(function (response) {
-        // //   console.log(response);
-        // // })
-        // .then(() => {
-        //     // this.$router.push("submit-success");
-        //     this.form.submitText = 'Thanks! You will hear from us shortly!';
-        //     this.submitButtonVariant = 'btn-outline-success';
-        //     this.submissionSuccess = true;
-        // })
-        // .catch(() => {
-        //     this.form.submitText = 'Please Refresh Your Page - Error Sending Form';
-        // });
-      } // ready to proceed, make POST attempt
+      }
     },
     onReset(evt) {
       evt.preventDefault();
