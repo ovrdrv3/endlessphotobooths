@@ -227,6 +227,7 @@ export default {
         { text: 'Package Types', value: null },
         '360 Video Booth',
         'Open Air Booth',
+        'Cali Booth',
         'Social Booth',
       ],
       referralOptions: [

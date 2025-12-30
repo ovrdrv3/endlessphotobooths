@@ -2,7 +2,6 @@
   <b-container fluid>
     <h1 class="title">ENDLESS PHOTO{{spaceForMobile}}BOOTHS PACKAGES</h1>
     <div class="subtitle">Ventura County Photo Booth Rentals</div>
-    <Packages/>
     <PhotoBoothTypes/>
 
   </b-container>

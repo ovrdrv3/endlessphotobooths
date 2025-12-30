@@ -1,35 +1,38 @@
 <template>
 <div>
     <b-row class="py-3">
-      <b-col offset-md="1" md="10">
-        <h1 class="title">Our Photo Booth Styles:</h1>
+      <b-col md="4">
+        <img src="~assets/new-images/packages/booth_360.png" alt="360 Photo Booth" class="img-fluid">
+        <b-button class="book-button" variant="primary" to="/contact-us?package=360">Book</b-button>
+      </b-col>
+      <b-col md="4">
+        <img src="~assets/new-images/packages/open_air.png" alt="Open Air Photo Booth" class="img-fluid">
+        <b-button class="book-button" variant="primary" to="/contact-us?package=Open">Book</b-button>
+      </b-col>
+      <b-col md="4">
+        <img src="~assets/new-images/packages/cali.png" alt="Cali Photo Booth" class="img-fluid">
+        <b-button class="book-button" variant="primary" to="/contact-us?package=Cali">Book</b-button>
       </b-col>
     </b-row>
     <b-row class="py-3">
-      <b-col offset-md="2" md="4">
-          <div class="card border-0">
-            <picture>
-              <source srcset="~assets/images/home/LED-Enclosed.webp" type="image/webp" class="img-fluid">
-              <img src="~assets/images/home/LED-Enclosed-min.jpg" alt="Enclosed Photo Booth" class="img-fluid">
-            </picture>
-            <div class="card-body">
-              <h5 class="card-title">Enclosed Photo Booths</h5>
-              <p class="card-text">The LED Photo Booth Enclosure is great fun for all events and will give your party an amazing look and feel. This gives a more private session for your guest and adds a cool, color changing background texture to brighten up every print. The enclosure is able to fit up to 10 or more people in a shot. So if you want that different look to your party and pictures, the LED enclosure is what you want!</p>
-            </div>
-          </div>
+      <b-col md="6">
+        <img src="~assets/new-images/packages/social.png" alt="Social Photo Booth" class="img-fluid">
+        <b-button class="book-button" variant="primary" to="/contact-us?package=Social">Book</b-button>
       </b-col>
-      <b-col  md="4">
-          <div class="card offset-md-1 border-0">
-            <picture>
-              <source srcset="~assets/images/home/Open-Air.webp" type="image/webp"  class="img-fluid">
-              <img src="~assets/images/home/Open-Air-min.jpeg" alt="Open Photo Booth" class="img-fluid">
-            </picture>
-            <div class="card-body">
-              <h5 class="card-title">Open Photo Booths</h5>
-              <p class="card-text">This Open Air booth is great for house parties or smaller venues and space limitations. Your guest are able to see and even jump in to the shot for a Photo Bomb. Able to fit up to 10 people in a shot. Black, Backdrop Curtain and Curtain Stand. Photo Booth can fit in spaces from 5ft to 8ft and must be at least 6.5ft back from the curtain.</p>
-            </div>
-          </div>
+      <b-col md="6">
+        <img src="~assets/new-images/packages/add_ons.jpg" alt="Add-ons" class="img-fluid">
       </b-col>
     </b-row>
 </div>
 </template>
+
+<style>
+.book-button {
+  background-color: #cbb1a3 !important;
+  color: #333333 !important;
+  width: 90%;
+  margin: 10px auto 0;
+  display: block;
+  border: none;
+}
+</style>

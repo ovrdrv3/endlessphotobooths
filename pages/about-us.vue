@@ -34,16 +34,20 @@
       </b-col>
       <b-col md="5" offset-md="1">
         <picture>
-          <source srcset="~assets/images/about-us/elijah_meet_and_greet-min.webp" type="image/webp"  class="py-5 img-fluid">
-          <img src="~assets/images/about-us/elijah_meet_and_greet-min.jpg" alt="Example of a Baby Shower" class="py-5 img-fluid">
+          <source media="(max-width: 600px)" srcset="~assets/new-images/about-us/slide_1_mob.png">
+          <img src="~assets/new-images/about-us/slide_1.png" alt="About Us Slide 1" class="py-5 img-fluid">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/krystal_and_deven_slides-min.webp" type="image/webp"  class="py-5 img-fluid">
-          <img src="~assets/images/about-us/krystal_and_deven_slides-min.jpg" alt="Example of what the slide print out will look like" class="py-5 img-fluid">
+          <source media="(max-width: 600px)" srcset="~assets/new-images/about-us/slide_2_mob.png">
+          <img src="~assets/new-images/about-us/slide_2.png" alt="About Us Slide 2" class="py-5 img-fluid">
         </picture>
         <picture>
-          <source srcset="~assets/images/about-us/props-min.webp" type="image/webp"  class="py-5 img-fluid">
-          <img src="~assets/images/about-us/props-min.jpg" alt="Example of what the props will look like" class="py-5 img-fluid">
+          <source media="(max-width: 600px)" srcset="~assets/new-images/about-us/slide_3_mob.png">
+          <img src="~assets/new-images/about-us/slide_3.png" alt="About Us Slide 3" class="py-5 img-fluid">
+        </picture>
+        <picture>
+          <source media="(max-width: 600px)" srcset="~assets/new-images/about-us/slide_4_mob.png">
+          <img src="~assets/new-images/about-us/slide_4.png" alt="About Us Slide 4" class="py-5 img-fluid">
         </picture>
       </b-col>
     </b-row>

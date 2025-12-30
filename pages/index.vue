@@ -9,15 +9,13 @@
           <div class="parallax-text title">
             <h2 class="gray-text">LIVING TO MAKE YOUR EVENT MEMORABLE</h2>
             <br>
-            <br>
             <h2 class="gray-text">ONE SHOT AT A TIME</h2>
-            <br>
             <br>
             <h2 class="bottom-gray-text">SANTA&nbspBARBARA • VENTURA • LOS&nbspANGELES</h2>
           </div>
           <picture>
-            <source srcset="~assets/images/home/home_splash-min.webp" type="image/webp" class="img-fluid dark-overlay">
-            <img src="~assets/images/home/home_splash-min.jpeg" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
+            <source media="(max-width: 600px)" srcset="~assets/new-images/home/home_splash-mob.png">
+            <img src="~assets/new-images/home/home_splash.png" alt="Endless Photo Booths Splash page" class="img-fluid dark-overlay">
           </picture>
 
         </div>
@@ -102,6 +100,11 @@
             </ul>
           </b-col>
         </b-row>
+      </b-col>
+    </b-row>
+    <b-row class="py-3">
+      <b-col offset-md="1" md="10">
+        <h1 class="title">Our Photo Booth Styles:</h1>
       </b-col>
     </b-row>
     <PhotoBoothTypes/>
