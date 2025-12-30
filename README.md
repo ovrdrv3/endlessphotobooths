@@ -2,6 +2,21 @@
 
 > Endless Photo Booths Site
 
+## 🚀 Development Setup
+
+### 1. Nuxt Web App
+Because this is a **Nuxt 2.15** project, it is highly sensitive to Node versions. **Always use Node 16.**
+
+```bash
+# Switch to the correct node version
+nvm use 16
+
+# Install dependencies
+npm install
+
+# Serve with hot reload at localhost:3000
+npm run dev
+
 ## Build Setup
 
 ``` bash
@@ -19,4 +34,3 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
