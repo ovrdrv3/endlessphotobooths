@@ -35,4 +35,10 @@
   display: block;
   border: none;
 }
+
+@media screen and (max-width: 768px) {
+  .book-button {
+    margin-bottom: 10px;
+  }
+}
 </style>
